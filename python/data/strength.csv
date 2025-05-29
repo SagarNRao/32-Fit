@@ -1,0 +1,14 @@
+ID,Age,Gender,Bodyweight,Session_Number,Exercise_Type,Weight_Lifted,Reps,Baseline_1RM,Post_Session_1RM,Delta_Percent_1RM,RPE,RPE_Change,Protein_g_kg,Sleep_hrs,Workouts_Per_Week
+1,25,Male,80,1,Bench Press,68,5,80,81.2,1.5,8,0,1.8,7,3
+1,25,Male,80,2,Bench Press,68,5,81.2,82.3,1.4,7.7,0.3,1.8,7,3
+1,25,Male,80,3,Bench Press,68,5,82.3,83.4,1.3,7.4,0.3,1.8,7,3
+2,30,Female,60,1,Squat,60,5,70,71.0,1.4,8,0,1.6,6,4
+2,30,Female,60,2,Squat,60,5,71.0,72.0,1.3,7.7,0.3,1.6,6,4
+2,30,Female,60,3,Squat,60,5,72.0,72.9,1.2,7.4,0.3,1.6,6,4
+3,22,Male,70,1,Deadlift,77,5,90,91.4,1.6,8,0,2.0,8,5
+3,22,Male,70,2,Deadlift,77,5,91.4,92.7,1.4,7.6,0.4,2.0,8,5
+3,22,Male,70,3,Deadlift,77,5,92.7,93.9,1.3,7.2,0.4,2.0,8,5
+4,35,Female,55,1,Bench Press,51,5,60,60.9,1.5,8,0,1.7,7,3
+4,35,Female,55,2,Bench Press,51,5,60.9,61.8,1.4,7.7,0.3,1.7,7,3
+5,28,Male,90,1,Squat,85,5,100,101.6,1.6,8,0,2.2,9,4
+5,28,Male,90,2,Squat,85,5,101.6,103.1,1.5,7.7,0.3,2.2,9,4

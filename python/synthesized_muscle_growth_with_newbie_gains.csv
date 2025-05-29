@@ -1,0 +1,1101 @@
+age,gender,exercise_type,sets,reps,weight,frequency,protein,calories,sleep,experience,muscle_size_increase_cm2
+56,M,Deadlifts,6,15,146.1,4,90.5,2986,5.2,Advanced,1.84
+46,M,Deadlifts,3,13,155.6,5,192.4,2794,9.4,Intermediate,4.61
+32,F,Squats,6,8,177.1,1,179.1,2245,5.1,Intermediate,4.72
+25,M,Squats,6,7,110.0,1,175.0,2057,9.7,Intermediate,3.21
+38,M,Deadlifts,5,11,151.4,5,104.1,3611,7.4,Intermediate,5.27
+56,M,Squats,4,12,131.5,3,176.6,2441,6.7,Intermediate,5.69
+36,F,Deadlifts,5,15,53.6,2,182.0,3796,9.6,Intermediate,5.93
+40,M,Deadlifts,3,6,24.6,3,114.7,2769,5.1,Beginner,7.33
+28,F,Bench Press,4,11,71.2,1,194.3,2439,7.9,Intermediate,2.1
+28,F,Squats,1,9,99.7,5,86.0,3110,7.7,Advanced,2.45
+41,M,Bench Press,1,15,131.1,5,98.0,3704,6.1,Beginner,5.72
+53,M,Squats,3,9,173.0,3,144.5,3225,7.1,Beginner,10.11
+57,M,Deadlifts,5,7,55.3,3,149.1,2484,8.3,Intermediate,4.34
+41,M,Bench Press,2,9,42.6,2,157.4,3087,8.6,Intermediate,5.57
+20,F,Deadlifts,3,6,193.4,4,82.0,2836,5.0,Intermediate,3.76
+39,F,Squats,4,8,39.4,4,195.2,3374,9.7,Beginner,6.58
+19,M,Deadlifts,4,10,106.1,2,85.4,2161,5.8,Intermediate,3.23
+41,M,Bench Press,6,5,125.4,4,97.2,1532,6.2,Beginner,4.23
+47,M,Squats,1,14,117.4,1,81.7,3316,6.3,Intermediate,2.34
+55,F,Squats,4,8,35.5,4,148.0,3620,5.2,Intermediate,3.09
+19,M,Deadlifts,3,10,30.3,2,191.9,3389,5.6,Beginner,7.67
+38,M,Bench Press,4,13,39.0,4,159.9,2656,9.9,Intermediate,3.54
+50,F,Deadlifts,3,15,125.4,5,178.7,1560,6.6,Advanced,3.0
+29,F,Squats,2,15,118.0,3,81.6,3043,5.6,Intermediate,4.32
+39,M,Squats,6,6,62.1,1,145.0,1771,5.5,Advanced,3.49
+42,F,Bench Press,1,15,134.8,5,135.1,3793,8.6,Intermediate,1.29
+44,F,Squats,4,11,167.6,5,139.9,2699,9.3,Intermediate,3.01
+59,M,Bench Press,3,10,27.5,2,88.7,3306,6.3,Beginner,4.76
+45,M,Deadlifts,5,6,109.7,3,162.1,2654,5.1,Beginner,5.38
+33,M,Deadlifts,1,12,144.1,3,140.4,2625,6.1,Beginner,2.2
+32,M,Deadlifts,2,11,65.4,1,171.8,1809,5.3,Intermediate,3.86
+20,F,Deadlifts,3,15,75.4,2,138.2,2815,5.5,Advanced,1.43
+54,F,Squats,6,9,130.5,1,97.9,3245,7.2,Intermediate,3.19
+24,M,Bench Press,6,9,181.6,4,157.8,1837,6.1,Intermediate,4.17
+38,M,Bench Press,2,11,165.8,5,100.7,1509,7.6,Intermediate,2.65
+26,M,Deadlifts,2,13,125.0,1,184.7,1548,6.3,Intermediate,5.37
+56,M,Squats,6,15,151.4,5,153.6,3010,9.7,Intermediate,2.48
+35,F,Bench Press,4,13,85.7,2,98.9,2844,9.5,Intermediate,1.48
+21,M,Squats,4,13,135.4,4,195.5,2230,7.8,Intermediate,2.7
+42,M,Bench Press,3,10,103.9,2,142.2,2294,6.8,Beginner,1.71
+31,M,Deadlifts,5,14,54.2,4,88.7,3148,6.9,Advanced,2.18
+26,F,Deadlifts,3,10,146.3,4,155.2,1632,7.1,Beginner,4.88
+43,M,Squats,5,7,120.2,5,110.4,3630,8.6,Beginner,7.21
+19,F,Deadlifts,2,5,84.6,2,176.4,3604,7.3,Advanced,1.31
+37,M,Bench Press,1,11,184.0,2,178.1,1875,9.3,Intermediate,4.46
+45,F,Squats,3,8,23.8,1,197.5,3896,9.7,Intermediate,2.54
+24,F,Squats,3,5,76.8,2,140.2,1770,6.7,Intermediate,2.2
+25,M,Squats,5,12,30.2,1,134.6,3006,7.8,Intermediate,6.24
+52,M,Squats,2,10,158.0,3,170.4,3658,5.5,Beginner,7.37
+31,F,Deadlifts,2,10,146.4,3,95.9,1575,6.0,Intermediate,3.47
+34,F,Bench Press,5,6,79.6,3,145.6,3456,7.1,Intermediate,4.07
+53,M,Deadlifts,2,5,141.6,2,145.5,3166,6.0,Intermediate,1.81
+57,M,Squats,6,6,91.3,2,90.7,1828,9.4,Intermediate,3.36
+21,F,Squats,4,8,156.1,1,130.2,3669,5.8,Advanced,4.23
+19,M,Bench Press,6,6,101.8,4,182.4,1540,7.3,Beginner,1.99
+23,M,Squats,1,5,94.2,1,182.7,2690,8.0,Intermediate,2.14
+59,F,Bench Press,3,11,188.3,3,91.9,3826,8.5,Intermediate,3.57
+21,M,Deadlifts,1,15,65.2,1,90.9,3556,6.9,Advanced,1.33
+46,M,Bench Press,3,15,41.7,4,111.5,1512,9.3,Beginner,2.7
+35,M,Bench Press,4,12,125.2,2,185.0,2423,7.8,Intermediate,2.42
+43,M,Squats,2,10,194.5,1,95.5,3342,7.2,Advanced,4.17
+51,M,Squats,6,8,88.0,3,166.4,2732,5.3,Beginner,5.96
+27,F,Squats,5,10,31.2,3,92.1,2714,7.3,Advanced,1.0
+53,M,Bench Press,6,7,81.1,2,154.8,2152,9.1,Beginner,4.62
+31,M,Squats,4,12,111.1,1,122.7,3203,8.1,Intermediate,6.03
+48,M,Squats,1,14,49.1,4,174.7,2120,9.2,Advanced,4.95
+32,M,Bench Press,5,6,138.5,2,108.0,3462,7.5,Intermediate,1.17
+25,F,Squats,2,9,199.6,1,156.7,3145,5.6,Intermediate,2.5
+31,M,Squats,4,5,101.3,5,108.3,3743,5.1,Beginner,3.22
+40,M,Squats,5,10,83.9,3,165.6,1916,6.5,Advanced,2.67
+57,F,Deadlifts,4,6,92.1,4,184.8,2163,8.5,Intermediate,4.4
+38,M,Bench Press,4,8,40.7,4,95.2,3278,9.0,Beginner,2.8
+33,M,Bench Press,2,10,179.0,4,184.0,2879,6.5,Intermediate,2.87
+35,M,Squats,3,14,94.7,3,151.2,1647,7.5,Intermediate,4.6
+41,M,Deadlifts,5,15,89.7,1,95.3,3545,7.1,Beginner,3.87
+43,M,Bench Press,2,12,138.7,2,131.3,2888,7.1,Beginner,4.93
+42,M,Squats,4,12,99.6,1,99.3,3911,6.2,Beginner,5.93
+58,F,Deadlifts,2,15,136.7,2,164.0,3225,5.7,Intermediate,4.44
+46,M,Squats,3,10,31.1,4,171.1,1901,6.0,Intermediate,1.35
+32,M,Bench Press,6,8,166.5,1,92.7,3015,5.3,Intermediate,1.36
+18,F,Bench Press,5,12,189.3,4,140.7,3531,6.0,Advanced,3.34
+42,M,Squats,3,12,136.8,5,177.8,1728,5.0,Advanced,2.11
+24,F,Deadlifts,1,14,191.8,4,192.3,3098,8.1,Intermediate,7.63
+26,M,Deadlifts,5,5,47.3,4,141.6,1767,6.6,Beginner,4.02
+41,M,Bench Press,3,8,105.9,2,194.0,2928,9.9,Intermediate,4.26
+18,F,Squats,4,8,128.3,5,144.3,3316,6.0,Intermediate,5.78
+25,M,Squats,5,11,124.7,4,127.3,2534,6.7,Intermediate,3.48
+41,M,Squats,5,15,92.3,4,181.8,2843,6.8,Intermediate,1.03
+28,M,Deadlifts,2,11,80.9,5,139.2,1625,5.0,Intermediate,3.98
+34,M,Squats,4,15,42.8,5,136.6,3853,9.2,Advanced,3.06
+25,F,Bench Press,1,12,90.5,1,138.8,3225,5.2,Beginner,5.95
+52,M,Deadlifts,6,15,49.3,2,181.6,2612,9.7,Intermediate,3.44
+52,M,Squats,3,9,152.2,5,179.8,2875,9.5,Beginner,5.14
+50,M,Bench Press,2,11,57.6,5,128.4,2188,7.7,Advanced,1.66
+22,F,Squats,3,12,30.5,3,120.0,2780,7.7,Beginner,8.86
+59,M,Deadlifts,1,13,119.4,5,139.0,2732,8.3,Beginner,7.86
+56,F,Bench Press,1,7,127.1,2,148.7,1780,6.9,Intermediate,3.04
+58,M,Squats,5,7,176.9,4,108.6,1942,8.2,Intermediate,5.71
+45,F,Squats,1,8,123.9,4,175.3,3363,5.2,Beginner,4.01
+24,F,Bench Press,3,9,82.2,4,138.4,2336,5.3,Intermediate,1.02
+26,F,Deadlifts,4,14,164.5,4,120.1,1888,7.3,Intermediate,2.03
+25,F,Deadlifts,4,5,117.3,3,92.8,2116,7.7,Beginner,2.63
+29,M,Bench Press,5,11,34.3,5,108.7,1646,9.4,Intermediate,1.01
+51,M,Squats,6,13,121.9,4,193.9,2020,5.5,Advanced,3.97
+50,M,Squats,3,12,183.4,1,116.6,2129,9.1,Intermediate,6.37
+40,M,Squats,3,9,91.3,4,100.3,3981,6.1,Intermediate,1.69
+41,M,Bench Press,1,8,73.3,5,135.3,3691,7.0,Intermediate,5.0
+54,M,Deadlifts,3,11,45.8,4,116.9,1788,6.6,Intermediate,4.79
+52,M,Bench Press,2,9,47.3,3,84.2,2909,7.0,Beginner,2.62
+57,M,Squats,6,11,97.9,2,118.8,1513,5.8,Beginner,6.81
+39,F,Bench Press,1,5,127.2,2,145.3,1756,7.5,Advanced,1.08
+44,M,Deadlifts,2,5,34.5,5,146.2,3221,9.0,Advanced,3.64
+52,F,Deadlifts,5,14,189.1,2,122.8,2923,7.2,Intermediate,3.7
+18,F,Deadlifts,4,7,155.9,2,133.7,2730,7.5,Beginner,9.55
+52,F,Squats,5,15,125.6,1,195.9,2357,9.2,Beginner,4.51
+54,F,Squats,4,6,169.1,5,125.3,2695,8.5,Intermediate,4.04
+31,F,Deadlifts,5,6,34.4,5,111.0,1963,7.5,Intermediate,3.84
+20,F,Bench Press,3,11,105.8,2,109.2,1769,6.3,Beginner,2.8
+18,F,Squats,2,14,133.4,2,134.9,2744,9.4,Advanced,1.0
+22,M,Deadlifts,4,6,169.2,2,171.1,2706,7.9,Intermediate,2.68
+43,M,Deadlifts,1,15,161.0,3,104.7,1571,6.1,Advanced,2.77
+31,M,Bench Press,2,8,69.9,4,165.1,2806,6.3,Intermediate,3.52
+56,M,Bench Press,1,6,189.4,3,82.5,3621,9.0,Intermediate,4.51
+44,F,Squats,2,10,42.4,5,130.3,3902,5.2,Intermediate,5.57
+26,F,Bench Press,2,12,177.5,1,173.1,3250,10.0,Intermediate,2.71
+32,F,Bench Press,5,14,194.8,4,120.6,1996,5.7,Intermediate,1.0
+32,M,Deadlifts,4,8,51.9,1,147.6,2487,9.0,Intermediate,7.54
+43,F,Deadlifts,4,9,150.0,5,104.6,2409,7.0,Intermediate,4.54
+59,F,Deadlifts,2,8,27.3,5,169.0,1872,7.5,Advanced,2.26
+30,F,Squats,3,7,93.0,1,86.3,1861,9.4,Intermediate,4.02
+49,F,Deadlifts,3,9,112.9,1,182.3,3640,7.1,Intermediate,3.25
+56,F,Deadlifts,1,13,124.5,1,103.8,2844,7.7,Advanced,1.65
+49,M,Bench Press,1,12,188.5,5,184.9,1823,5.2,Beginner,2.49
+21,F,Deadlifts,5,12,141.0,2,122.3,3931,5.0,Beginner,8.34
+47,M,Deadlifts,2,12,106.6,1,166.7,2074,6.2,Intermediate,3.46
+54,M,Bench Press,1,12,165.7,4,118.3,2235,8.4,Intermediate,2.33
+40,F,Bench Press,1,11,191.1,5,188.7,3893,5.6,Advanced,1.3
+56,M,Squats,6,12,24.0,3,95.2,2715,5.6,Intermediate,4.84
+32,F,Squats,2,15,196.9,3,101.4,3195,7.1,Intermediate,2.81
+46,M,Bench Press,5,12,35.5,4,139.2,3407,8.2,Intermediate,2.67
+53,F,Deadlifts,1,12,166.6,2,89.8,2218,8.6,Beginner,4.61
+30,M,Squats,5,14,70.5,1,103.5,2280,5.9,Intermediate,2.29
+49,F,Squats,4,11,43.8,5,193.3,2519,5.4,Advanced,1.0
+24,F,Bench Press,5,5,99.2,1,197.2,2903,9.7,Beginner,3.32
+39,M,Squats,3,8,135.9,5,125.2,2926,6.3,Intermediate,2.08
+45,M,Squats,3,8,88.6,3,190.8,2163,9.3,Intermediate,1.73
+19,F,Squats,5,9,29.8,1,145.4,3272,9.3,Beginner,9.72
+59,M,Squats,3,14,127.9,4,112.4,1510,8.9,Beginner,2.45
+23,M,Squats,4,10,182.4,2,164.3,3734,5.8,Advanced,5.11
+45,M,Squats,2,8,89.0,4,159.1,2538,9.1,Intermediate,4.44
+45,M,Bench Press,3,6,58.9,2,198.7,3958,8.8,Beginner,7.15
+37,F,Deadlifts,3,10,99.7,1,111.8,2084,8.0,Beginner,2.75
+47,F,Bench Press,5,12,28.7,1,160.6,2575,6.7,Intermediate,1.04
+28,M,Deadlifts,4,12,167.7,2,86.2,2874,6.3,Intermediate,3.24
+45,M,Squats,2,11,168.7,3,93.6,2951,5.6,Intermediate,3.08
+42,F,Squats,5,10,125.8,5,80.5,3354,7.5,Beginner,7.38
+56,M,Deadlifts,5,6,83.6,4,199.9,3289,7.9,Advanced,2.99
+50,M,Squats,6,11,164.0,4,176.3,2242,6.8,Intermediate,5.04
+18,F,Bench Press,4,15,119.8,4,174.4,3276,7.4,Intermediate,4.0
+44,F,Bench Press,2,9,168.7,1,141.2,1703,6.8,Intermediate,3.63
+30,F,Bench Press,4,10,133.7,4,116.0,2576,8.2,Intermediate,2.12
+58,F,Squats,2,14,161.2,5,98.2,2473,9.5,Advanced,3.11
+20,M,Squats,4,12,127.7,5,114.2,2898,5.8,Advanced,2.22
+56,F,Bench Press,5,12,94.5,2,125.1,3365,6.9,Intermediate,3.88
+23,M,Squats,5,7,192.4,1,170.8,2799,5.7,Advanced,5.0
+25,M,Bench Press,1,11,117.4,5,144.8,2554,8.1,Intermediate,3.8
+44,M,Deadlifts,3,5,128.9,3,89.3,2658,8.6,Advanced,1.57
+26,M,Deadlifts,6,5,59.7,1,82.2,1604,9.7,Beginner,4.99
+54,F,Squats,4,11,132.6,1,92.3,1752,6.4,Intermediate,1.89
+50,M,Deadlifts,6,14,122.9,5,129.3,1794,9.8,Beginner,5.4
+59,M,Bench Press,1,13,53.3,3,192.0,2681,5.3,Advanced,1.23
+41,M,Squats,3,11,30.7,2,156.5,2048,8.0,Beginner,6.7
+32,M,Squats,4,14,128.8,5,176.2,3277,5.3,Intermediate,5.52
+49,F,Deadlifts,2,9,157.5,3,136.0,1798,9.5,Intermediate,3.32
+49,M,Squats,3,12,114.2,1,123.4,3248,7.6,Intermediate,3.25
+41,F,Squats,5,6,60.8,3,93.0,3343,8.3,Intermediate,5.85
+58,M,Squats,1,13,140.0,1,185.1,1600,9.2,Advanced,4.01
+29,M,Deadlifts,3,10,34.4,5,174.0,3879,5.8,Intermediate,5.01
+56,F,Deadlifts,3,13,99.5,5,100.2,3274,5.2,Advanced,1.94
+19,M,Deadlifts,5,6,49.4,4,141.5,3940,9.4,Beginner,5.0
+20,F,Squats,4,7,53.2,4,138.5,2373,6.6,Intermediate,1.91
+54,M,Squats,2,12,56.4,4,155.0,3928,5.6,Intermediate,2.64
+34,M,Bench Press,5,5,89.6,5,193.5,1591,7.3,Beginner,3.61
+19,F,Bench Press,2,14,29.2,2,149.6,1946,8.0,Intermediate,3.97
+19,M,Squats,4,11,91.6,5,144.8,1608,5.2,Intermediate,1.99
+45,M,Bench Press,3,11,112.1,3,86.0,1816,6.4,Intermediate,3.45
+40,F,Deadlifts,2,5,107.0,5,87.5,3335,5.2,Intermediate,2.54
+54,M,Deadlifts,1,13,88.9,5,102.5,3443,7.1,Intermediate,5.75
+49,F,Deadlifts,1,12,171.0,1,83.9,2958,9.5,Beginner,6.18
+50,M,Deadlifts,5,8,46.2,1,169.2,1941,9.9,Beginner,6.45
+18,F,Squats,4,14,111.0,1,166.8,3765,8.2,Intermediate,2.75
+36,F,Bench Press,5,15,31.2,5,96.3,2745,5.8,Beginner,6.18
+19,F,Deadlifts,5,9,32.8,2,180.3,3051,9.5,Beginner,5.39
+43,F,Squats,6,6,123.3,3,98.6,1777,7.6,Intermediate,3.24
+49,M,Deadlifts,5,13,121.9,3,116.1,2068,5.8,Intermediate,4.26
+23,F,Bench Press,6,10,178.0,2,109.9,2509,9.6,Intermediate,3.45
+49,M,Bench Press,1,7,120.4,2,124.7,2338,8.8,Intermediate,2.5
+21,M,Bench Press,1,11,192.8,3,110.6,3107,8.7,Intermediate,6.49
+28,M,Deadlifts,5,13,28.8,4,138.7,1529,8.5,Intermediate,4.13
+34,M,Deadlifts,1,7,37.6,1,128.9,3906,6.0,Intermediate,5.99
+55,M,Squats,4,6,27.9,1,198.4,3442,6.1,Intermediate,2.28
+41,F,Deadlifts,6,11,53.3,3,86.7,3633,8.4,Intermediate,3.48
+22,F,Squats,6,11,117.4,2,97.1,2757,6.1,Intermediate,2.56
+51,F,Squats,5,8,136.2,4,86.3,3860,7.2,Beginner,7.76
+23,M,Bench Press,1,15,28.2,3,155.1,1864,8.9,Intermediate,1.0
+39,F,Bench Press,2,13,190.3,1,86.5,3300,8.9,Intermediate,1.52
+28,M,Bench Press,6,12,171.6,5,180.4,3322,7.3,Advanced,2.45
+33,M,Deadlifts,5,5,73.4,2,141.4,3362,9.0,Advanced,5.81
+50,M,Deadlifts,5,5,33.9,5,143.2,2404,9.2,Intermediate,2.09
+26,M,Bench Press,4,9,50.6,3,147.4,2197,8.3,Beginner,7.02
+23,F,Squats,3,10,42.8,1,100.5,3678,6.1,Beginner,8.63
+33,M,Deadlifts,3,7,42.2,4,103.7,3355,6.4,Intermediate,2.72
+46,M,Deadlifts,6,13,113.3,5,118.3,1850,6.6,Intermediate,2.35
+20,M,Deadlifts,4,14,64.3,4,151.2,1679,5.6,Beginner,8.08
+37,M,Squats,4,10,84.5,1,105.2,3003,6.4,Intermediate,1.76
+53,M,Squats,4,8,198.1,5,94.0,2686,6.0,Beginner,5.29
+36,F,Squats,6,11,143.2,4,196.4,3306,7.3,Advanced,4.1
+43,M,Squats,3,12,190.8,4,82.6,2273,9.5,Beginner,4.07
+20,M,Squats,4,13,45.7,5,176.3,2009,5.5,Advanced,2.25
+36,M,Deadlifts,1,15,88.8,1,174.6,1864,8.6,Advanced,3.45
+37,F,Bench Press,5,10,119.9,4,115.7,1852,8.4,Intermediate,1.49
+49,F,Squats,5,10,33.8,3,96.3,2606,5.5,Intermediate,1.99
+24,F,Squats,2,12,20.8,5,97.5,2748,9.6,Intermediate,4.97
+58,F,Squats,2,9,140.7,2,163.7,1911,7.8,Intermediate,4.8
+50,M,Squats,6,7,135.5,2,157.1,2234,6.8,Intermediate,2.87
+57,M,Squats,6,7,93.9,1,173.9,1617,8.8,Intermediate,5.71
+56,F,Squats,5,10,108.1,3,192.5,1981,6.3,Intermediate,1.79
+35,F,Deadlifts,1,6,94.8,4,163.0,1691,8.5,Intermediate,6.59
+57,F,Deadlifts,3,10,24.3,2,98.7,1606,5.2,Intermediate,1.76
+18,F,Squats,3,10,80.4,1,109.2,1881,9.2,Beginner,6.26
+28,F,Bench Press,6,12,51.9,3,181.1,2282,7.2,Intermediate,1.81
+45,F,Deadlifts,1,11,37.7,3,105.1,3937,8.2,Beginner,6.48
+42,F,Squats,6,12,192.2,1,88.7,1743,6.1,Beginner,2.19
+40,F,Squats,3,13,127.9,1,164.4,1967,8.4,Beginner,4.99
+48,F,Deadlifts,6,10,151.2,4,128.3,2365,8.9,Beginner,3.77
+47,F,Squats,4,7,76.8,1,190.4,3061,7.4,Beginner,7.54
+59,M,Bench Press,6,14,90.8,4,158.0,2733,8.1,Advanced,2.61
+52,F,Bench Press,5,7,62.6,4,90.9,2103,7.3,Beginner,1.86
+24,M,Squats,6,15,37.5,5,193.7,3160,9.5,Intermediate,7.86
+33,M,Squats,5,5,52.2,3,111.0,2596,7.5,Beginner,4.3
+43,F,Deadlifts,1,15,163.6,3,120.5,3515,9.2,Advanced,4.11
+19,M,Squats,3,9,142.0,3,128.3,3158,9.0,Intermediate,2.44
+18,M,Squats,2,8,118.4,5,86.1,3233,7.1,Intermediate,5.45
+29,M,Deadlifts,2,13,105.5,4,139.6,3113,6.2,Intermediate,4.12
+22,M,Bench Press,3,13,186.0,4,94.8,2359,7.0,Intermediate,4.6
+54,F,Squats,2,9,33.1,1,128.1,3379,9.1,Intermediate,5.23
+49,M,Deadlifts,6,14,70.5,5,122.1,2776,6.1,Beginner,5.8
+26,M,Squats,1,8,83.0,1,172.7,1512,7.6,Advanced,3.76
+58,M,Deadlifts,1,11,160.8,5,176.4,3846,9.0,Intermediate,4.04
+52,F,Deadlifts,3,10,198.7,1,98.4,2599,6.8,Intermediate,3.72
+36,F,Bench Press,2,8,63.3,2,124.0,2574,8.2,Intermediate,4.86
+33,M,Bench Press,6,14,177.4,3,124.8,2286,6.2,Intermediate,3.71
+20,M,Deadlifts,1,6,169.5,3,98.2,1648,5.5,Advanced,2.77
+37,M,Squats,1,5,60.4,4,175.8,3254,9.0,Intermediate,5.22
+41,F,Deadlifts,4,8,91.9,2,164.9,3669,5.5,Intermediate,3.36
+50,F,Squats,4,8,93.7,3,102.8,2803,6.4,Beginner,2.54
+41,M,Squats,1,5,196.1,4,124.0,2679,9.3,Advanced,2.96
+28,M,Squats,3,10,52.6,2,92.7,3923,6.7,Intermediate,5.08
+25,M,Deadlifts,5,8,163.8,3,155.4,1581,9.9,Beginner,7.69
+53,F,Deadlifts,5,5,80.2,1,94.6,1991,9.9,Beginner,6.48
+55,M,Squats,6,5,151.6,5,198.3,3903,6.3,Intermediate,2.33
+57,M,Squats,1,5,95.6,2,173.7,3525,5.2,Advanced,3.55
+37,M,Deadlifts,1,12,124.1,4,126.8,2424,8.5,Beginner,7.59
+52,M,Bench Press,1,14,169.9,2,149.4,2796,7.3,Intermediate,3.0
+42,F,Squats,3,12,164.7,4,189.4,3103,5.5,Beginner,5.07
+52,M,Bench Press,4,6,176.0,2,146.5,3096,8.5,Intermediate,1.72
+42,F,Bench Press,1,15,30.7,4,100.9,1622,5.2,Intermediate,1.48
+46,F,Deadlifts,1,11,144.6,3,125.4,2207,9.4,Advanced,2.39
+35,M,Squats,2,12,45.2,1,181.2,3877,5.7,Intermediate,2.51
+35,M,Bench Press,3,12,94.8,3,157.3,2490,5.6,Advanced,1.54
+19,F,Bench Press,6,15,118.7,1,158.1,3870,5.9,Intermediate,2.19
+52,M,Deadlifts,1,14,92.5,3,184.0,3540,9.8,Beginner,6.41
+33,M,Bench Press,2,15,113.5,3,187.3,3980,8.5,Intermediate,4.67
+58,F,Bench Press,5,11,199.4,2,190.4,2209,9.0,Intermediate,3.31
+53,M,Squats,6,9,44.3,5,91.4,2293,7.0,Advanced,1.89
+50,M,Deadlifts,1,5,141.6,4,145.3,2211,6.7,Advanced,1.85
+21,M,Bench Press,1,13,91.3,4,168.9,3217,6.2,Beginner,8.48
+50,F,Squats,2,11,43.9,4,170.8,1756,7.4,Beginner,8.08
+31,M,Bench Press,3,6,48.6,1,152.8,2712,7.8,Beginner,4.05
+38,M,Squats,1,10,190.9,4,100.0,2370,8.2,Advanced,2.32
+37,M,Squats,5,6,178.3,4,175.7,3231,6.3,Advanced,2.71
+25,M,Deadlifts,1,5,183.3,2,166.4,2308,9.7,Intermediate,7.28
+24,M,Bench Press,5,11,198.5,3,90.3,1770,5.8,Intermediate,4.59
+20,M,Deadlifts,6,6,57.5,4,135.7,3043,9.8,Intermediate,4.23
+34,M,Squats,6,6,84.0,5,100.9,2049,5.1,Intermediate,4.47
+50,M,Deadlifts,4,15,140.5,4,120.5,2637,7.4,Beginner,6.97
+29,M,Squats,4,9,107.1,1,82.2,2067,6.7,Intermediate,5.09
+39,M,Squats,5,9,95.3,1,128.0,1858,7.2,Beginner,3.98
+39,M,Deadlifts,3,11,84.4,1,146.0,3173,7.9,Beginner,5.41
+47,M,Deadlifts,1,5,126.9,4,154.3,3137,7.2,Advanced,2.64
+55,F,Bench Press,1,12,123.6,2,159.6,2857,7.1,Intermediate,2.67
+55,M,Squats,4,7,49.1,5,180.4,3212,8.7,Intermediate,3.95
+25,M,Deadlifts,5,8,104.9,4,105.9,2862,8.4,Intermediate,3.58
+44,M,Bench Press,1,13,119.6,2,94.5,2297,9.2,Intermediate,3.65
+44,F,Deadlifts,1,8,122.7,2,182.2,2784,6.2,Intermediate,4.62
+51,F,Deadlifts,3,14,57.8,4,98.8,2386,8.0,Intermediate,3.83
+38,M,Squats,2,9,153.6,4,197.0,3258,7.9,Intermediate,4.32
+47,M,Squats,4,11,24.5,2,181.1,2722,6.8,Intermediate,3.44
+50,F,Bench Press,4,8,83.9,2,140.1,3758,7.4,Beginner,3.85
+45,M,Squats,2,5,160.4,2,197.8,1786,6.6,Intermediate,4.0
+50,M,Squats,1,13,121.5,4,91.7,3215,5.7,Intermediate,1.65
+22,M,Deadlifts,3,8,67.0,2,116.4,3285,6.1,Intermediate,3.17
+36,M,Bench Press,3,13,145.1,1,156.6,2242,5.5,Intermediate,1.0
+21,F,Deadlifts,4,10,122.1,4,122.0,3005,8.4,Intermediate,5.39
+52,F,Bench Press,3,5,163.3,1,191.4,3540,8.3,Beginner,3.73
+34,M,Bench Press,6,7,152.3,3,87.9,2546,9.8,Intermediate,2.62
+45,M,Squats,2,15,129.8,4,145.9,1795,8.6,Advanced,1.0
+47,F,Squats,1,6,107.9,3,150.9,3553,5.3,Beginner,7.05
+46,F,Squats,6,13,44.0,2,158.3,2180,9.4,Intermediate,3.48
+23,F,Squats,2,5,67.0,2,110.7,3391,9.3,Intermediate,5.27
+52,F,Deadlifts,5,13,95.4,5,123.7,2294,7.2,Beginner,3.44
+58,F,Squats,4,13,127.9,2,181.2,1702,7.9,Intermediate,2.16
+54,F,Bench Press,3,12,112.5,3,103.4,1824,9.9,Intermediate,2.44
+41,M,Squats,5,12,71.9,2,179.2,3791,7.7,Intermediate,5.67
+46,M,Squats,3,15,21.2,4,147.5,1826,9.5,Advanced,2.88
+48,F,Bench Press,6,5,109.3,2,171.5,2486,5.4,Beginner,4.5
+52,M,Squats,1,15,71.4,5,165.6,2260,6.0,Beginner,6.5
+50,F,Squats,1,12,152.2,2,104.9,2536,7.2,Advanced,2.31
+38,M,Squats,1,14,24.3,3,148.3,2406,7.9,Intermediate,5.14
+49,M,Squats,3,7,125.3,3,184.1,2903,9.1,Intermediate,6.61
+40,M,Deadlifts,5,15,189.5,2,131.9,1864,9.9,Intermediate,1.72
+50,M,Squats,1,11,51.4,3,196.0,2744,6.9,Intermediate,5.9
+20,F,Squats,5,15,104.9,3,134.3,3620,5.2,Intermediate,1.16
+35,F,Bench Press,3,5,36.5,5,97.1,3148,9.0,Beginner,4.37
+42,F,Squats,6,5,132.6,4,126.7,2569,8.0,Beginner,1.93
+59,F,Deadlifts,5,14,119.1,5,194.2,1773,6.0,Beginner,2.86
+48,M,Bench Press,6,9,93.3,1,118.4,3755,7.5,Advanced,2.89
+20,M,Bench Press,3,9,113.8,5,184.2,3452,8.7,Beginner,11.4
+57,M,Bench Press,3,12,181.4,2,185.8,3384,8.9,Intermediate,3.23
+41,M,Squats,4,11,55.3,4,122.0,1623,7.5,Advanced,1.9
+49,M,Bench Press,3,12,24.1,2,90.0,2852,6.5,Intermediate,2.63
+39,M,Squats,3,10,175.1,1,166.9,3191,9.9,Intermediate,7.52
+40,M,Deadlifts,2,10,123.9,4,117.4,3607,8.3,Intermediate,4.81
+19,F,Squats,1,6,180.3,3,174.0,1941,7.0,Intermediate,1.48
+44,F,Bench Press,4,10,127.5,5,133.1,2740,6.4,Intermediate,3.03
+59,M,Bench Press,4,9,165.8,2,138.2,2410,8.7,Intermediate,5.48
+19,F,Squats,4,7,97.3,1,173.3,2525,6.2,Advanced,3.38
+43,F,Squats,2,10,155.0,3,125.9,3059,5.9,Advanced,1.75
+34,M,Deadlifts,6,12,184.3,5,133.2,3241,7.6,Advanced,2.5
+57,F,Deadlifts,3,13,123.0,3,125.1,3234,6.4,Advanced,1.92
+50,F,Squats,1,5,52.5,5,124.1,2125,8.1,Intermediate,6.67
+26,M,Deadlifts,5,7,68.4,4,143.1,3190,5.6,Intermediate,3.68
+56,M,Deadlifts,6,7,55.8,3,177.1,2497,8.3,Advanced,2.19
+46,M,Deadlifts,3,15,64.4,3,123.4,1590,6.4,Intermediate,4.05
+59,M,Squats,2,12,75.2,3,142.9,3714,5.0,Advanced,2.43
+43,M,Deadlifts,3,5,119.9,4,160.5,1706,5.6,Intermediate,4.53
+52,F,Squats,3,9,125.8,1,112.3,2588,9.7,Intermediate,5.17
+42,M,Deadlifts,2,7,96.8,5,113.3,3411,9.3,Intermediate,2.25
+41,M,Bench Press,4,6,130.8,3,192.0,2015,6.2,Advanced,1.82
+30,F,Squats,4,12,34.7,4,166.8,2680,8.9,Beginner,7.76
+24,F,Deadlifts,1,7,35.8,1,149.3,3292,8.0,Intermediate,6.35
+53,M,Squats,1,11,50.9,5,157.7,3853,9.9,Intermediate,5.04
+37,M,Deadlifts,4,15,113.3,4,83.5,3401,6.9,Beginner,8.08
+18,M,Deadlifts,6,5,58.5,5,154.2,3505,8.4,Intermediate,5.64
+25,F,Bench Press,5,10,71.0,3,141.1,1894,5.3,Intermediate,3.13
+33,M,Squats,3,7,92.1,1,145.5,2597,7.0,Intermediate,3.1
+31,M,Bench Press,5,12,166.1,4,123.1,1686,9.8,Intermediate,3.26
+29,F,Squats,3,10,22.5,1,89.8,3097,7.7,Intermediate,2.83
+40,M,Squats,4,6,136.9,3,103.2,3091,6.4,Intermediate,3.07
+32,F,Deadlifts,1,10,140.4,1,194.1,2229,5.6,Intermediate,5.83
+45,F,Squats,6,11,163.8,1,129.0,1739,8.5,Beginner,5.82
+51,M,Squats,1,9,187.9,2,136.0,1640,8.2,Advanced,1.88
+19,F,Deadlifts,5,7,23.6,1,86.3,1638,6.9,Intermediate,3.47
+49,M,Squats,1,8,47.7,5,84.5,1569,9.8,Intermediate,2.1
+40,F,Squats,4,8,179.5,4,166.1,1884,5.1,Intermediate,2.76
+39,M,Deadlifts,6,10,102.5,2,144.6,2129,6.5,Intermediate,3.26
+42,F,Squats,5,14,121.6,4,141.0,3745,9.6,Intermediate,5.0
+39,M,Deadlifts,6,5,139.3,4,109.2,1704,6.6,Intermediate,3.78
+39,F,Deadlifts,3,15,142.2,3,169.4,3249,6.3,Intermediate,6.18
+59,F,Deadlifts,1,8,187.7,3,100.2,2067,7.7,Intermediate,2.0
+23,M,Bench Press,6,14,199.5,2,102.8,2481,9.1,Intermediate,1.8
+32,F,Squats,2,8,149.6,3,135.3,2304,5.5,Beginner,4.45
+54,M,Squats,1,14,71.7,3,114.4,3210,9.7,Intermediate,7.22
+50,M,Deadlifts,3,5,178.4,3,109.7,2381,9.0,Beginner,4.75
+25,M,Deadlifts,6,13,28.9,4,157.4,3535,5.9,Beginner,6.2
+22,M,Bench Press,5,8,61.6,2,158.1,2473,8.6,Advanced,4.21
+56,M,Squats,3,11,181.5,4,178.9,2139,6.9,Intermediate,2.95
+21,F,Squats,2,7,66.1,5,130.1,2954,7.0,Intermediate,1.42
+23,M,Squats,6,14,59.7,4,88.8,1824,8.9,Intermediate,2.39
+49,F,Deadlifts,4,7,44.9,5,112.8,1941,9.8,Advanced,3.56
+47,M,Bench Press,1,12,174.6,1,197.6,2303,5.6,Intermediate,1.66
+52,F,Deadlifts,5,12,110.0,1,151.6,3835,7.1,Intermediate,1.1
+57,F,Deadlifts,4,15,141.5,5,165.2,1725,7.4,Intermediate,4.46
+33,M,Squats,6,5,63.0,5,80.9,2587,6.9,Advanced,1.59
+30,F,Bench Press,6,14,156.4,4,142.2,2466,6.8,Advanced,1.53
+59,M,Bench Press,3,6,156.8,5,84.5,2059,5.3,Advanced,1.11
+47,F,Bench Press,6,12,76.3,2,148.3,2213,8.4,Beginner,5.3
+36,M,Deadlifts,5,5,93.9,1,190.5,1997,7.2,Beginner,5.38
+34,F,Deadlifts,4,12,57.7,1,196.2,3607,6.0,Beginner,2.33
+36,M,Deadlifts,5,12,195.8,5,144.9,1756,9.1,Beginner,7.87
+45,M,Squats,2,6,136.2,3,135.0,2076,9.0,Advanced,1.21
+43,F,Squats,2,8,188.2,3,193.4,3786,7.4,Beginner,9.61
+54,M,Deadlifts,1,10,74.6,5,160.8,1537,6.5,Beginner,4.38
+43,M,Squats,1,15,160.7,2,87.8,3572,8.2,Beginner,3.79
+40,M,Squats,2,13,157.9,3,135.9,1909,6.4,Beginner,4.5
+26,M,Squats,6,12,144.5,5,108.8,1960,6.2,Beginner,5.37
+29,M,Bench Press,5,12,193.8,2,136.4,2940,8.7,Intermediate,3.58
+18,M,Squats,2,11,90.8,2,134.7,3904,5.2,Intermediate,4.73
+18,M,Bench Press,1,13,43.5,4,149.9,1882,5.5,Beginner,2.89
+51,M,Deadlifts,2,6,140.9,2,122.8,3332,5.0,Intermediate,1.04
+49,F,Squats,6,7,151.3,3,99.7,2068,5.8,Intermediate,1.39
+42,M,Squats,2,14,123.5,3,140.4,2571,5.3,Beginner,5.09
+57,M,Squats,5,12,57.2,5,179.6,1932,10.0,Intermediate,5.63
+18,M,Deadlifts,4,10,110.8,5,159.7,1555,6.4,Intermediate,3.41
+33,M,Squats,6,14,76.2,2,120.6,3815,5.7,Intermediate,3.83
+56,F,Squats,1,13,96.9,1,192.3,3616,6.2,Intermediate,2.56
+22,M,Squats,5,14,136.1,4,189.5,3251,9.7,Beginner,12.96
+39,M,Deadlifts,2,8,154.1,1,105.1,3547,7.6,Advanced,2.92
+46,F,Bench Press,2,12,61.8,2,84.7,2401,6.8,Advanced,1.0
+20,F,Deadlifts,4,14,93.0,2,169.0,3124,9.4,Advanced,2.8
+29,M,Deadlifts,1,7,68.4,1,179.3,1756,7.0,Beginner,3.63
+43,F,Squats,1,7,55.8,4,196.1,2171,6.7,Advanced,1.26
+33,F,Deadlifts,3,12,161.0,1,186.8,1989,6.0,Advanced,2.99
+54,M,Squats,1,9,183.7,5,152.1,3596,6.9,Advanced,3.31
+39,F,Deadlifts,4,7,86.6,3,143.6,3182,6.6,Beginner,7.87
+46,F,Bench Press,3,14,155.2,5,83.3,1815,8.4,Intermediate,2.16
+31,M,Deadlifts,3,15,181.5,3,109.6,3960,6.4,Advanced,3.73
+45,M,Squats,2,5,172.3,2,135.2,1933,7.9,Intermediate,1.96
+22,M,Squats,2,7,52.9,4,155.4,2525,5.3,Intermediate,4.86
+47,F,Squats,1,13,192.1,1,146.9,3475,6.0,Advanced,1.55
+22,F,Squats,3,9,87.8,4,169.1,3479,7.0,Intermediate,6.1
+29,F,Squats,2,14,81.1,1,113.6,2889,9.7,Intermediate,4.88
+33,M,Squats,4,6,31.2,5,147.8,1919,6.9,Intermediate,2.2
+43,F,Squats,2,11,107.5,5,90.6,3096,8.3,Advanced,3.12
+43,M,Bench Press,6,6,39.6,1,129.6,3084,6.3,Beginner,4.3
+38,M,Deadlifts,6,8,64.7,4,170.0,2343,5.6,Intermediate,3.64
+56,M,Bench Press,2,11,77.0,1,163.2,2967,5.3,Intermediate,3.31
+53,F,Squats,3,8,165.6,2,198.9,1933,6.5,Intermediate,1.69
+50,M,Bench Press,3,11,177.6,5,113.3,3078,5.8,Intermediate,1.32
+47,F,Squats,5,11,74.4,2,139.8,3604,5.9,Advanced,2.87
+54,M,Deadlifts,6,5,174.6,5,119.5,2463,8.8,Advanced,1.66
+40,M,Squats,4,10,174.3,5,132.9,2476,5.1,Beginner,8.49
+27,M,Deadlifts,3,13,157.6,3,182.8,1545,7.8,Intermediate,4.87
+22,M,Deadlifts,1,6,46.4,2,162.1,2693,6.9,Beginner,4.12
+53,F,Deadlifts,6,7,144.3,2,185.9,1916,7.5,Intermediate,1.0
+51,M,Bench Press,4,14,190.1,3,104.4,2347,7.8,Intermediate,4.49
+48,F,Deadlifts,4,9,142.9,4,184.8,3686,6.6,Advanced,1.87
+27,M,Deadlifts,3,13,79.7,2,87.2,1746,6.5,Advanced,1.2
+36,F,Bench Press,4,8,110.1,1,186.6,1729,8.7,Beginner,3.34
+49,M,Bench Press,3,5,136.2,3,119.5,2291,9.4,Beginner,6.31
+18,F,Bench Press,2,8,111.9,2,117.8,2136,6.0,Intermediate,1.68
+22,F,Bench Press,6,10,41.6,4,141.5,3921,5.5,Intermediate,1.25
+21,M,Bench Press,5,9,76.2,2,192.9,2237,9.5,Beginner,10.21
+33,M,Bench Press,2,5,164.4,5,85.7,2588,6.7,Advanced,2.13
+41,F,Squats,6,8,175.1,1,122.3,1587,7.8,Advanced,2.68
+33,F,Squats,3,10,44.7,3,182.8,2212,6.8,Intermediate,1.96
+19,M,Squats,6,14,191.4,5,127.5,3249,5.6,Advanced,4.55
+45,F,Squats,3,14,79.2,4,103.9,2727,7.9,Intermediate,5.43
+49,F,Squats,2,8,139.2,5,131.0,3436,7.6,Intermediate,4.42
+44,F,Bench Press,1,13,155.3,5,126.3,2905,6.0,Intermediate,2.0
+37,F,Squats,1,9,166.2,4,189.8,2100,7.3,Beginner,2.44
+41,F,Deadlifts,6,12,190.2,5,171.4,2999,9.0,Advanced,1.59
+29,M,Squats,1,13,76.3,3,140.6,1713,8.0,Intermediate,5.61
+52,M,Squats,3,14,174.5,2,198.6,3621,5.5,Intermediate,2.83
+50,M,Deadlifts,4,9,43.7,5,135.8,3608,7.7,Intermediate,1.54
+50,F,Bench Press,3,10,146.9,3,87.0,2197,8.5,Beginner,3.82
+54,F,Squats,4,5,153.6,2,111.5,2742,9.0,Beginner,8.95
+29,M,Deadlifts,2,15,142.0,2,132.3,3559,8.1,Intermediate,5.81
+20,F,Deadlifts,5,11,65.4,5,98.8,3579,5.8,Intermediate,3.38
+18,F,Squats,4,8,177.1,3,193.7,2683,8.6,Intermediate,7.5
+50,M,Squats,1,15,50.4,5,172.0,2500,8.4,Intermediate,3.39
+57,M,Deadlifts,3,6,29.7,4,112.2,1736,5.1,Intermediate,4.63
+27,M,Bench Press,2,9,149.1,2,150.9,2704,7.1,Intermediate,1.0
+46,M,Bench Press,1,7,105.6,5,166.6,2981,6.7,Intermediate,3.44
+30,M,Deadlifts,2,10,172.8,2,193.0,2603,8.3,Advanced,4.8
+29,M,Squats,5,12,89.0,3,185.8,2146,6.1,Intermediate,4.49
+48,M,Bench Press,3,11,50.3,1,141.8,1972,8.0,Intermediate,1.49
+19,M,Squats,6,7,170.6,5,173.0,1611,9.6,Beginner,11.74
+52,M,Deadlifts,3,12,118.8,5,147.5,3345,9.0,Intermediate,3.39
+40,M,Bench Press,5,6,54.1,2,146.3,3154,9.6,Beginner,2.39
+34,F,Bench Press,3,14,149.7,3,93.8,1882,9.9,Intermediate,3.67
+43,M,Squats,6,13,112.0,4,95.1,1516,5.1,Beginner,1.77
+25,F,Squats,4,8,128.8,3,143.5,1992,8.1,Intermediate,3.66
+46,F,Bench Press,2,5,103.0,5,112.3,3396,7.1,Intermediate,4.78
+43,M,Deadlifts,6,12,169.2,4,82.5,3009,9.3,Intermediate,3.43
+27,M,Bench Press,1,11,169.3,3,166.7,1616,6.3,Beginner,1.42
+43,M,Squats,5,15,147.7,1,83.9,3078,9.9,Beginner,8.97
+51,M,Deadlifts,4,9,39.0,2,151.4,2379,8.1,Intermediate,3.27
+58,F,Squats,1,14,171.0,3,144.7,3662,9.0,Beginner,7.25
+24,M,Deadlifts,1,9,140.8,3,196.3,3318,5.4,Intermediate,1.97
+21,M,Squats,5,11,145.5,1,138.1,3072,5.9,Intermediate,2.94
+28,M,Bench Press,4,9,85.3,5,87.6,3148,8.8,Intermediate,4.45
+46,M,Squats,1,12,178.3,2,146.2,2143,5.1,Intermediate,1.61
+53,F,Deadlifts,1,15,150.6,3,180.9,2859,9.1,Advanced,2.57
+42,M,Bench Press,4,10,40.3,4,199.6,1835,5.1,Beginner,4.62
+38,M,Squats,3,9,93.4,3,131.6,1646,8.3,Beginner,7.07
+53,M,Squats,1,13,179.5,2,118.4,1621,6.8,Beginner,3.07
+27,F,Squats,2,15,28.5,3,188.8,1580,8.1,Beginner,8.33
+54,M,Squats,4,6,193.1,1,102.9,3922,8.5,Beginner,4.21
+26,M,Deadlifts,1,5,142.2,3,153.9,3610,6.7,Intermediate,5.75
+41,F,Bench Press,5,12,133.6,3,128.7,2003,5.5,Intermediate,1.05
+52,M,Deadlifts,6,7,68.7,4,84.9,2167,5.3,Intermediate,3.01
+52,F,Bench Press,2,15,64.8,1,121.7,3996,7.9,Intermediate,2.29
+53,F,Bench Press,6,11,189.6,1,111.8,2944,7.6,Intermediate,2.54
+35,F,Squats,6,14,73.7,3,162.3,2845,8.7,Intermediate,1.36
+56,F,Squats,1,15,159.6,4,193.9,2689,7.5,Beginner,7.94
+49,F,Deadlifts,2,12,90.8,3,112.2,3120,7.1,Intermediate,3.49
+41,F,Deadlifts,2,10,45.1,3,177.4,3480,7.0,Beginner,8.8
+40,F,Squats,3,14,21.9,2,86.6,3172,5.1,Beginner,4.18
+49,F,Squats,6,13,118.0,2,144.6,1958,6.7,Intermediate,2.18
+54,M,Bench Press,2,11,195.6,4,88.5,2712,9.9,Advanced,1.67
+29,M,Deadlifts,3,14,86.4,5,192.1,1963,9.4,Intermediate,3.57
+30,M,Squats,4,9,84.3,2,172.0,2411,6.6,Beginner,4.85
+40,M,Bench Press,3,12,81.9,5,159.0,3926,7.9,Advanced,1.0
+42,M,Deadlifts,5,6,113.7,1,178.9,2525,9.2,Intermediate,6.93
+52,M,Squats,1,11,99.3,2,157.7,3911,7.2,Intermediate,2.29
+58,M,Squats,4,8,178.4,2,196.3,1571,5.1,Advanced,1.47
+47,F,Bench Press,4,13,111.0,4,165.7,2950,5.4,Intermediate,2.65
+34,F,Deadlifts,5,5,111.4,5,191.0,2693,7.6,Beginner,8.81
+37,M,Squats,3,11,44.9,2,142.1,3348,9.8,Intermediate,4.11
+42,M,Bench Press,1,10,196.9,2,94.0,3884,8.5,Intermediate,2.68
+39,F,Bench Press,3,12,65.0,4,143.4,3522,5.4,Intermediate,3.26
+30,M,Bench Press,2,9,33.2,4,95.2,3742,5.9,Intermediate,1.91
+36,F,Bench Press,3,5,139.4,5,151.1,2511,8.9,Advanced,1.49
+53,M,Bench Press,4,5,127.2,1,137.9,2152,9.2,Advanced,2.69
+29,M,Bench Press,1,13,94.7,1,154.7,2798,8.1,Advanced,4.52
+58,F,Bench Press,3,14,96.0,3,81.2,1506,8.2,Advanced,2.91
+36,M,Bench Press,1,10,161.3,2,103.4,2404,5.1,Advanced,2.19
+29,F,Bench Press,1,14,55.2,5,139.0,3528,9.1,Beginner,6.02
+26,F,Deadlifts,2,9,167.6,2,194.1,2115,8.9,Beginner,5.05
+24,M,Squats,2,5,136.8,5,126.0,3373,6.3,Intermediate,2.78
+45,F,Deadlifts,4,10,95.4,5,130.9,2269,8.5,Advanced,3.27
+31,F,Deadlifts,5,10,102.4,5,165.8,3789,6.1,Intermediate,4.5
+48,M,Squats,1,7,66.2,2,152.5,3066,5.2,Intermediate,5.63
+36,F,Bench Press,5,12,155.4,4,115.9,2985,6.0,Beginner,3.35
+33,M,Bench Press,4,5,112.3,2,129.3,2940,5.9,Beginner,3.15
+22,F,Squats,1,5,77.8,5,106.1,2265,6.7,Intermediate,3.53
+52,F,Squats,1,10,127.3,3,195.9,1883,7.1,Beginner,5.43
+29,M,Squats,6,14,199.2,1,95.7,3938,7.5,Intermediate,3.21
+42,F,Squats,5,5,98.3,5,124.6,2187,7.4,Beginner,6.1
+38,F,Deadlifts,3,10,185.7,3,83.1,2649,6.4,Intermediate,2.97
+53,F,Squats,2,5,82.1,4,106.6,1546,5.1,Intermediate,4.28
+40,F,Deadlifts,3,10,29.9,5,173.7,3472,8.0,Intermediate,3.08
+33,F,Bench Press,5,7,56.8,3,104.1,1963,7.0,Intermediate,2.39
+56,M,Deadlifts,2,12,95.4,5,89.6,3372,6.5,Beginner,7.63
+59,F,Bench Press,3,10,59.5,2,136.9,1622,9.3,Advanced,2.04
+56,M,Squats,6,15,20.0,3,81.2,3681,8.7,Intermediate,4.19
+31,M,Bench Press,2,5,184.7,2,90.2,3142,9.3,Intermediate,4.83
+48,F,Squats,1,9,171.9,2,176.9,2340,7.5,Intermediate,1.74
+22,M,Bench Press,3,12,153.6,3,172.6,3085,5.7,Beginner,8.12
+52,M,Deadlifts,2,7,50.2,1,189.8,3303,8.5,Advanced,4.86
+40,M,Squats,6,10,41.7,3,182.5,1522,6.0,Intermediate,5.72
+46,M,Squats,2,9,32.2,1,162.0,2065,7.2,Intermediate,5.88
+28,F,Deadlifts,2,10,150.3,5,86.3,3409,5.3,Beginner,7.73
+35,M,Deadlifts,6,14,187.2,5,173.9,2464,9.1,Advanced,4.73
+29,F,Bench Press,3,5,97.5,3,181.5,3782,5.6,Intermediate,1.0
+26,M,Squats,4,11,41.4,5,175.9,2495,9.5,Beginner,5.75
+27,F,Bench Press,3,13,112.2,4,141.0,2687,9.3,Intermediate,1.1
+34,M,Squats,5,6,82.8,2,107.9,3294,7.3,Advanced,1.89
+55,M,Deadlifts,6,14,87.5,2,181.4,2325,8.7,Intermediate,7.29
+24,F,Deadlifts,3,9,131.8,1,167.3,1715,8.1,Intermediate,3.62
+30,F,Deadlifts,2,14,149.4,5,197.7,2156,9.0,Intermediate,2.47
+57,M,Deadlifts,6,8,39.9,1,98.7,2613,7.2,Intermediate,4.05
+59,M,Squats,1,10,26.4,2,107.1,3487,8.9,Intermediate,6.45
+26,M,Deadlifts,3,10,199.0,2,105.4,1810,7.3,Beginner,7.54
+44,M,Deadlifts,6,15,61.9,5,175.1,2056,9.7,Intermediate,4.25
+19,F,Squats,3,6,29.7,4,102.4,3804,7.4,Advanced,3.3
+22,M,Deadlifts,6,6,54.2,4,88.0,3056,7.3,Intermediate,3.48
+46,M,Squats,2,8,27.0,5,199.8,1551,8.9,Intermediate,1.62
+54,M,Bench Press,1,5,90.5,5,83.0,2861,9.1,Intermediate,2.02
+55,M,Deadlifts,1,13,164.4,1,180.2,2694,7.8,Intermediate,2.8
+36,M,Bench Press,5,11,81.4,5,123.8,3148,5.9,Advanced,3.73
+25,M,Squats,6,11,100.0,4,181.0,3847,7.3,Intermediate,4.15
+18,M,Bench Press,3,7,141.6,5,146.6,2171,9.8,Beginner,7.29
+39,M,Bench Press,1,15,111.6,1,188.2,2277,8.8,Advanced,2.43
+34,F,Deadlifts,1,7,175.1,1,191.1,2331,9.1,Intermediate,4.33
+24,M,Bench Press,4,5,175.9,1,81.1,3779,5.2,Advanced,2.68
+42,F,Squats,4,7,21.8,1,89.0,3360,7.3,Intermediate,3.0
+21,M,Deadlifts,1,7,160.0,3,110.0,3029,8.2,Advanced,3.04
+53,F,Bench Press,6,8,102.9,5,160.3,3575,9.2,Beginner,7.22
+23,F,Bench Press,5,8,198.0,2,186.6,3472,5.2,Intermediate,6.12
+48,F,Bench Press,1,7,107.0,5,135.2,2574,9.3,Advanced,2.71
+36,F,Deadlifts,2,14,197.6,3,152.8,3216,7.7,Beginner,4.7
+56,M,Bench Press,3,12,155.8,1,102.6,2783,6.0,Beginner,5.64
+44,M,Bench Press,5,12,64.7,3,176.6,2090,6.6,Intermediate,3.36
+27,M,Squats,2,5,116.9,4,196.1,3486,6.4,Advanced,3.2
+43,M,Squats,5,11,198.6,4,112.2,2501,7.7,Beginner,3.26
+36,M,Squats,2,15,174.4,5,139.4,3731,5.3,Advanced,2.86
+56,M,Squats,3,6,37.5,5,90.3,2546,5.8,Intermediate,4.35
+20,F,Bench Press,3,5,147.1,2,147.1,3676,9.1,Intermediate,5.58
+30,M,Deadlifts,4,7,82.2,2,140.3,3838,5.7,Advanced,2.29
+45,F,Bench Press,6,8,21.3,4,97.3,3355,6.2,Intermediate,2.19
+37,F,Deadlifts,2,10,92.6,1,133.0,2000,7.3,Beginner,6.26
+45,F,Deadlifts,4,14,62.3,3,120.1,3733,7.6,Beginner,5.32
+25,M,Deadlifts,2,9,167.4,2,142.6,1978,8.8,Intermediate,5.54
+58,M,Bench Press,4,8,80.7,2,150.3,3094,7.2,Intermediate,2.79
+56,M,Bench Press,3,12,169.0,1,81.0,2012,8.9,Advanced,2.19
+18,M,Bench Press,5,15,20.1,1,171.3,3832,8.1,Intermediate,3.67
+20,F,Squats,4,8,75.4,5,165.6,2100,5.6,Intermediate,6.21
+30,M,Squats,2,14,63.4,3,124.0,2940,5.8,Intermediate,1.07
+45,F,Deadlifts,2,6,62.0,1,86.4,2623,7.2,Beginner,4.74
+42,M,Deadlifts,6,7,32.3,2,170.6,1688,7.0,Beginner,7.72
+50,F,Squats,3,10,53.7,2,194.6,2488,8.7,Advanced,4.06
+55,F,Bench Press,2,12,120.0,4,108.8,3381,7.9,Beginner,3.59
+23,M,Deadlifts,1,12,72.4,1,118.8,1887,6.9,Beginner,4.54
+49,M,Squats,5,15,95.1,5,102.1,3788,5.9,Intermediate,5.88
+38,M,Squats,4,13,87.8,3,149.2,3305,6.1,Intermediate,2.62
+33,M,Deadlifts,6,11,177.7,5,98.6,3533,7.9,Advanced,2.19
+38,M,Bench Press,5,6,183.0,2,122.7,3254,7.1,Beginner,4.32
+28,M,Squats,3,12,108.7,5,163.6,3964,7.6,Beginner,5.74
+54,M,Bench Press,6,11,79.4,2,147.2,3723,5.9,Intermediate,2.81
+53,M,Deadlifts,4,12,39.2,2,126.4,1886,8.3,Intermediate,5.13
+52,M,Bench Press,4,7,191.6,2,130.4,2994,9.3,Intermediate,4.26
+36,F,Squats,1,11,30.8,2,147.5,2352,6.3,Intermediate,5.24
+37,M,Squats,3,14,73.6,2,80.7,1951,7.5,Advanced,2.5
+35,F,Bench Press,6,13,73.7,4,89.4,3824,9.9,Advanced,2.74
+58,M,Bench Press,6,7,77.7,5,185.8,3258,6.7,Beginner,1.96
+31,M,Deadlifts,2,14,49.6,4,89.3,1712,8.0,Intermediate,4.55
+32,F,Squats,1,10,161.0,4,164.8,1540,5.5,Intermediate,3.65
+48,M,Deadlifts,1,6,42.0,1,190.4,2645,8.0,Advanced,1.76
+18,M,Squats,6,6,134.3,1,112.5,3841,5.4,Advanced,3.26
+20,M,Squats,6,9,42.3,1,124.5,2099,9.8,Beginner,4.48
+33,M,Squats,5,9,32.7,3,148.3,3524,8.6,Intermediate,5.45
+40,M,Squats,5,11,183.7,1,185.8,3530,8.9,Intermediate,7.44
+28,M,Bench Press,5,6,54.2,5,193.0,3282,8.5,Beginner,5.28
+29,F,Bench Press,1,15,167.8,4,168.7,3351,7.9,Beginner,3.46
+27,M,Squats,2,11,118.0,5,90.4,3998,7.2,Intermediate,3.77
+49,M,Bench Press,4,9,34.0,1,160.3,3279,9.3,Intermediate,6.25
+33,M,Squats,5,10,192.0,3,129.2,3881,9.8,Beginner,10.96
+25,F,Deadlifts,2,12,64.5,3,136.5,3404,7.5,Intermediate,1.67
+55,M,Deadlifts,3,14,174.7,4,85.9,3591,9.7,Beginner,5.05
+29,M,Squats,5,8,50.4,5,102.9,1643,7.9,Intermediate,4.11
+41,M,Bench Press,4,11,173.7,2,174.9,1832,7.7,Intermediate,1.0
+45,F,Squats,3,10,22.4,5,134.5,2497,7.3,Beginner,4.62
+25,M,Squats,3,14,112.1,1,116.2,2919,6.0,Intermediate,3.86
+45,M,Squats,4,6,158.5,2,126.1,1554,5.0,Beginner,1.22
+53,M,Deadlifts,5,12,188.3,3,182.5,2830,6.2,Intermediate,3.13
+43,F,Bench Press,1,14,183.7,4,169.9,2946,7.5,Beginner,3.98
+25,M,Squats,4,13,167.5,4,112.7,2940,6.9,Intermediate,3.29
+45,M,Deadlifts,4,9,179.9,3,94.1,3872,7.2,Beginner,3.69
+45,F,Bench Press,4,14,55.9,1,110.2,3233,9.9,Intermediate,3.15
+54,F,Deadlifts,3,8,71.2,3,190.5,3194,6.8,Intermediate,2.08
+58,M,Bench Press,2,10,72.0,1,149.8,1579,7.3,Beginner,4.71
+53,F,Bench Press,1,12,87.9,2,144.0,2484,5.7,Intermediate,2.11
+44,M,Squats,5,15,90.8,3,151.6,2364,5.2,Beginner,6.69
+34,M,Squats,5,7,118.0,1,123.9,3087,8.9,Intermediate,2.98
+26,M,Deadlifts,2,14,48.8,2,176.9,1971,7.9,Beginner,8.73
+50,F,Squats,4,15,144.4,3,142.8,3621,8.8,Intermediate,1.92
+37,M,Deadlifts,1,15,50.2,4,94.0,3076,5.7,Intermediate,4.17
+30,M,Bench Press,5,5,75.9,3,95.5,3002,7.9,Advanced,1.75
+45,M,Squats,6,8,110.6,5,144.4,2088,6.3,Intermediate,5.24
+46,F,Squats,5,8,163.4,3,192.4,2910,6.1,Intermediate,5.03
+30,M,Squats,4,5,153.1,5,117.0,3405,5.1,Intermediate,6.12
+52,M,Deadlifts,6,13,136.2,2,184.3,2063,5.7,Advanced,1.0
+23,M,Bench Press,2,7,48.0,3,171.7,1966,6.5,Intermediate,2.61
+35,M,Squats,1,9,118.5,2,109.7,2098,5.6,Beginner,3.89
+22,M,Squats,2,10,35.7,2,84.4,3144,9.9,Advanced,2.11
+42,F,Squats,2,12,87.9,1,92.2,2491,6.5,Intermediate,4.03
+19,M,Bench Press,1,10,94.4,2,167.4,3432,5.7,Advanced,3.91
+27,M,Squats,1,7,27.2,2,104.0,3795,6.0,Advanced,4.51
+47,F,Deadlifts,5,10,69.3,3,124.6,3104,7.9,Beginner,3.37
+22,M,Squats,5,5,192.0,3,140.2,1566,5.3,Intermediate,1.88
+50,M,Squats,1,8,191.7,4,167.1,1969,9.3,Beginner,4.49
+18,F,Bench Press,6,10,83.4,1,93.6,3224,9.8,Beginner,7.21
+35,M,Bench Press,3,11,27.8,2,128.8,3833,6.2,Beginner,6.34
+49,M,Deadlifts,5,15,52.2,1,138.2,3131,7.3,Intermediate,6.11
+28,M,Bench Press,3,15,90.6,5,144.9,3859,5.1,Beginner,1.62
+38,M,Squats,6,14,190.6,2,178.2,3856,8.2,Beginner,12.71
+43,M,Bench Press,1,7,45.4,1,100.6,2274,7.1,Intermediate,2.87
+42,M,Squats,6,13,157.4,4,176.9,2636,6.4,Beginner,5.76
+39,M,Squats,5,11,39.6,4,163.1,3511,6.0,Beginner,5.4
+44,M,Deadlifts,2,5,196.6,2,146.7,2986,8.3,Beginner,2.41
+30,F,Deadlifts,1,6,88.7,5,163.9,1631,7.1,Intermediate,1.0
+50,F,Deadlifts,4,5,159.5,4,129.4,2429,5.9,Intermediate,3.52
+51,M,Bench Press,3,15,81.7,4,96.6,2428,8.4,Beginner,2.32
+58,M,Bench Press,6,13,133.0,5,159.9,3668,7.8,Advanced,2.34
+52,F,Squats,1,13,54.6,1,143.0,2720,9.3,Intermediate,1.63
+18,M,Squats,6,11,46.3,4,156.7,3005,5.6,Intermediate,2.11
+38,M,Deadlifts,1,14,188.9,3,120.6,2133,8.9,Intermediate,4.6
+23,F,Squats,5,7,185.2,4,188.8,2562,8.4,Intermediate,7.62
+45,M,Deadlifts,5,9,179.7,1,150.5,2684,5.6,Intermediate,4.11
+34,F,Deadlifts,5,8,132.6,1,90.2,1788,8.5,Beginner,4.56
+22,F,Squats,6,11,165.5,2,134.0,3747,7.2,Beginner,10.85
+48,M,Bench Press,4,13,32.4,3,170.8,3311,9.7,Advanced,2.33
+22,M,Bench Press,5,6,80.3,1,175.3,2027,5.7,Beginner,2.09
+55,M,Squats,1,12,76.5,5,139.4,2416,8.2,Intermediate,3.72
+20,F,Deadlifts,5,13,134.4,3,187.4,3208,6.9,Advanced,1.41
+40,F,Bench Press,2,14,84.1,3,112.1,2906,9.8,Intermediate,5.06
+54,F,Squats,5,14,46.7,5,129.3,2741,6.6,Intermediate,3.88
+54,M,Bench Press,6,13,127.4,4,187.8,2610,9.8,Intermediate,2.33
+27,F,Deadlifts,4,14,166.6,5,187.6,2298,9.5,Beginner,3.65
+27,F,Squats,2,11,88.8,5,162.3,3023,6.4,Intermediate,3.71
+36,F,Deadlifts,6,13,43.8,4,183.1,1511,9.0,Intermediate,2.48
+34,F,Squats,6,13,55.4,4,90.7,2332,10.0,Advanced,1.95
+38,F,Deadlifts,6,7,62.7,4,183.8,2741,6.3,Advanced,4.07
+31,F,Deadlifts,1,8,74.0,4,118.5,3172,7.2,Advanced,2.31
+26,M,Squats,6,6,135.7,4,101.4,3653,7.6,Advanced,1.23
+18,M,Squats,1,14,128.2,5,108.7,2190,6.5,Intermediate,5.02
+30,M,Deadlifts,6,7,145.3,2,130.2,2027,5.1,Intermediate,1.98
+21,F,Bench Press,3,15,85.3,2,110.1,2995,6.1,Intermediate,4.48
+18,M,Deadlifts,2,15,168.3,1,118.5,2392,6.4,Intermediate,3.35
+57,F,Squats,3,9,56.7,2,96.2,1886,7.2,Advanced,1.61
+49,F,Deadlifts,6,9,104.4,2,115.5,2749,5.9,Beginner,5.8
+51,F,Deadlifts,2,10,164.2,5,148.7,3277,9.4,Advanced,2.18
+45,M,Deadlifts,2,11,52.4,4,133.0,1907,8.5,Advanced,3.77
+48,M,Squats,4,11,39.8,4,121.6,3176,5.4,Advanced,4.26
+25,M,Bench Press,3,5,179.1,5,169.6,2397,8.3,Advanced,2.54
+56,F,Bench Press,4,6,81.7,2,187.2,2210,8.3,Beginner,3.62
+43,F,Squats,2,13,143.1,5,170.8,3182,9.8,Beginner,4.33
+51,F,Bench Press,1,14,24.6,1,119.8,2417,5.0,Beginner,4.02
+20,M,Squats,2,6,144.2,4,169.3,3750,6.2,Beginner,8.86
+29,F,Deadlifts,4,10,76.9,3,98.2,1916,9.6,Intermediate,1.0
+18,F,Bench Press,3,15,30.0,1,95.6,1915,9.7,Advanced,2.92
+22,M,Squats,6,15,129.8,1,121.5,2971,8.6,Advanced,1.2
+47,F,Bench Press,6,5,63.3,5,176.9,3035,8.8,Intermediate,2.36
+47,M,Bench Press,3,7,89.6,2,109.6,1584,5.5,Beginner,5.47
+34,M,Squats,6,6,34.5,4,87.6,1666,7.6,Beginner,3.46
+40,F,Deadlifts,6,7,46.5,3,95.8,3931,6.2,Beginner,4.0
+32,M,Deadlifts,4,9,73.6,1,183.0,2595,5.9,Intermediate,4.11
+54,F,Bench Press,3,15,36.2,3,156.1,2309,9.1,Intermediate,4.13
+38,F,Squats,5,14,183.9,2,110.4,3044,5.7,Beginner,4.88
+31,M,Deadlifts,1,10,21.1,2,146.6,3316,7.3,Intermediate,2.91
+19,M,Bench Press,1,13,107.1,3,143.3,2492,9.7,Beginner,5.88
+28,M,Squats,6,15,42.2,4,158.7,2781,5.9,Intermediate,1.8
+56,M,Bench Press,1,14,75.4,2,108.0,1774,9.9,Intermediate,2.1
+55,M,Bench Press,3,8,186.7,3,183.7,3273,10.0,Intermediate,5.98
+51,M,Bench Press,3,11,49.1,1,117.1,3256,7.8,Intermediate,2.78
+55,M,Bench Press,2,10,193.8,3,163.3,3873,5.9,Advanced,3.36
+51,M,Bench Press,2,6,57.0,3,81.9,2391,6.6,Beginner,2.47
+35,M,Deadlifts,1,14,153.5,5,124.7,1588,7.1,Intermediate,5.35
+47,F,Squats,5,15,118.4,2,122.2,2207,6.5,Intermediate,2.48
+32,F,Deadlifts,2,15,179.2,4,145.2,3897,6.4,Intermediate,1.02
+44,M,Deadlifts,2,15,119.7,4,88.7,1886,9.9,Advanced,2.3
+51,M,Bench Press,3,12,116.2,5,174.8,3634,5.8,Intermediate,4.95
+55,F,Bench Press,5,11,55.2,4,106.1,3854,8.7,Intermediate,3.12
+50,F,Bench Press,6,11,49.9,3,161.2,3373,5.0,Beginner,4.79
+41,F,Bench Press,1,12,185.0,5,176.4,2677,8.0,Intermediate,4.74
+32,F,Deadlifts,2,15,79.0,1,147.4,1939,9.6,Beginner,3.98
+47,M,Bench Press,5,5,87.0,2,168.9,3811,6.4,Beginner,5.05
+59,M,Deadlifts,5,5,156.8,2,159.4,2476,5.9,Intermediate,2.69
+34,M,Squats,1,12,81.0,2,122.7,2234,8.3,Intermediate,6.22
+22,M,Squats,5,8,191.4,3,177.1,3968,8.6,Beginner,3.37
+46,M,Bench Press,5,9,152.8,1,115.4,2132,8.4,Intermediate,4.97
+21,M,Squats,5,12,127.5,5,148.5,2492,6.6,Intermediate,1.1
+27,M,Squats,2,9,178.6,5,169.4,3958,6.3,Beginner,5.08
+34,F,Squats,1,14,28.9,2,125.5,1672,9.8,Intermediate,5.28
+27,F,Squats,5,8,66.3,1,116.3,1503,9.6,Intermediate,5.26
+34,M,Squats,5,10,103.7,1,135.1,3163,7.3,Intermediate,5.06
+37,F,Deadlifts,2,9,60.9,1,178.2,3515,9.2,Intermediate,3.72
+41,M,Squats,1,11,153.9,4,191.6,2995,7.3,Intermediate,2.02
+22,F,Deadlifts,3,14,185.5,4,145.4,2560,7.1,Intermediate,5.08
+51,M,Deadlifts,2,11,96.3,2,159.4,2554,5.8,Advanced,1.0
+23,F,Deadlifts,1,8,81.6,1,188.4,1880,7.1,Intermediate,2.16
+19,F,Squats,5,9,193.1,1,91.8,2791,7.7,Beginner,6.3
+30,M,Deadlifts,1,7,100.1,5,107.8,3891,5.1,Intermediate,5.38
+28,M,Bench Press,1,8,108.0,5,165.1,3092,7.2,Advanced,3.02
+40,M,Bench Press,6,8,83.3,2,178.8,1665,8.9,Beginner,5.21
+33,M,Bench Press,1,7,183.7,1,182.8,3889,8.4,Advanced,2.17
+48,M,Deadlifts,3,14,122.4,2,129.8,2542,8.2,Advanced,2.07
+28,F,Squats,1,9,157.2,5,90.7,3151,9.5,Beginner,7.42
+33,M,Deadlifts,3,9,166.1,5,132.5,2707,5.1,Advanced,2.39
+25,F,Bench Press,5,15,81.5,4,107.7,2044,7.8,Intermediate,2.75
+21,F,Deadlifts,3,11,98.1,2,114.9,3739,8.9,Advanced,5.25
+57,M,Deadlifts,5,8,172.7,2,172.7,3867,7.7,Intermediate,2.34
+21,M,Squats,5,8,85.4,1,89.1,3974,6.6,Intermediate,3.57
+42,M,Deadlifts,3,13,162.9,1,179.3,1596,5.7,Intermediate,3.82
+20,F,Squats,2,10,189.4,4,131.3,2801,9.4,Intermediate,3.8
+49,M,Squats,4,8,132.2,3,151.5,3556,7.4,Beginner,8.93
+20,F,Squats,1,6,153.5,3,90.8,1956,9.4,Intermediate,1.55
+44,F,Squats,6,10,164.9,3,120.5,3318,7.9,Beginner,1.71
+46,M,Bench Press,4,6,172.1,2,90.8,1772,8.4,Intermediate,2.89
+49,M,Squats,1,9,91.1,2,195.4,2531,9.0,Intermediate,6.0
+36,F,Squats,1,10,29.2,5,176.9,1707,8.3,Intermediate,4.29
+38,F,Deadlifts,5,8,92.3,2,135.2,3437,7.0,Intermediate,4.96
+22,M,Deadlifts,1,7,141.3,2,106.8,3160,7.6,Beginner,11.04
+35,M,Deadlifts,6,11,101.1,2,192.0,2646,9.0,Beginner,3.58
+45,F,Deadlifts,1,6,154.8,4,121.4,2556,6.9,Beginner,6.9
+59,M,Deadlifts,3,15,84.3,2,99.3,3036,6.9,Intermediate,5.33
+39,F,Squats,4,10,134.3,1,147.6,1703,5.5,Advanced,1.23
+38,M,Squats,3,8,53.6,1,193.3,3332,9.6,Beginner,12.09
+23,M,Deadlifts,6,10,154.9,5,80.5,1942,5.5,Advanced,2.73
+18,F,Squats,1,8,118.2,4,108.6,2188,8.2,Intermediate,6.51
+22,M,Bench Press,6,8,56.7,1,192.6,2332,7.1,Intermediate,1.95
+58,M,Squats,5,8,72.5,4,100.5,3886,7.0,Intermediate,4.08
+29,M,Squats,3,13,154.7,4,93.6,2961,8.4,Advanced,2.67
+43,M,Bench Press,3,11,106.9,5,148.4,2659,5.3,Beginner,4.27
+51,F,Bench Press,2,7,58.9,4,183.4,1886,8.0,Intermediate,4.46
+31,M,Bench Press,1,7,194.1,2,137.3,3541,8.9,Intermediate,5.41
+43,M,Bench Press,5,10,148.7,4,199.3,2848,9.1,Intermediate,4.82
+44,F,Squats,3,10,192.3,5,161.5,3218,5.9,Advanced,4.26
+26,F,Squats,3,8,96.9,5,88.9,2179,9.5,Beginner,7.18
+43,M,Deadlifts,5,13,105.5,5,199.1,2189,8.3,Intermediate,6.28
+39,M,Bench Press,6,8,181.6,1,128.9,3068,9.4,Intermediate,3.45
+47,F,Squats,6,13,114.5,2,114.5,2669,7.4,Intermediate,1.34
+34,F,Deadlifts,1,8,147.3,1,146.9,2392,7.7,Intermediate,3.65
+43,M,Squats,2,6,65.4,3,116.5,2452,9.6,Intermediate,2.63
+53,M,Bench Press,3,6,100.4,2,90.4,2754,9.5,Advanced,1.83
+18,M,Squats,2,9,42.2,4,80.2,2283,7.2,Intermediate,5.25
+25,F,Deadlifts,6,8,57.1,5,134.0,3546,6.4,Advanced,1.53
+52,F,Bench Press,6,11,20.2,3,180.4,3371,7.0,Intermediate,4.12
+32,F,Squats,4,15,27.1,2,148.7,1994,6.9,Beginner,6.1
+39,F,Deadlifts,1,9,195.9,1,199.9,2246,6.4,Beginner,8.02
+31,F,Bench Press,4,10,63.6,5,114.4,3984,6.3,Beginner,6.15
+43,M,Squats,4,14,139.4,1,113.7,3354,9.3,Intermediate,4.18
+45,M,Squats,4,8,171.0,2,99.2,3892,5.3,Intermediate,1.45
+40,M,Squats,1,6,119.1,2,99.7,3691,8.4,Intermediate,4.48
+31,M,Squats,1,14,47.6,3,114.2,2156,5.9,Intermediate,5.09
+41,F,Bench Press,5,13,151.1,4,175.1,3382,6.7,Beginner,6.3
+19,M,Deadlifts,2,14,128.0,1,188.7,3892,5.3,Beginner,9.6
+43,M,Bench Press,2,11,151.6,3,197.0,3296,6.3,Beginner,3.02
+31,M,Squats,5,8,158.6,5,107.9,1767,8.8,Intermediate,5.07
+24,M,Squats,5,7,195.6,4,185.8,3716,9.4,Beginner,13.8
+20,M,Squats,6,14,123.2,3,119.4,3262,6.1,Beginner,9.48
+40,M,Bench Press,4,7,81.5,1,93.5,3580,7.3,Advanced,1.67
+35,F,Deadlifts,5,13,136.7,2,184.4,1876,7.4,Advanced,1.36
+55,M,Squats,3,9,32.3,5,156.3,3085,9.4,Beginner,9.83
+52,F,Deadlifts,2,7,181.5,1,99.8,2963,8.8,Intermediate,2.04
+32,M,Deadlifts,5,9,41.5,4,131.6,3940,7.6,Intermediate,6.76
+42,M,Bench Press,3,6,79.0,4,114.5,1988,8.4,Intermediate,1.01
+54,M,Deadlifts,3,15,166.8,2,168.4,2221,9.2,Intermediate,1.93
+45,M,Bench Press,3,8,127.5,2,134.4,2445,5.0,Beginner,1.58
+27,F,Bench Press,6,14,90.9,5,198.7,3586,7.0,Intermediate,3.35
+56,M,Bench Press,6,6,105.2,5,86.6,3135,9.5,Intermediate,3.07
+34,M,Bench Press,3,6,173.8,2,122.6,2540,8.7,Beginner,4.24
+56,F,Squats,6,12,81.2,2,137.8,3773,7.7,Intermediate,3.46
+39,M,Squats,4,5,176.5,4,140.4,3614,7.6,Intermediate,4.67
+43,M,Squats,3,11,35.9,2,117.9,3177,6.7,Intermediate,3.56
+42,F,Bench Press,4,9,159.8,3,167.5,2498,7.6,Beginner,2.94
+34,F,Squats,4,15,172.6,1,185.0,3277,8.3,Intermediate,1.9
+30,M,Deadlifts,3,12,52.7,2,192.6,3784,7.1,Beginner,2.04
+37,F,Deadlifts,2,5,97.5,5,176.6,2456,8.6,Intermediate,6.5
+42,F,Bench Press,3,15,49.8,3,182.1,3089,9.3,Beginner,1.78
+21,M,Squats,3,11,147.2,5,146.1,2661,5.8,Beginner,3.41
+27,F,Deadlifts,6,9,116.4,3,179.1,3368,7.3,Intermediate,7.24
+20,M,Deadlifts,3,8,134.4,2,116.4,2052,7.0,Intermediate,6.82
+58,M,Deadlifts,2,11,55.4,1,127.8,3133,8.4,Advanced,4.18
+35,M,Squats,6,14,58.1,5,118.0,2194,6.2,Intermediate,6.3
+53,M,Bench Press,1,6,27.5,3,136.1,1816,8.2,Beginner,6.23
+39,F,Squats,1,5,78.0,4,114.3,2267,9.4,Intermediate,3.56
+51,M,Squats,4,5,120.8,2,195.4,3471,7.1,Intermediate,5.47
+25,F,Deadlifts,4,15,174.4,1,117.5,3805,9.6,Beginner,2.09
+57,F,Deadlifts,2,5,140.0,2,91.8,3003,10.0,Advanced,1.47
+36,M,Bench Press,5,9,98.4,4,143.2,1622,5.5,Beginner,6.46
+59,F,Deadlifts,1,14,191.6,1,86.9,3889,6.2,Advanced,1.65
+58,M,Bench Press,4,11,149.5,4,93.3,3368,9.8,Advanced,1.27
+54,M,Bench Press,1,6,187.4,2,106.3,3171,9.8,Intermediate,3.42
+23,F,Squats,2,14,115.0,3,135.7,2582,5.5,Advanced,1.72
+43,M,Deadlifts,2,12,66.6,2,132.0,3228,5.1,Intermediate,1.65
+51,M,Squats,5,8,29.5,2,176.0,3807,5.8,Beginner,7.95
+23,M,Deadlifts,5,7,150.7,2,168.7,3496,10.0,Intermediate,3.7
+54,M,Deadlifts,6,14,41.8,5,131.2,3642,5.9,Beginner,5.54
+50,M,Squats,2,15,74.5,4,120.0,2648,7.5,Intermediate,3.03
+39,M,Bench Press,4,12,115.8,4,118.0,3588,9.2,Intermediate,6.26
+38,F,Deadlifts,1,6,121.6,4,172.9,3414,5.1,Intermediate,1.53
+23,M,Bench Press,3,15,128.1,5,86.2,1753,8.0,Intermediate,2.45
+23,M,Deadlifts,5,15,49.9,3,81.5,1506,6.4,Intermediate,4.78
+21,M,Deadlifts,3,7,88.4,2,175.5,3616,9.3,Advanced,7.15
+47,M,Bench Press,4,7,131.1,3,137.3,2041,6.4,Beginner,5.41
+28,F,Squats,5,14,194.6,5,95.7,1588,8.4,Intermediate,1.33
+47,F,Deadlifts,3,15,151.0,4,108.3,3438,8.4,Beginner,4.08
+48,F,Bench Press,4,5,186.1,2,191.9,1712,6.1,Intermediate,2.16
+41,M,Squats,1,10,157.2,1,183.1,1765,5.2,Beginner,3.05
+26,M,Squats,4,6,126.5,1,165.2,3840,7.0,Intermediate,4.42
+20,M,Bench Press,6,5,54.6,3,137.9,2730,6.4,Beginner,5.28
+48,F,Deadlifts,5,6,140.0,4,142.4,3880,9.0,Beginner,5.36
+57,M,Deadlifts,2,10,132.2,1,197.0,2504,9.0,Advanced,1.29
+54,M,Bench Press,1,8,128.4,3,195.9,3594,7.3,Beginner,2.26
+53,F,Squats,3,10,108.2,5,105.8,2121,8.0,Intermediate,2.61
+41,M,Squats,5,13,115.2,3,177.3,1926,8.0,Beginner,5.65
+48,M,Deadlifts,2,14,80.2,3,103.7,1709,9.1,Intermediate,3.98
+23,M,Squats,4,14,113.5,3,105.6,2387,7.1,Intermediate,4.89
+19,F,Squats,2,12,55.6,2,161.1,2943,6.4,Intermediate,3.3
+37,M,Squats,5,5,164.9,3,128.6,1653,6.3,Beginner,4.29
+45,F,Bench Press,5,12,53.4,3,191.8,1914,7.7,Intermediate,1.03
+28,F,Deadlifts,6,13,35.3,2,90.7,2680,7.2,Intermediate,1.13
+21,M,Squats,6,10,98.5,2,141.4,2784,7.2,Intermediate,4.46
+32,F,Bench Press,2,14,138.5,5,190.2,2268,5.5,Intermediate,4.13
+23,M,Bench Press,4,9,98.8,4,188.5,2482,8.6,Intermediate,4.01
+47,M,Deadlifts,2,10,69.8,1,98.8,3011,6.1,Beginner,4.94
+55,F,Squats,5,10,120.5,1,124.0,2078,6.0,Beginner,6.88
+19,F,Bench Press,5,13,82.5,3,154.3,3710,7.1,Beginner,5.31
+32,F,Squats,3,8,187.9,5,99.1,2538,6.1,Beginner,4.86
+28,M,Deadlifts,6,6,186.1,3,196.2,3742,7.9,Beginner,5.36
+25,M,Bench Press,3,15,110.4,1,189.8,2041,6.9,Intermediate,1.91
+43,M,Squats,1,15,79.0,2,100.0,1858,7.2,Intermediate,1.06
+22,M,Bench Press,5,13,152.7,4,94.5,2349,7.7,Advanced,3.56
+23,M,Deadlifts,3,6,26.6,5,90.2,1926,6.0,Beginner,3.57
+43,M,Squats,2,14,105.5,2,189.1,1985,5.8,Intermediate,4.37
+21,M,Deadlifts,6,13,80.5,4,103.2,3331,9.4,Advanced,4.73
+36,M,Squats,6,6,185.7,5,130.0,2972,7.2,Intermediate,4.56
+37,M,Bench Press,4,12,22.2,5,133.9,2936,7.1,Beginner,6.7
+50,M,Bench Press,2,13,119.5,1,151.9,1829,5.2,Beginner,5.5
+37,F,Deadlifts,4,14,153.3,2,88.6,3255,7.5,Beginner,6.49
+29,M,Squats,3,13,107.3,5,107.2,2670,7.8,Intermediate,5.35
+18,F,Deadlifts,1,14,35.4,5,191.8,1758,7.8,Intermediate,1.66
+43,F,Deadlifts,2,13,195.0,4,189.0,3839,8.5,Beginner,4.07
+31,M,Bench Press,2,6,113.2,1,173.8,1642,5.9,Beginner,4.19
+55,F,Deadlifts,2,8,130.6,3,82.3,3516,6.3,Intermediate,1.34
+54,M,Deadlifts,4,11,62.6,1,119.2,2126,9.1,Intermediate,3.07
+28,M,Squats,3,6,107.0,3,155.4,2888,9.7,Intermediate,2.73
+53,M,Squats,2,5,97.2,2,113.0,1589,5.7,Intermediate,2.51
+30,M,Deadlifts,2,7,33.5,2,189.2,2219,7.5,Intermediate,5.96
+20,M,Squats,6,8,39.1,5,156.1,1980,6.1,Beginner,4.02
+50,M,Deadlifts,1,12,170.7,2,88.6,3631,5.3,Intermediate,3.09
+23,F,Deadlifts,6,10,63.2,5,189.1,2600,6.6,Intermediate,5.26
+27,F,Squats,6,15,55.1,1,194.9,2172,5.7,Advanced,2.22
+22,M,Bench Press,1,6,110.9,2,89.3,2016,8.5,Beginner,8.94
+40,F,Bench Press,3,13,158.4,1,143.9,3113,7.7,Intermediate,4.43
+27,M,Bench Press,6,6,31.2,1,116.4,2281,5.7,Intermediate,4.35
+19,M,Squats,3,9,123.8,2,127.1,3651,5.0,Intermediate,4.85
+30,F,Squats,6,8,41.5,1,101.6,3535,9.0,Beginner,8.97
+57,M,Bench Press,5,11,26.6,2,149.4,3886,5.9,Intermediate,4.41
+19,M,Deadlifts,1,12,29.5,2,195.0,2186,8.0,Advanced,4.3
+37,M,Deadlifts,6,9,170.1,2,140.4,3089,6.7,Intermediate,5.81
+18,M,Bench Press,5,14,41.2,3,89.9,2399,7.9,Intermediate,4.09
+54,F,Squats,4,9,28.1,1,154.4,3001,6.6,Beginner,5.07
+26,M,Bench Press,5,6,98.8,4,120.8,1722,5.4,Beginner,3.44
+34,F,Squats,2,12,171.9,2,182.7,2576,6.1,Intermediate,5.74
+26,M,Deadlifts,6,6,67.2,1,132.2,2600,5.9,Advanced,1.0
+28,M,Deadlifts,5,14,95.9,5,103.1,3241,7.1,Advanced,1.44
+32,M,Deadlifts,3,10,27.2,2,102.9,2002,8.3,Intermediate,2.0
+41,F,Deadlifts,4,12,100.8,2,172.3,2839,6.3,Intermediate,5.71
+55,M,Squats,6,10,124.0,4,111.9,2123,5.1,Advanced,2.27
+52,F,Deadlifts,2,8,122.8,3,172.1,3386,7.6,Intermediate,5.17
+47,F,Squats,5,8,79.8,3,104.7,3712,8.0,Intermediate,5.54
+48,M,Deadlifts,4,10,76.8,2,118.6,2550,9.8,Beginner,7.34
+22,F,Squats,6,8,39.2,1,135.9,2593,7.9,Intermediate,5.39
+31,F,Deadlifts,4,12,86.0,5,193.2,3485,7.4,Intermediate,2.42
+28,F,Deadlifts,2,13,37.9,5,191.8,2888,7.9,Advanced,1.0
+26,M,Squats,5,5,158.0,1,104.8,2829,9.6,Intermediate,2.97
+51,M,Squats,4,8,193.9,2,123.0,2647,9.1,Beginner,3.68
+29,M,Deadlifts,4,8,194.6,5,97.9,1518,6.6,Intermediate,3.93
+52,M,Bench Press,1,6,175.7,3,141.2,2780,6.2,Advanced,1.0
+52,M,Squats,4,10,128.1,1,135.3,2545,6.3,Intermediate,2.19
+18,F,Squats,1,7,146.2,4,188.1,2488,7.5,Beginner,4.54
+57,M,Squats,5,11,71.3,2,191.6,3997,8.7,Beginner,3.1
+39,M,Deadlifts,6,15,133.5,1,126.0,3073,7.5,Intermediate,6.88
+46,F,Bench Press,6,15,102.0,5,139.0,2571,5.3,Intermediate,3.61
+25,F,Squats,5,9,106.8,2,187.5,2706,8.6,Intermediate,5.81
+28,M,Squats,5,8,156.4,3,176.8,2958,9.0,Beginner,6.97
+58,F,Squats,3,9,70.7,2,80.4,3654,6.4,Advanced,1.0
+54,M,Squats,5,12,77.2,2,118.4,2711,8.3,Beginner,3.76
+31,M,Bench Press,4,7,186.4,3,130.6,2275,7.1,Beginner,7.91
+47,F,Squats,6,11,30.1,3,107.6,3359,9.4,Intermediate,5.47
+52,M,Squats,2,10,107.4,2,103.9,3366,9.2,Intermediate,2.98
+38,M,Deadlifts,6,5,184.3,3,84.5,2660,7.6,Beginner,1.69
+54,M,Squats,1,11,129.9,1,157.2,3381,8.5,Beginner,1.86
+22,M,Bench Press,6,11,118.4,3,111.5,3883,9.4,Beginner,8.19
+36,M,Bench Press,3,5,65.0,3,86.3,3280,7.5,Intermediate,3.19
+31,M,Bench Press,5,13,81.8,2,107.7,2101,6.6,Intermediate,4.0
+43,F,Bench Press,5,10,173.4,1,176.2,3094,8.8,Intermediate,3.18
+21,F,Bench Press,6,6,120.7,4,182.2,3950,6.1,Intermediate,1.36
+42,M,Deadlifts,2,9,112.7,4,138.0,2039,6.9,Intermediate,1.79
+59,M,Bench Press,2,15,37.9,5,129.9,2595,9.3,Beginner,7.55
+42,M,Bench Press,3,8,22.9,3,197.3,3305,8.6,Advanced,3.6
+35,M,Deadlifts,1,11,193.5,3,104.1,1523,7.0,Advanced,2.39
+57,F,Bench Press,6,12,87.9,1,105.8,2123,6.1,Beginner,4.76
+25,M,Squats,5,15,128.6,4,115.0,3335,6.8,Beginner,8.41
+56,M,Squats,6,15,34.3,5,100.7,2579,6.4,Beginner,7.12
+57,F,Squats,3,5,143.0,1,125.5,2485,5.9,Beginner,4.47
+31,F,Deadlifts,4,9,187.9,3,189.3,1722,8.7,Intermediate,5.79
+49,F,Deadlifts,4,7,123.6,4,153.8,1678,6.3,Intermediate,2.61
+55,M,Deadlifts,3,5,42.7,5,129.4,3981,7.3,Intermediate,3.93
+50,M,Bench Press,5,7,124.7,2,192.1,3460,6.9,Intermediate,1.24
+40,M,Bench Press,3,10,157.9,4,85.8,2973,9.9,Intermediate,2.95
+32,M,Squats,5,11,93.2,5,105.2,2292,7.0,Intermediate,1.73
+50,F,Bench Press,2,12,178.4,1,147.9,2383,5.4,Beginner,5.65
+42,F,Bench Press,3,15,136.8,2,153.9,2712,5.4,Intermediate,2.29
+34,F,Deadlifts,5,8,181.9,5,84.7,3101,8.0,Intermediate,2.2
+50,F,Squats,3,7,132.2,5,128.4,2309,8.0,Beginner,4.18
+19,M,Bench Press,3,9,43.6,3,157.9,2460,7.1,Beginner,5.85
+31,F,Bench Press,5,13,75.7,4,163.8,1919,7.2,Advanced,2.67
+57,M,Bench Press,5,10,56.3,3,156.6,2687,5.3,Intermediate,4.15
+57,M,Bench Press,1,13,183.6,2,118.5,2778,7.6,Beginner,7.28
+56,M,Deadlifts,3,10,156.9,5,91.2,2940,7.5,Intermediate,2.24
+23,M,Squats,4,6,141.8,3,131.3,3717,5.7,Intermediate,2.9
+23,M,Deadlifts,3,9,74.2,4,95.5,2840,5.5,Intermediate,5.05
+20,F,Bench Press,3,15,53.1,2,193.7,3721,5.6,Beginner,4.89
+24,M,Deadlifts,5,13,156.2,1,137.0,3892,5.5,Advanced,4.62
+25,M,Deadlifts,3,12,105.3,3,118.1,3992,8.0,Intermediate,7.01
+59,M,Squats,6,11,60.6,2,172.0,2541,6.0,Beginner,4.25
+32,F,Squats,3,5,131.0,1,139.8,2593,6.3,Intermediate,1.02
+46,M,Deadlifts,6,8,27.3,3,117.2,2861,5.9,Intermediate,5.08
+50,F,Bench Press,4,11,78.7,2,177.4,2091,9.8,Beginner,6.66
+47,M,Deadlifts,5,15,104.3,2,184.1,2026,9.3,Beginner,10.35
+56,F,Squats,3,11,46.6,3,160.8,2792,6.2,Beginner,6.38
+44,M,Bench Press,6,10,197.2,2,85.6,3154,6.6,Advanced,1.46
+53,F,Deadlifts,6,12,57.6,5,148.0,2310,6.0,Beginner,4.24
+46,F,Deadlifts,6,15,43.5,3,171.6,1687,7.5,Intermediate,2.6
+55,M,Squats,2,10,56.6,2,96.4,3092,5.1,Advanced,3.82
+50,M,Deadlifts,1,14,158.4,1,107.4,2028,8.4,Beginner,6.4
+54,M,Bench Press,4,7,96.6,1,185.9,1933,7.6,Advanced,2.08
+44,M,Squats,3,8,121.8,5,82.4,3835,9.5,Advanced,1.21
+50,M,Bench Press,2,7,23.8,3,170.3,3441,5.8,Advanced,3.69
+21,F,Bench Press,3,5,26.2,2,136.9,3304,9.0,Beginner,5.47
+39,M,Deadlifts,3,14,100.2,2,133.6,1802,9.0,Intermediate,3.46
+19,M,Bench Press,5,9,167.0,1,80.9,1586,5.6,Intermediate,4.22
+27,M,Squats,5,5,179.3,5,178.3,1937,7.0,Advanced,2.05
+22,M,Squats,5,5,35.6,1,123.2,2545,5.9,Beginner,4.92
+27,F,Bench Press,2,6,116.9,1,144.9,2332,6.3,Intermediate,3.82
+50,M,Squats,3,8,184.4,5,161.3,2296,6.3,Intermediate,3.49
+55,F,Deadlifts,1,10,89.8,3,164.3,2059,7.8,Beginner,3.06
+30,F,Squats,4,12,169.3,2,194.7,2261,7.1,Intermediate,4.85
+48,F,Deadlifts,5,7,44.1,3,143.8,3198,9.7,Intermediate,6.47
+53,F,Deadlifts,5,5,188.4,4,128.0,2624,5.6,Intermediate,2.52
+41,M,Bench Press,3,7,155.3,4,194.4,2184,9.9,Intermediate,3.67
+32,F,Deadlifts,3,7,189.4,4,157.1,2664,6.2,Advanced,2.3
+46,M,Deadlifts,2,9,141.8,5,115.8,1637,8.9,Intermediate,1.99
+25,M,Bench Press,2,15,85.4,1,95.2,2077,6.7,Intermediate,3.4
+22,F,Squats,5,8,188.9,3,181.1,2209,5.7,Intermediate,1.93
+35,F,Squats,5,10,47.6,2,131.6,2216,7.5,Beginner,7.82
+19,F,Deadlifts,2,10,68.7,2,114.4,2622,9.0,Beginner,7.05
+20,M,Bench Press,3,10,55.4,4,122.8,2352,6.5,Beginner,6.06
+36,F,Squats,4,6,31.5,4,136.4,2691,8.9,Beginner,7.94
+18,M,Squats,2,10,127.9,3,123.3,2674,7.1,Beginner,9.89
+38,F,Squats,4,8,130.9,2,118.7,2630,6.6,Beginner,5.73
+38,M,Bench Press,2,11,48.6,4,158.9,2324,7.2,Beginner,5.2
+27,M,Squats,3,6,28.4,2,100.6,2900,7.8,Beginner,8.38
+38,M,Bench Press,3,7,116.0,2,143.1,3251,6.6,Beginner,6.79
+31,F,Deadlifts,5,10,47.5,4,163.5,3168,6.9,Beginner,6.75
+30,F,Squats,3,9,71.1,3,121.3,2307,8.6,Beginner,6.31
+26,M,Deadlifts,4,6,28.3,4,148.3,2653,9.0,Beginner,8.94
+23,M,Bench Press,3,12,49.4,4,153.5,2284,7.0,Beginner,8.56
+23,F,Squats,2,7,123.1,2,152.4,2391,6.4,Beginner,7.39
+36,M,Bench Press,3,11,124.6,3,135.7,2359,8.4,Beginner,4.93
+38,F,Deadlifts,4,8,46.9,4,127.7,2768,7.8,Beginner,5.66
+27,F,Bench Press,2,12,63.7,2,166.9,2796,6.3,Beginner,6.18
+40,M,Squats,5,7,37.5,4,160.7,2931,8.8,Beginner,5.89
+20,M,Squats,5,10,29.6,2,125.7,2164,6.2,Beginner,5.42
+35,M,Deadlifts,5,9,149.0,4,108.2,2732,7.9,Beginner,7.78
+38,M,Bench Press,2,10,105.2,3,105.7,2580,7.3,Beginner,5.33
+36,M,Bench Press,5,7,90.5,4,107.5,2820,7.7,Beginner,4.0
+22,M,Squats,3,6,119.5,2,146.6,3247,6.6,Beginner,9.27
+28,M,Deadlifts,2,12,129.2,4,104.1,2123,8.1,Beginner,8.88
+27,F,Deadlifts,2,9,124.9,3,127.0,2343,8.9,Beginner,9.34
+34,F,Squats,2,12,22.2,3,160.3,2523,7.4,Beginner,8.81
+21,M,Squats,6,12,44.3,3,123.5,3075,7.6,Beginner,7.27
+38,M,Deadlifts,4,9,105.1,3,161.1,2128,6.7,Beginner,5.52
+35,M,Deadlifts,6,7,68.8,2,159.6,3158,8.7,Beginner,12.62
+35,M,Bench Press,6,11,147.7,4,119.7,2656,8.9,Beginner,4.63
+18,F,Deadlifts,6,11,106.5,3,158.3,3150,8.4,Beginner,8.97
+31,M,Bench Press,4,10,144.4,4,159.8,2737,7.6,Beginner,6.58
+25,F,Squats,6,7,46.2,2,131.8,2938,8.9,Beginner,10.48
+19,M,Deadlifts,5,9,132.3,4,116.8,2070,6.5,Beginner,6.64
+36,F,Bench Press,2,7,61.8,4,141.7,2272,7.4,Beginner,5.64
+32,M,Deadlifts,2,9,148.6,3,173.7,3210,7.6,Beginner,8.06
+19,F,Squats,3,12,40.5,3,151.2,3026,7.5,Beginner,11.03
+21,F,Bench Press,5,10,87.1,2,113.8,3308,8.4,Beginner,9.91
+18,F,Deadlifts,4,6,123.1,4,154.6,2021,8.0,Beginner,8.4
+36,F,Squats,2,12,76.2,2,134.2,2165,6.4,Beginner,4.82
+38,M,Squats,6,6,80.9,2,147.3,3333,7.0,Beginner,5.75
+27,F,Deadlifts,3,7,148.2,2,158.7,2874,7.0,Beginner,9.18
+18,M,Bench Press,3,9,75.3,3,141.2,3500,7.7,Beginner,6.91
+37,M,Bench Press,2,6,98.5,3,165.1,2497,6.9,Beginner,5.92
+39,M,Deadlifts,5,12,27.1,4,157.8,2433,6.4,Beginner,7.33
+32,F,Squats,3,9,129.5,4,149.2,2757,8.0,Beginner,6.24
+21,F,Deadlifts,2,10,104.3,4,112.1,2233,8.6,Beginner,6.89
+24,F,Deadlifts,5,12,72.5,3,166.9,2836,8.8,Beginner,7.01
+24,F,Bench Press,2,7,22.1,3,174.9,2662,8.9,Beginner,8.89
+39,M,Bench Press,2,9,96.9,2,111.0,2724,8.3,Beginner,4.58
+35,F,Deadlifts,5,7,21.6,3,139.1,2375,6.4,Beginner,5.41
+30,F,Squats,5,9,20.2,2,120.7,2729,8.6,Beginner,6.96
+27,M,Squats,5,12,100.1,2,160.4,3269,7.2,Beginner,11.66
+25,M,Squats,2,11,44.6,3,157.7,2302,8.2,Beginner,7.48
+27,F,Squats,3,11,44.9,2,111.3,2404,7.6,Beginner,7.32
+31,F,Bench Press,4,9,104.9,2,170.2,2707,8.5,Beginner,9.09
+31,F,Deadlifts,4,10,27.0,4,114.5,2916,7.3,Beginner,5.0
+37,F,Deadlifts,2,7,60.7,2,163.8,2020,6.2,Beginner,6.46
+39,F,Squats,2,8,39.4,3,136.6,2256,7.7,Beginner,4.51
+28,F,Bench Press,3,9,95.4,3,126.3,2398,6.5,Beginner,4.54
+23,F,Bench Press,5,9,106.0,2,112.7,2050,8.9,Beginner,4.9
+38,F,Squats,2,11,113.7,4,113.4,2446,7.6,Beginner,4.57
+18,M,Deadlifts,6,6,53.2,3,153.0,3293,7.7,Beginner,7.43
+36,F,Deadlifts,5,12,31.6,3,144.0,2826,8.7,Beginner,6.04
+24,M,Deadlifts,2,11,30.2,4,109.8,2594,7.9,Beginner,6.25
+35,F,Squats,6,7,75.4,2,109.0,2817,6.9,Beginner,4.01
+20,M,Bench Press,3,11,143.0,3,105.8,2635,6.9,Beginner,4.89
+37,M,Squats,6,8,48.3,2,159.5,3285,7.5,Beginner,8.01
+28,M,Squats,2,10,53.4,2,157.0,3388,8.6,Beginner,12.3
+22,F,Bench Press,4,12,33.1,2,104.7,3072,8.4,Beginner,5.68
+36,M,Deadlifts,2,8,98.7,2,144.8,3141,8.9,Beginner,7.91
+38,M,Deadlifts,4,10,108.4,3,106.8,3476,6.2,Beginner,7.88
+19,M,Deadlifts,3,8,103.6,4,172.3,2774,6.8,Beginner,7.32
+39,M,Deadlifts,3,12,131.9,3,172.6,2972,6.2,Beginner,5.49
+21,M,Squats,5,11,83.2,4,155.9,2396,8.3,Beginner,9.64
+27,M,Bench Press,5,8,37.5,2,174.1,2682,6.4,Beginner,5.66
+19,M,Squats,4,11,57.6,4,164.9,3050,6.3,Beginner,12.58
+25,M,Squats,4,12,106.1,2,166.3,2710,7.7,Beginner,6.65
+18,M,Bench Press,3,11,99.7,3,145.6,3395,7.2,Beginner,9.3
+23,M,Deadlifts,6,7,89.0,3,124.5,3120,8.1,Beginner,9.9
+28,F,Bench Press,4,11,108.8,4,117.4,2528,7.5,Beginner,6.38
+27,M,Squats,4,6,102.9,2,126.2,2684,7.3,Beginner,8.66
+30,M,Squats,6,8,134.6,2,150.3,2612,7.3,Beginner,9.65
+18,M,Squats,5,12,96.2,4,113.8,2185,8.6,Beginner,5.52
+19,M,Squats,5,9,121.2,2,120.7,2695,7.2,Beginner,8.74
+20,M,Squats,4,9,52.3,2,137.4,2214,7.0,Beginner,6.75
+26,M,Bench Press,5,9,108.2,2,118.6,3274,7.0,Beginner,7.34
+22,F,Deadlifts,5,12,137.3,3,147.1,2215,6.6,Beginner,4.96
+27,F,Bench Press,5,6,70.1,3,173.9,2028,8.6,Beginner,7.37
+27,M,Bench Press,3,11,121.3,3,159.8,2101,6.4,Beginner,5.12
+29,F,Squats,2,8,114.2,2,153.3,2122,8.7,Beginner,5.48
+35,M,Deadlifts,4,10,27.7,3,146.6,2053,6.9,Beginner,8.53
+38,F,Squats,4,10,95.6,2,139.0,3306,8.7,Beginner,10.0
+38,M,Deadlifts,3,12,36.9,2,114.9,3140,8.4,Beginner,4.74
+18,F,Deadlifts,2,7,145.8,4,171.6,2615,7.7,Beginner,7.64
+20,M,Deadlifts,2,6,125.5,2,119.9,2556,8.0,Beginner,7.43
+22,F,Squats,3,8,34.3,3,107.3,2113,7.0,Beginner,7.67
+34,M,Bench Press,6,11,35.8,3,160.0,2854,7.7,Beginner,6.01
+25,M,Squats,6,9,97.3,2,114.0,2675,6.9,Beginner,5.76
+34,F,Squats,2,6,64.8,3,129.8,2976,7.2,Beginner,7.44
