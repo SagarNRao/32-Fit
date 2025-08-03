@@ -8,31 +8,31 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
+  SelectGroup,
+  SelectLabel,
 } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import axios from "axios";
 
 interface User {
-  name: string;
   age: number;
   gender: "M" | "F";
-  backSize: number;
-  chestSize: number;
-  quadsSize: number;
   frequency: number;
   protein: number;
   calories: number;
   sleep: number;
   experience: "Beginner" | "Intermediate" | "Advanced";
+  current_size_cm: number;
+  workout_time_years: number;
 }
 
 interface Exercise {
-  name: string;
-  targetMuscle: string;
+  exercise_name: string;
+  target_muscle_group: string;
   sets: number;
   reps: number;
   weight: number;
-  difficulty: number;
+  exercise_category: "Compound" | "Isolation";
 }
 
 interface Prediction {
@@ -40,217 +40,252 @@ interface Prediction {
 }
 
 export default function WorkoutForm() {
-  const [workout, setWorkout] = useState<Exercise[] | null>(null);
-  const [proteinIntake, setProteinIntake] = useState<number>();
-  const [predictions, setPredictions] = useState<Prediction | null>(null);
+  const [user, setUser] = useState<User>({
+    age: 30,
+    gender: "M",
+    frequency: 3,
+    protein: 150,
+    calories: 2800,
+    sleep: 7.5,
+    experience: "Intermediate",
+    current_size_cm: 0,
+    workout_time_years: 1,
+  });
+
+  const [workout, setWorkout] = useState<Exercise[]>([]);
+  const [exercise, setExercise] = useState<Exercise>({
+    exercise_name: "",
+    target_muscle_group: "",
+    sets: 0,
+    reps: 0,
+    weight: 0,
+    exercise_category: "Compound",
+  });
+  const [predictions, setPredictions] = useState<Prediction>({});
   const [error, setError] = useState<string | null>(null);
 
-  const userHere: User = {
-    name: "John Doe",
-    age: 25,
-    gender: "M",
-    backSize: 80,
-    chestSize: 95,
-    quadsSize: 60,
-    frequency: 3,
-    protein: 140, // Updated to a reasonable value
-    calories: 2800,
-    sleep: 8,
-    experience: "Beginner",
-  };
-
-  const handleAddExercise = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const form = e.currentTarget
-      .closest("div")
-      ?.querySelectorAll("input, select");
-    if (!form) return;
-
-    const formData = new FormData();
-    form.forEach((element) => {
-      if (
-        element instanceof HTMLInputElement ||
-        element instanceof HTMLSelectElement
-      ) {
-        formData.append(element.name, element.value);
-      }
-    });
-
-    const exercise: Exercise = {
-      name: formData.get("name") as string,
-      targetMuscle: formData.get("targetMuscle") as string,
-      sets: Number(formData.get("sets")),
-      reps: Number(formData.get("reps")),
-      weight: Number(formData.get("weight")),
-      difficulty: Number(formData.get("difficulty")),
-    };
-
-    setWorkout((prev) => (prev ? [...prev, exercise] : [exercise]));
-    form.forEach((element) => {
-      if (
-        element instanceof HTMLInputElement ||
-        element instanceof HTMLSelectElement
-      ) {
-        element.value = "";
-      }
-    });
-
-    console.log("WORKOUT HERE", workout);
-  };
-
-  const getSizeProgress = async () => {
-    if (!workout || workout.length === 0) {
-      setError("No exercises added to predict.");
-      return;
+  const addExercise = () => {
+    if (
+      exercise.exercise_name &&
+      exercise.target_muscle_group &&
+      exercise.sets > 0 &&
+      exercise.reps > 0 &&
+      exercise.weight > 0 &&
+      exercise.exercise_category
+    ) {
+      setWorkout([...workout, exercise]);
+      setExercise({
+        exercise_name: "",
+        target_muscle_group: "",
+        sets: 0,
+        reps: 0,
+        weight: 0,
+        exercise_category: "Compound",
+      });
+    } else {
+      setError("Please fill in all exercise fields");
     }
+  };
 
-    // Map workout to the format expected by the server
-    const exercises = workout.map((ex) => ({
-      exercise_type: ex.name,
-      sets: ex.sets,
-      reps: ex.reps,
-      weight: ex.weight,
-      target_muscle_group: "Quads", 
-      exercise_category: "Compound"
-    }));
-
-    const payload = {
-      age: userHere.age,
-      gender: userHere.gender,
-      exercises,
-      frequency: userHere.frequency,
-      protein: userHere.protein,
-      calories: userHere.calories,
-      sleep: userHere.sleep,
-      experience: userHere.experience,
-    };
-
-    console.log("PAYLOAD HERE", payload)
-
+  const callServer = async () => {
     try {
-      const response = await axios.post(
-        "http://localhost:5000/predict",
-        payload
-      );
-      setPredictions(response.data.predictions);
-      console.log(predictions);
       setError(null);
-      console.log("Progress response:", response.data);
+      const response = await axios.post("http://localhost:3001/predict", {
+        ...user,
+        exercises: workout,
+      });
+      
+      // Parse the response string into an object
+      const predictionLines = response.data.result.split("\n");
+      const predictionObj: Prediction = {};
+      predictionLines.forEach((line: string) => {
+        if (line && !line.includes("Error")) {
+          const [muscle, value] = line.split(" growth: ");
+          predictionObj[muscle] = parseFloat(value);
+        }
+      });
+      setPredictions(predictionObj);
     } catch (error) {
-      console.error("Error getting progress:", error);
+      console.error("Error calling server:", error);
+      setError("Failed to get predictions. Please try again.");
     }
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-4">
-      <Card className="w-full max-w-md">
+    <div className="flex gap-4 p-4">
+      <Card className="w-1/2">
+        <CardHeader>
+          <CardTitle>User Profile</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <Input
+            type="number"
+            placeholder="Age (18-100)"
+            value={user.age || ''}
+            onChange={(e) => setUser({ ...user, age: Number(e.target.value) })}
+          />
+          <Select
+            onValueChange={(value) => setUser({ ...user, gender: value as "M" | "F" })}
+            value={user.gender}
+          >
+            <SelectTrigger>
+              <SelectValue placeholder="Gender" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="M">Male</SelectItem>
+              <SelectItem value="F">Female</SelectItem>
+            </SelectContent>
+          </Select>
+          <Input
+            type="number"
+            placeholder="Training Frequency (1-7 days/week)"
+            value={user.frequency || ''}
+            onChange={(e) => setUser({ ...user, frequency: Number(e.target.value) })}
+          />
+          <Input
+            type="number"
+            placeholder="Protein Intake (g)"
+            value={user.protein || ''}
+            onChange={(e) => setUser({ ...user, protein: Number(e.target.value) })}
+          />
+          <Input
+            type="number"
+            placeholder="Calories (kcal)"
+            value={user.calories || ''}
+            onChange={(e) => setUser({ ...user, calories: Number(e.target.value) })}
+          />
+          <Input
+            type="number"
+            placeholder="Sleep (hours)"
+            value={user.sleep || ''}
+            onChange={(e) => setUser({ ...user, sleep: Number(e.target.value) })}
+          />
+          <Select
+            onValueChange={(value) =>
+              setUser({ ...user, experience: value as "Beginner" | "Intermediate" | "Advanced" })
+            }
+            value={user.experience}
+          >
+            <SelectTrigger>
+              <SelectValue placeholder="Experience Level" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="Beginner">Beginner</SelectItem>
+              <SelectItem value="Intermediate">Intermediate</SelectItem>
+              <SelectItem value="Advanced">Advanced</SelectItem>
+            </SelectContent>
+          </Select>
+          <Input
+            type="number"
+            placeholder="Current Muscle Size (cm)"
+            value={user.current_size_cm || ''}
+            onChange={(e) => setUser({ ...user, current_size_cm: Number(e.target.value) })}
+          />
+          <Input
+            type="number"
+            placeholder="Workout Time (years)"
+            value={user.workout_time_years || ''}
+            onChange={(e) => setUser({ ...user, workout_time_years: Number(e.target.value) })}
+          />
+        </CardContent>
+      </Card>
+
+      <Card className="w-1/2">
         <CardHeader>
           <CardTitle>Add Exercise</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <Input
-            name="name"
-            placeholder="Exercise name (e.g., Squats)"
-            required
+            placeholder="Exercise Name"
+            value={exercise.exercise_name}
+            onChange={(e) => setExercise({ ...exercise, exercise_name: e.target.value })}
           />
-          <Select name="targetMuscle" required>
+          <Select
+            onValueChange={(value) => setExercise({ ...exercise, target_muscle_group: value })}
+            value={exercise.target_muscle_group}
+          >
             <SelectTrigger>
-              <SelectValue placeholder="Select muscle group" />
+              <SelectValue placeholder="Target Muscle Group" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="Back">Back</SelectItem>
               <SelectItem value="Chest">Chest</SelectItem>
+              <SelectItem value="Back">Back</SelectItem>
+              <SelectItem value="Biceps">Biceps</SelectItem>
               <SelectItem value="Quads">Quads</SelectItem>
             </SelectContent>
           </Select>
+          <Select
+            onValueChange={(value) =>
+              setExercise({ ...exercise, exercise_category: value as "Compound" | "Isolation" })
+            }
+            value={exercise.exercise_category}
+          >
+            <SelectTrigger>
+              <SelectValue placeholder="Exercise Category" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="Compound">Compound</SelectItem>
+              <SelectItem value="Isolation">Isolation</SelectItem>
+            </SelectContent>
+          </Select>
           <Input
-            name="sets"
             type="number"
-            placeholder="Number of sets (1-10)"
-            required
-            min="1"
-            max="10"
+            placeholder="Sets (1-10)"
+            value={exercise.sets || ''}
+            onChange={(e) => setExercise({ ...exercise, sets: Number(e.target.value) })}
           />
           <Input
-            name="reps"
             type="number"
-            placeholder="Number of reps (1-20)"
-            required
-            min="1"
-            max="20"
+            placeholder="Reps (1-20)"
+            value={exercise.reps || ''}
+            onChange={(e) => setExercise({ ...exercise, reps: Number(e.target.value) })}
           />
           <Input
-            name="weight"
             type="number"
-            placeholder="Weight (kg, 0-300)"
-            required
-            min="0"
-            max="300"
+            placeholder="Weight (kg)"
+            value={exercise.weight || ''}
+            onChange={(e) => setExercise({ ...exercise, weight: Number(e.target.value) })}
           />
-          <Input
-            name="difficulty"
-            type="number"
-            min="1"
-            max="10"
-            placeholder="Difficulty (1-10, ≥5 for Compound)"
-            required
-          />
-          <Button className="w-full" onClick={handleAddExercise}>
-            Add Exercise
-          </Button>
+          <Button onClick={addExercise}>Add Exercise</Button>
         </CardContent>
       </Card>
 
-      <Button onClick={() => getSizeProgress()}>Get size progress</Button>
-
-      {workout && workout.length > 0 && (
-        <Card className="mt-8 w-full max-w-md">
-          <CardHeader>
-            <CardTitle>Current Workout</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul className="space-y-2">
-              {workout.map((exercise, index) => (
-                <li key={index} className="p-2 border rounded">
-                  {exercise.name} - {exercise.targetMuscle} - {exercise.sets}x
-                  {exercise.reps} @ {exercise.weight}kg (Difficulty:{" "}
-                  {exercise.difficulty})
-                </li>
-              ))}
-            </ul>
-            <Button className="w-full mt-4" onClick={getSizeProgress}>
-              Get Muscle Growth Prediction
-            </Button>
-          </CardContent>
-        </Card>
-      )}
-
-      {predictions && (
-        <Card className="mt-8 w-full max-w-md">
-          <CardHeader>
-            <CardTitle>Predicted Muscle Growth (12 Weeks)</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul className="space-y-2">
-              {Object.entries(predictions).map(([muscle, growth]) => (
-                <li key={muscle} className="p-2 border rounded">
-                  {muscle}: {growth.toFixed(2)} cm²
-                </li>
-              ))}
-            </ul>
-          </CardContent>
-        </Card>
-      )}
-
-      {error && (
-        <Card className="mt-8 w-full max-w-md">
-          <CardHeader>
-            <CardTitle>Error</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-red-500">{error}</p>
-          </CardContent>
-        </Card>
-      )}
+      <Card className="w-full">
+        <CardHeader>
+          <CardTitle>Workout Plan & Predictions</CardTitle>
+        </CardHeader>
+        <CardContent>
+          {workout.length > 0 && (
+            <div className="mb-4">
+              <h3 className="text-lg font-semibold">Current Workout Plan:</h3>
+              <ul className="list-disc pl-5">
+                {workout.map((ex, index) => (
+                  <li key={index}>
+                    {ex.exercise_name} ({ex.target_muscle_group}): {ex.sets} sets x {ex.reps} reps @ {ex.weight}kg
+                    ({ex.exercise_category})
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          <Button onClick={callServer} disabled={workout.length === 0}>
+            Get Predictions
+          </Button>
+          {error && <p className="text-red-500 mt-2">{error}</p>}
+          {Object.keys(predictions).length > 0 && (
+            <div className="mt-4">
+              <h3 className="text-lg font-semibold">Predicted Muscle Growth:</h3>
+              <ul className="list-disc pl-5">
+                {Object.entries(predictions).map(([muscle, growth]) => (
+                  <li key={muscle}>
+                    {muscle}: {growth.toFixed(2)} cm²
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </CardContent>
+      </Card>
     </div>
   );
 }
