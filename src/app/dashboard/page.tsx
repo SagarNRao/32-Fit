@@ -13,6 +13,8 @@ import {
 } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import axios from "axios";
+import { useAppContext } from "../appContext";
+import { useRouter } from "next/navigation";
 
 interface User {
   age: number;
@@ -40,15 +42,24 @@ interface Prediction {
 }
 
 export default function WorkoutForm() {
-  const [user, setUser] = useState<User>({
-    age: 30,
-    gender: "M",
+  const { age, gender, chest, Back, Traps, Biceps } = useAppContext();
+  const router = useRouter();
+
+  const [targetMuscleGroup, setTargetMuscleGroup] = useState<number>(0);
+  const [sets, setSets] = useState<number>(0);
+  const [reps, setReps] = useState<number>(0);
+  const [weight, setWeight] = useState<number>(0);
+  const [exerciseCategory, setExerciseCategory] = useState<"Compound" | "Isolation">("Compound");
+  
+  const [user] = useState<User>({
+    age: age,
+    gender: gender,
     frequency: 3,
     protein: 150,
     calories: 2800,
     sleep: 7.5,
     experience: "Intermediate",
-    current_size_cm: 0,
+    current_size_cm: targetMuscleGroup, // Using chest as default current size
     workout_time_years: 1,
   });
 
@@ -56,10 +67,10 @@ export default function WorkoutForm() {
   const [exercise, setExercise] = useState<Exercise>({
     exercise_name: "",
     target_muscle_group: "",
-    sets: 0,
-    reps: 0,
-    weight: 0,
-    exercise_category: "Compound",
+    sets: sets,
+    reps: reps,
+    weight: weight,
+    exercise_category: exerciseCategory,
   });
   const [predictions, setPredictions] = useState<Prediction>({});
   const [error, setError] = useState<string | null>(null);
@@ -90,8 +101,16 @@ export default function WorkoutForm() {
   const callServer = async () => {
     try {
       setError(null);
-      const response = await axios.post("http://localhost:3001/predict", {
+      
+      const updatedUser = {
         ...user,
+        age: age,
+        gender: gender,
+        current_size_cm: chest, // Using chest as primary measurement
+      };
+      
+      const response = await axios.post("http://localhost:3001/predict", {
+        ...updatedUser,
         exercises: workout,
       });
       
@@ -113,93 +132,68 @@ export default function WorkoutForm() {
 
   return (
     <div className="flex gap-4 p-4">
-      <Card className="w-1/2">
+      <Card className="w-1/3">
         <CardHeader>
-          <CardTitle>User Profile</CardTitle>
+          <CardTitle>User Profile (From Context)</CardTitle>
         </CardHeader>
-        <CardContent className="space-y-4">
-          <Input
-            type="number"
-            placeholder="Age (18-100)"
-            value={user.age || ''}
-            onChange={(e) => setUser({ ...user, age: Number(e.target.value) })}
-          />
-          <Select
-            onValueChange={(value) => setUser({ ...user, gender: value as "M" | "F" })}
-            value={user.gender}
+        <CardContent className="space-y-2">
+          <p><strong>Age:</strong> {age}</p>
+          <p><strong>Gender:</strong> {gender === "M" ? "Male" : "Female"}</p>
+          <p><strong>Chest Size:</strong> {chest} cm</p>
+          <p><strong>Back Size:</strong> {Back} cm</p>
+          <p><strong>Traps Size:</strong> {Traps} cm</p>
+          <p><strong>Biceps Size:</strong> {Biceps} cm</p>
+          <Button 
+            onClick={() => router.push("/profile")} 
+            variant="outline" 
+            className="w-full mt-4"
           >
-            <SelectTrigger>
-              <SelectValue placeholder="Gender" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="M">Male</SelectItem>
-              <SelectItem value="F">Female</SelectItem>
-            </SelectContent>
-          </Select>
-          <Input
-            type="number"
-            placeholder="Training Frequency (1-7 days/week)"
-            value={user.frequency || ''}
-            onChange={(e) => setUser({ ...user, frequency: Number(e.target.value) })}
-          />
-          <Input
-            type="number"
-            placeholder="Protein Intake (g)"
-            value={user.protein || ''}
-            onChange={(e) => setUser({ ...user, protein: Number(e.target.value) })}
-          />
-          <Input
-            type="number"
-            placeholder="Calories (kcal)"
-            value={user.calories || ''}
-            onChange={(e) => setUser({ ...user, calories: Number(e.target.value) })}
-          />
-          <Input
-            type="number"
-            placeholder="Sleep (hours)"
-            value={user.sleep || ''}
-            onChange={(e) => setUser({ ...user, sleep: Number(e.target.value) })}
-          />
-          <Select
-            onValueChange={(value) =>
-              setUser({ ...user, experience: value as "Beginner" | "Intermediate" | "Advanced" })
-            }
-            value={user.experience}
-          >
-            <SelectTrigger>
-              <SelectValue placeholder="Experience Level" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="Beginner">Beginner</SelectItem>
-              <SelectItem value="Intermediate">Intermediate</SelectItem>
-              <SelectItem value="Advanced">Advanced</SelectItem>
-            </SelectContent>
-          </Select>
-          <Input
-            type="number"
-            placeholder="Current Muscle Size (cm)"
-            value={user.current_size_cm || ''}
-            onChange={(e) => setUser({ ...user, current_size_cm: Number(e.target.value) })}
-          />
-          <Input
-            type="number"
-            placeholder="Workout Time (years)"
-            value={user.workout_time_years || ''}
-            onChange={(e) => setUser({ ...user, workout_time_years: Number(e.target.value) })}
-          />
+            Edit Profile
+          </Button>
         </CardContent>
       </Card>
 
-      <Card className="w-1/2">
+      <Card className="w-1/3">
         <CardHeader>
           <CardTitle>Add Exercise</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          <Input
-            placeholder="Exercise Name"
+          <Select
+            onValueChange={(value) => setExercise({ ...exercise, exercise_name: value })}
             value={exercise.exercise_name}
-            onChange={(e) => setExercise({ ...exercise, exercise_name: e.target.value })}
-          />
+          >
+            <SelectTrigger>
+              <SelectValue placeholder="Select Exercise" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                <SelectLabel>Chest Exercises</SelectLabel>
+                <SelectItem value="Barbell Bench Press">Barbell Bench Press</SelectItem>
+                <SelectItem value="Incline Barbell Bench Press">Incline Barbell Bench Press</SelectItem>
+                <SelectItem value="Dumbbell Bench Press">Dumbbell Bench Press</SelectItem>
+                <SelectItem value="Dumbbell Flyes">Dumbbell Flyes</SelectItem>
+              </SelectGroup>
+              <SelectGroup>
+                <SelectLabel>Back Exercises</SelectLabel>
+                <SelectItem value="Barbell Rows">Barbell Rows</SelectItem>
+                <SelectItem value="Lat Pulldowns">Lat Pulldowns</SelectItem>
+                <SelectItem value="Pull-ups">Pull-ups</SelectItem>
+                <SelectItem value="Deadlifts">Deadlifts</SelectItem>
+              </SelectGroup>
+              <SelectGroup>
+                <SelectLabel>Biceps Exercises</SelectLabel>
+                <SelectItem value="Barbell Curls">Barbell Curls</SelectItem>
+                <SelectItem value="Dumbbell Curls">Dumbbell Curls</SelectItem>
+                <SelectItem value="Hammer Curls">Hammer Curls</SelectItem>
+              </SelectGroup>
+              <SelectGroup>
+                <SelectLabel>Legs Exercises</SelectLabel>
+                <SelectItem value="Squats">Squats</SelectItem>
+                <SelectItem value="Leg Press">Leg Press</SelectItem>
+                <SelectItem value="Leg Curls">Leg Curls</SelectItem>
+              </SelectGroup>
+            </SelectContent>
+          </Select>
           <Select
             onValueChange={(value) => setExercise({ ...exercise, target_muscle_group: value })}
             value={exercise.target_muscle_group}
@@ -211,7 +205,7 @@ export default function WorkoutForm() {
               <SelectItem value="Chest">Chest</SelectItem>
               <SelectItem value="Back">Back</SelectItem>
               <SelectItem value="Biceps">Biceps</SelectItem>
-              <SelectItem value="Quads">Quads</SelectItem>
+              <SelectItem value="Traps">Traps</SelectItem>
             </SelectContent>
           </Select>
           <Select
@@ -250,7 +244,7 @@ export default function WorkoutForm() {
         </CardContent>
       </Card>
 
-      <Card className="w-full">
+      <Card className="w-1/3">
         <CardHeader>
           <CardTitle>Workout Plan & Predictions</CardTitle>
         </CardHeader>
