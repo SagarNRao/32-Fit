@@ -11,9 +11,12 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import { Input } from "@/components/ui/input";
 
 export default function Page() {
   const {
+    userName,
+    setUserName,
     age,
     setAge,
     gender,
@@ -45,8 +48,10 @@ export default function Page() {
 
             <form onSubmit={handleSave} className="mt-4 space-y-4">
               <div className="space-y-2">
+                <label className="text-sm font-medium">Name</label>
+                <Input type="text" value={userName} onChange={(e) => setUserName(e.target.value)} />
                 <label className="text-sm font-medium">Age</label>
-                <input
+                <Input
                   type="number"
                   value={age}
                   onChange={(e) => setAge(Number(e.target.value))}
@@ -70,7 +75,7 @@ export default function Page() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Chest (cm)</label>
-                  <input
+                  <Input
                     type="number"
                     value={chest}
                     onChange={(e) => setChest(Number(e.target.value))}
@@ -79,7 +84,7 @@ export default function Page() {
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Back (cm)</label>
-                  <input
+                  <Input
                     type="number"
                     value={Back}
                     onChange={(e) => setBack(Number(e.target.value))}
@@ -88,7 +93,7 @@ export default function Page() {
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Traps (cm)</label>
-                  <input
+                  <Input
                     type="number"
                     value={Traps}
                     onChange={(e) => setTraps(Number(e.target.value))}
@@ -97,7 +102,7 @@ export default function Page() {
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Biceps (cm)</label>
-                  <input
+                  <Input
                     type="number"
                     value={Biceps}
                     onChange={(e) => setBiceps(Number(e.target.value))}
@@ -106,7 +111,9 @@ export default function Page() {
                 </div>
               </div>
 
-              <Button type="submit" className="w-full">Save Profile & Go to Dashboard</Button>
+              <Button type="submit" className="w-full">
+                Save Profile & Go to Dashboard
+              </Button>
             </form>
           </CardContent>
         </Card>

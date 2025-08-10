@@ -4,6 +4,8 @@ import React, { createContext, useContext, ReactNode, useState } from 'react';
 
 // Define the type for your context data
 interface AppContextData {
+    userName: string;
+    setUserName: (name: string) => void;
     isLoading: boolean;
     setIsLoading: (loading: boolean) => void;
 
@@ -40,6 +42,7 @@ export function AppProvider({ children }: AppProviderProps) {
     const [Back, setBack] = useState(0);
     const [Traps, setTraps] = useState(0);
     const [Biceps, setBiceps] = useState(0);
+    const [userName, setUserName] = useState("");
 
     const value = {
         isLoading,
@@ -55,7 +58,9 @@ export function AppProvider({ children }: AppProviderProps) {
         Traps,
         setTraps,
         Biceps,
-        setBiceps
+        setBiceps,
+        userName,
+        setUserName
     };
 
     return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

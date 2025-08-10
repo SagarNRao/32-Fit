@@ -53,7 +53,7 @@ def safe_transform(encoder, value, default_value=0):
 # Prediction function
 def predict_multi_exercise_muscle_growth(age: int, gender: str, exercises: List[Dict], frequency: int, 
                                         protein: float, calories: int, sleep: float, experience: str, 
-                                        current_size_cm: float = 0, workout_time_years: float = 0) -> List[Dict]:
+                                        current_size_cm: float = 0, workout_time_years: float = 0, time_months: int = 3) -> List[Dict]:
     try:
         difficulty_weights = {'Compound': 1.0, 'Isolation': 0.8}
         
@@ -92,7 +92,7 @@ def predict_multi_exercise_muscle_growth(age: int, gender: str, exercises: List[
             # Baseline growth
             baseline = calculate_baseline_growth(
                 pd.Series({'age': age, 'gender': gender, 'experience': experience}),
-                current_size_cm, workout_time_years
+                time_months, current_size_cm, workout_time_years
             )
 
             # Equivalent exercise metrics
@@ -147,6 +147,14 @@ def predict_multi_exercise_muscle_growth(age: int, gender: str, exercises: List[
 def predict():
     try:
         data = request.get_json()
+        
+        print("RECIEVED DATA HERE")
+        print("RECIEVED DATA HERE")
+        print(data)
+        print("RECIEVED DATA HERE")
+        print("RECIEVED DATA HERE")
+        
+        
         result = predict_multi_exercise_muscle_growth(
             age=data['age'],
             gender=data['gender'],
@@ -157,11 +165,12 @@ def predict():
             sleep=data['sleep'],
             experience=data['experience'],
             current_size_cm=data.get('current_size_cm', 0),
-            workout_time_years=data.get('workout_time_years', 0)
+            workout_time_years=data.get('workout_time_years', 0),
+            time_months=data.get('time_months', 3)
         )
         return jsonify({"predictions": result})
     except Exception as e:
         return jsonify({"error": str(e)}), 400
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True, host='0.0.0.0', port=3001)

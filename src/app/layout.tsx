@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { AppProvider } from "./appContext";
+import Link from "next/link";
+import Image from "next/image";
+import logo from "../public/logo.png";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -10,6 +13,11 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const plusJakartaSans = Geist({
+  variable: "--font-plus-jakarta-sans",
   subsets: ["latin"],
 });
 
@@ -26,10 +34,26 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}
+        className={`${plusJakartaSans.variable} ${geistMono.variable} antialiased dark`}
       >
         <main className="min-h-screen bg-background text-foreground">
           <AppProvider>
+            <nav className="flex items-center justify-between p-4 border-b border-gray-700">
+              <div className="text-xl items-center flex font-bold"></div>
+              <div className="space-x-4 text-xl items-center flex font-bold ">
+                <span className="mr-4">Hi Sagar!</span>
+                <Link href={"/profile"}>
+                  <Image
+                    src={logo}
+                    alt="32-Fit Logo"
+                    width={40}
+                    height={40}
+                    className="mr-2"
+                  />
+                </Link>
+                <div className="text-xl items-center flex font-bold"></div>
+              </div>
+            </nav>
             {children}
           </AppProvider>
         </main>
