@@ -24,6 +24,9 @@ interface AppContextData {
     Biceps: number;
     setBiceps: (biceps: number) => void;
 
+    // muscle tone and body fat
+    BFP:number;
+
 }
 
 // Create the context with an initial undefined value

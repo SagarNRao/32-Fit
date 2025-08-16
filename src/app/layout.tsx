@@ -38,10 +38,10 @@ export default function RootLayout({
       >
         <main className="min-h-screen bg-background text-foreground">
           <AppProvider>
-            <nav className="flex items-center justify-between p-4 border-b border-gray-700">
+            <nav className="flex items-center justify-between p-4 border-b border-[#E1E2C1]">
               <div className="text-xl items-center flex font-bold"></div>
               <div className="space-x-4 text-xl items-center flex font-bold ">
-                <span className="mr-4">Hi Sagar!</span>
+                <span className="mr-4 text-[#E1E2C1]">Hi Sagar!</span>
                 <Link href={"/profile"}>
                   <Image
                     src={logo}
