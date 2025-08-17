@@ -15,6 +15,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import axios from "axios";
 import { useAppContext } from "../appContext";
 import { useRouter } from "next/navigation";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 interface User {
   age: number;
@@ -78,6 +79,10 @@ export default function WorkoutForm() {
   const [predictions, setPredictions] = useState<Prediction>({});
   const [error, setError] = useState<string | null>(null);
 
+  // HERE IS THE BULK MODE / CUT MODE STATE
+  const [mode, setMode] = useState<"bulk" | "cut">("bulk");
+  const [activeTab, setActiveTab] = useState("tab1");
+
   const addExercise = () => {
     if (
       exercise.exercise_name &&
@@ -136,6 +141,36 @@ export default function WorkoutForm() {
 
   return (
     <div>
+      <Tabs
+        value={activeTab}
+        onValueChange={setActiveTab}
+        className="w-1/3 p-4"
+      >
+        <TabsList className="grid grid-cols-2">
+            <TabsTrigger
+            className="data-[state=active]:bg-[#E66B31] data-[state=active]:text-white"
+            value="tab1"
+            onClick={() => setMode("bulk")}
+            style={{
+              backgroundColor: activeTab === 'tab1' ? '#E66B31' : '',
+              color: activeTab === 'tab1' ? 'white' : ''
+            }}
+            >
+            Bulk Mode
+            </TabsTrigger>
+          <TabsTrigger
+            className="data-[state=active]:bg-[#E66B31] data-[state=active]:text-white"
+            value="tab2"
+            onClick={() => setMode("cut")}
+            style={{
+              backgroundColor: activeTab === 'tab2' ? '#E66B31' : '',
+              color: activeTab === 'tab2' ? 'white' : ''
+            }}
+          >
+            Cut Mode
+          </TabsTrigger>
+        </TabsList>
+      </Tabs>
       <div className="flex gap-4 p-4">
         <Card className="w-1/3 text-[#E1E2C1]">
           <CardHeader>

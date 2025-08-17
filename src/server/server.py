@@ -1,14 +1,15 @@
 from flask import Flask, request, jsonify
-import joblib
+from flask_cors import CORS
 import pandas as pd
 import numpy as np
-from flask_cors import CORS
-from typing import List, Dict
+import joblib
+from sklearn.preprocessing import LabelEncoder
+import uuid
 
 app = Flask(__name__)
-CORS(app)
+CORS(app)  # Enable CORS for all routes
 
-# Load model and encoders
+# Load models and encoders for bulk.ipynb
 try:
     rf_model = joblib.load('bulkPredictor.pkl')
     le_gender = joblib.load('le_gender.pkl')
@@ -16,161 +17,277 @@ try:
     le_experience = joblib.load('le_experience.pkl')
     le_muscle_group = joblib.load('le_muscle_group.pkl')
     le_category = joblib.load('le_category.pkl')
-except FileNotFoundError as e:
-    print(f"Error loading files: {e}")
-    raise
+except Exception as e:
+    print(f"Error loading bulk model or encoders: {str(e)}")
+    exit()
 
-# Baseline muscle growth calculation
+# Load models for check.ipynb (assuming similar joblib saving was implemented)
+try:
+    models = {
+        3: {
+            'bfp': joblib.load('bfp_model_3.pkl'),
+            'muscle_mass': joblib.load('muscle_mass_model_3.pkl'),
+            'definition': joblib.load('definition_model_3.pkl')
+        },
+        6: {
+            'bfp': joblib.load('bfp_model_6.pkl'),
+            'muscle_mass': joblib.load('muscle_mass_model_6.pkl'),
+            'definition': joblib.load('definition_model_6.pkl')
+        },
+        9: {
+            'bfp': joblib.load('bfp_model_9.pkl'),
+            'muscle_mass': joblib.load('muscle_mass_model_9.pkl'),
+            'definition': joblib.load('definition_model_9.pkl')
+        },
+        12: {
+            'bfp': joblib.load('bfp_model_12.pkl'),
+            'muscle_mass': joblib.load('muscle_mass_model_12.pkl'),
+            'definition': joblib.load('definition_model_12.pkl')
+        }
+    }
+    # Load encoders for check.ipynb
+    le_gender_check = joblib.load('le_gender_check.pkl')
+    le_exercise_check = joblib.load('le_exercise_check.pkl')
+    le_experience_check = joblib.load('le_experience_check.pkl')
+    le_muscle_group_check = joblib.load('le_muscle_group_check.pkl')
+    le_category_check = joblib.load('le_category_check.pkl')
+except Exception as e:
+    print(f"Error loading check model or encoders: {str(e)}")
+    exit()
+
+# Helper function for bulk.ipynb baseline growth calculation
 def get_baseline_params(age, gender, experience, current_size_cm, workout_time_years):
-    base_limit = 45 if gender == 'M' else 30
-    age_factor = max(0.7, 1 - (age - 25) * (0.01 if gender == 'M' else 0.008))
+    if gender == 'M':
+        base_limit = 45
+        age_factor = max(0.7, 1 - (age - 25) * 0.01)
+    else:
+        base_limit = 30
+        age_factor = max(0.7, 1 - (age - 25) * 0.008)
+    
     M_max = base_limit * age_factor
     remaining_potential = max(0, M_max - (current_size_cm * 0.2))
+    
     k_base = {'Beginner': 0.20, 'Intermediate': 0.10, 'Advanced': 0.05}
     k = k_base.get(experience, 0.10) * (1 / (1 + workout_time_years * 0.1))
-    print(f"Baseline params: M_max={M_max:.2f}, remaining_potential={remaining_potential:.2f}, k={k:.4f}")
+    
     return remaining_potential, k
 
-def calculate_baseline_growth(row, time_months=3, current_size_cm=0, workout_time_years=0):
-    M_max, k = get_baseline_params(row['age'], row['gender'], row['experience'], current_size_cm, workout_time_years)
+def calculate_baseline_growth(age, gender, experience, current_size_cm, workout_time_years, time_months):
+    M_max, k = get_baseline_params(age, gender, experience, current_size_cm, workout_time_years)
     M0 = current_size_cm * 0.2
     baseline_growth = (M_max - M0) * (1 - np.exp(-k * time_months))
-    baseline_cm2 = max(baseline_growth * 5, 0.1)
-    print(f"Baseline calc: M0={M0:.2f}, baseline_growth={baseline_growth:.2f}, baseline_cm2={baseline_cm2:.2f}")
-    return baseline_cm2
+    baseline_cm2 = baseline_growth * 5
+    return max(baseline_cm2, 0.1)  # Ensure minimum baseline to avoid division by zero
 
-# Safe encoding
-def safe_transform(encoder, value, default_value=0):
-    try:
-        if value in encoder.classes_:
-            return encoder.transform([value])[0]
-        print(f"Warning: '{value}' not found, using default {default_value}")
-        return default_value
-    except:
-        print(f"Error encoding '{value}', using default {default_value}")
-        return default_value
+# Helper function for check.ipynb feature engineering
+def calculate_body_composition_features(user_data, gender):
+    # Calculate BMR using Mifflin-St Jeor Equation
+    if gender == 'M':
+        bmr = 88.362 + (13.397 * user_data['current_weight']) + (4.799 * user_data['height']) - (5.677 * user_data['age'])
+    else:
+        bmr = 447.593 + (9.247 * user_data['current_weight']) + (3.098 * user_data['height']) - (4.330 * user_data['age'])
+    
+    # BMI
+    bmi = user_data['current_weight'] / ((user_data['height'] / 100) ** 2)
+    
+    # Activity level
+    activity_level = user_data['frequency'] * 5
+    
+    # TDEE
+    tdee = bmr * (1.2 + (activity_level * 0.1))
+    
+    # Estimated fat mass
+    estimated_fat_mass = (user_data['BFP'] / 100) * user_data['current_weight']
+    
+    # Muscle mass
+    muscle_mass = user_data['current_weight'] - estimated_fat_mass
+    
+    # Training intensity
+    training_intensity = (user_data['weight'] * user_data['sets'] * user_data['reps']) / user_data['current_weight']
+    
+    # Sleep quality
+    sleep_quality = 1 if user_data['sleep'] >= 7.5 else user_data['sleep'] / 7.5
+    
+    # Protein per kg
+    protein_per_kg = user_data['protein'] / user_data['current_weight']
+    
+    # Deficit ratio
+    deficit_ratio = user_data['daily_deficit'] / tdee
+    
+    return {
+        'BMR': bmr,
+        'BMI': bmi,
+        'activity_level': activity_level,
+        'TDEE': tdee,
+        'estimated_fat_mass': estimated_fat_mass,
+        'muscle_mass': muscle_mass,
+        'training_intensity': training_intensity,
+        'sleep_quality': sleep_quality,
+        'protein_per_kg': protein_per_kg,
+        'deficit_ratio': deficit_ratio
+    }
 
-# Prediction function
-def predict_multi_exercise_muscle_growth(age: int, gender: str, exercises: List[Dict], frequency: int, 
-                                        protein: float, calories: int, sleep: float, experience: str, 
-                                        current_size_cm: float = 0, workout_time_years: float = 0, time_months: int = 3) -> List[Dict]:
-    try:
-        difficulty_weights = {'Compound': 1.0, 'Isolation': 0.8}
-        
-        # Basic input validation
-        if not (18 <= age <= 100) or gender not in le_gender.classes_ or experience not in le_experience.classes_:
-            raise ValueError("Invalid age, gender, or experience")
-        if not (1 <= frequency <= 7) or not (0 < protein <= 300) or not (0 < calories <= 5000) or not (0 < sleep <= 24):
-            raise ValueError("Invalid frequency, protein, calories, or sleep")
-
-        # Group exercises by muscle group
-        muscle_groups = {}
-        for ex in exercises:
-            if not all(key in ex for key in ['exercise_name', 'sets', 'reps', 'weight', 'target_muscle_group', 'exercise_category']):
-                raise ValueError("Exercise missing required fields")
-            if ex['exercise_name'] not in le_exercise.classes_ or ex['target_muscle_group'] not in le_muscle_group.classes_ or ex['exercise_category'] not in le_category.classes_:
-                raise ValueError("Invalid exercise, muscle group, or category")
-            if not (1 <= ex['sets'] <= 10) or not (1 <= ex['reps'] <= 20) or not (0 < ex['weight'] <= 300):
-                raise ValueError("Invalid sets, reps, or weight")
-            
-            muscle_group = ex['target_muscle_group']
-            muscle_groups.setdefault(muscle_group, []).append(ex)
-
-        results = []
-        for muscle_group, ex_list in muscle_groups.items():
-            total_volume = 0
-            primary_exercise = None
-            max_volume = 0
-            for ex in ex_list:
-                volume = ex['sets'] * ex['reps'] * ex['weight'] * difficulty_weights[ex['exercise_category']]
-                total_volume += volume
-                if volume > max_volume:
-                    max_volume = volume
-                    primary_exercise = ex
-            print(f"Muscle group: {muscle_group}, total_volume={total_volume:.2f}, primary_exercise={primary_exercise['exercise_name']}")
-
-            # Baseline growth
-            baseline = calculate_baseline_growth(
-                pd.Series({'age': age, 'gender': gender, 'experience': experience}),
-                time_months, current_size_cm, workout_time_years
-            )
-
-            # Equivalent exercise metrics
-            equiv_sets = min(10, primary_exercise['sets'])
-            equiv_reps = min(20, primary_exercise['reps'])
-            equiv_weight = min(300, total_volume / (equiv_sets * equiv_reps))
-            print(f"Equivalent metrics: sets={equiv_sets}, reps={equiv_reps}, weight={equiv_weight:.2f}")
-
-            # Encode inputs
-            gender_encoded = safe_transform(le_gender, gender)
-            exercise_encoded = safe_transform(le_exercise, primary_exercise['exercise_name'])
-            experience_encoded = safe_transform(le_experience, experience)
-            muscle_group_encoded = safe_transform(le_muscle_group, muscle_group)
-            category_encoded = safe_transform(le_category, primary_exercise['exercise_category'])
-            print(f"Encoded: gender={gender_encoded}, exercise={exercise_encoded}, experience={experience_encoded}, muscle_group={muscle_group_encoded}, category={category_encoded}")
-
-            # Additional features
-            protein_per_kg = protein / max(equiv_weight * 0.45, 1)
-            volume = equiv_sets * equiv_reps
-            intensity = equiv_weight / max(equiv_reps, 1)
-            calories_per_kg = calories / max(equiv_weight * 0.45, 1)
-            print(f"Features: protein_per_kg={protein_per_kg:.2f}, volume={volume:.2f}, intensity={intensity:.2f}, calories_per_kg={calories_per_kg:.2f}")
-
-            # Model input
-            input_data = np.array([[age, gender_encoded, exercise_encoded, equiv_sets, equiv_reps, equiv_weight,
-                                   frequency, protein, calories, sleep, experience_encoded,
-                                   muscle_group_encoded, category_encoded, protein_per_kg, volume,
-                                   intensity, calories_per_kg, 3]])
-            print(f"Model input: {input_data}")
-
-            # Predict and adjust
-            adjustment = rf_model.predict(input_data)[0]
-            adjustment = np.clip(adjustment, 0.01, 10.0)
-            adjustment *= min(1.3, 1 + 0.1 * (len(ex_list) - 1))
-            print(f"Adjustment: raw={rf_model.predict(input_data)[0]:.4f}, clipped={adjustment:.4f}")
-
-            # Final prediction
-            growth = baseline * adjustment
-            print(f"Final: baseline={baseline:.2f}, adjustment={adjustment:.4f}, growth={growth:.2f}")
-            results.append({
-                "muscle_group": muscle_group,
-                "growth": round(growth, 2)
-            })
-
-        return results or [{"error": "No valid exercises provided"}]
-
-    except Exception as e:
-        return [{"error": str(e)}]
-
-# Flask endpoint
-@app.route('/predict', methods=['POST'])
-def predict():
+# Endpoint for muscle growth prediction (bulk.ipynb)
+@app.route('/predict/bulk', methods=['POST'])
+def predict_bulk():
     try:
         data = request.get_json()
-        
-        print("RECIEVED DATA HERE")
-        print("RECIEVED DATA HERE")
-        print(data)
-        print("RECIEVED DATA HERE")
-        print("RECIEVED DATA HERE")
-        
-        
-        result = predict_multi_exercise_muscle_growth(
-            age=data['age'],
-            gender=data['gender'],
-            exercises=data['exercises'],
-            frequency=data['frequency'],
-            protein=data['protein'],
-            calories=data['calories'],
-            sleep=data['sleep'],
-            experience=data['experience'],
-            current_size_cm=data.get('current_size_cm', 0),
-            workout_time_years=data.get('workout_time_years', 0),
-            time_months=data.get('time_months', 3)
-        )
-        return jsonify({"predictions": result})
+        age = data.get('age')
+        gender = data.get('gender')
+        exercises = data.get('exercises')  # List of {exercise_name, sets, reps, weight}
+        frequency = data.get('frequency')
+        protein = data.get('protein')
+        calories = data.get('calories')
+        sleep = data.get('sleep')
+        experience = data.get('experience')
+        current_size_cm = data.get('current_size_cm', 0)
+        workout_time_years = data.get('workout_time_years', 0)
+        time_months = data.get('time_months', 3)
+
+        results = []
+        for exercise in exercises:
+            try:
+                # Encode categorical variables
+                gender_encoded = le_gender.transform([gender])[0]
+                exercise_name_encoded = le_exercise.transform([exercise['exercise_name']])[0]
+                muscle_group = next((x for x in pd.read_csv('mostCommonExercises.csv')[['exercise_name', 'target_muscle_group']].values if x[0] == exercise['exercise_name']), [None, 'Chest'])[1]
+                muscle_group_encoded = le_muscle_group.transform([muscle_group])[0]
+                category = next((x for x in pd.read_csv('mostCommonExercises.csv')[['exercise_name', 'type']].values if x[0] == exercise['exercise_name']), [None, 'Compound'])[1]
+                category_encoded = le_category.transform([category])[0]
+                experience_encoded = le_experience.transform([experience])[0]
+
+                # Calculate additional features
+                weight_kg = exercise['weight'] * 0.453592  # Convert lbs to kg
+                protein_per_kg = protein / max(weight_kg, 1)
+                volume = exercise['sets'] * exercise['reps']
+                intensity = exercise['weight'] / max(exercise['reps'], 1)
+                calories_per_kg = calories / max(weight_kg, 1)
+                genetic_advantage = data.get('genetic_advantage', 3)  # Default to average
+
+                # Prepare feature array
+                features = [
+                    age, gender_encoded, exercise_name_encoded, exercise['sets'], exercise['reps'],
+                    exercise['weight'], frequency, protein, calories, sleep, experience_encoded,
+                    muscle_group_encoded, category_encoded, protein_per_kg, volume, intensity,
+                    calories_per_kg, genetic_advantage
+                ]
+
+                # Predict adjustment factor
+                adjustment_factor = rf_model.predict([features])[0]
+                
+                # Calculate baseline growth
+                baseline_growth = calculate_baseline_growth(
+                    age, gender, experience, current_size_cm, workout_time_years, time_months
+                )
+                
+                # Final prediction
+                predicted_growth = baseline_growth * adjustment_factor
+                
+                results.append({
+                    'muscle_group': muscle_group,
+                    'exercise': exercise['exercise_name'],
+                    'predicted_growth_cm2': round(predicted_growth, 2)
+                })
+            except Exception as e:
+                results.append({
+                    'muscle_group': muscle_group,
+                    'exercise': exercise['exercise_name'],
+                    'error': f"Prediction failed: {str(e)}"
+                })
+
+        return jsonify({'result': results})
     except Exception as e:
-        return jsonify({"error": str(e)}), 400
+        return jsonify({'error': str(e)}), 400
+
+# Endpoint for body composition prediction (check.ipynb)
+@app.route('/predict/check', methods=['POST'])
+def predict_check():
+    try:
+        data = request.get_json()
+        age = data.get('age')
+        gender = data.get('gender')
+        exercise_name = data.get('exercise_name')
+        sets = data.get('sets')
+        reps = data.get('reps')
+        weight = data.get('weight')
+        frequency = data.get('frequency')
+        protein = data.get('protein')
+        calories = data.get('calories')
+        sleep = data.get('sleep')
+        experience = data.get('experience')
+        BFP = data.get('BFP')
+        daily_deficit = data.get('daily_deficit')
+        current_weight = data.get('current_weight')
+        height = data.get('height')
+        genetic_advantage = data.get('genetic_advantage', 3)
+        time_months = data.get('time_months', [3, 6, 9, 12])
+
+        # Encode categorical variables
+        gender_encoded = le_gender_check.transform([gender])[0]
+        exercise_name_encoded = le_exercise_check.transform([exercise_name])[0]
+        muscle_group = next((x for x in pd.read_csv('fatLoss.csv')[['exercise_name', 'target_muscle_group']].values if x[0] == exercise_name), [None, 'Chest'])[1]
+        muscle_group_encoded = le_muscle_group_check.transform([muscle_group])[0]
+        category = next((x for x in pd.read_csv('fatLoss.csv')[['exercise_name', 'type']].values if x[0] == exercise_name), [None, 'Compound'])[1]
+        category_encoded = le_category_check.transform([category])[0]
+        experience_encoded = le_experience_check.transform([experience])[0]
+
+        # Calculate body composition features
+        user_data = {
+            'age': age,
+            'current_weight': current_weight,
+            'height': height,
+            'frequency': frequency,
+            'sleep': sleep,
+            'protein': protein,
+            'daily_deficit': daily_deficit,
+            'BFP': BFP,
+            'weight': weight,
+            'sets': sets,
+            'reps': reps
+        }
+        engineered_features = calculate_body_composition_features(user_data, gender)
+
+        # Prepare feature array
+        features = [
+            age, gender_encoded, exercise_name_encoded, sets, reps, weight, frequency,
+            protein, calories, sleep, experience_encoded, muscle_group_encoded,
+            category_encoded, genetic_advantage, engineered_features['BMI'],
+            engineered_features['activity_level'], engineered_features['TDEE'],
+            engineered_features['estimated_fat_mass'], engineered_features['muscle_mass'],
+            engineered_features['training_intensity'], engineered_features['sleep_quality'],
+            engineered_features['protein_per_kg'], engineered_features['deficit_ratio']
+        ]
+
+        results = {}
+        for month in time_months:
+            if month not in models:
+                continue
+            try:
+                bfp_pred = models[month]['bfp'].predict([features])[0]
+                muscle_mass_pred = models[month]['muscle_mass'].predict([features])[0]
+                definition_pred = models[month]['definition'].predict([features])[0]
+                
+                # Apply constraints
+                min_bfp = 3 if gender == 'M' else 8
+                bfp_pred = max(bfp_pred, min_bfp)
+                definition_pred = min(max(definition_pred, 1), 10)
+                
+                results[month] = {
+                    'bfp': round(bfp_pred, 2),
+                    'muscle_mass': round(muscle_mass_pred, 2),
+                    'definition': round(definition_pred, 2)
+                }
+            except Exception as e:
+                results[month] = {'error': f"Prediction failed: {str(e)}"}
+
+        return jsonify({'result': results})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 400
+
+# Health check endpoint
+@app.route('/health', methods=['GET'])
+def health():
+    return jsonify({'status': 'healthy', 'message': 'Server is running'})
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=3001)
+    app.run(host='localhost', port=3001, debug=False)
