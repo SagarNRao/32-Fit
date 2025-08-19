@@ -25,7 +25,24 @@ interface AppContextData {
     setBiceps: (biceps: number) => void;
 
     // muscle tone and body fat
+
+    Experience: "Beginner" | "Intermediate" | "Advanced";
+    setExperience: (experience: "Beginner" | "Intermediate" | "Advanced") => void;
+
     BFP:number;
+    setBFP: (bfp: number) => void;
+
+    currentWeight: number;
+    setCurrentWeight: (weight: number) => void;
+    height: number;
+    setHeight: (height: number) => void;
+
+    // genetic advantage between 1-10
+    geneticAdvantage: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
+    setGeneticAdvantage: (advantage: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10) => void;
+
+    workoutTimeYears: number;
+    setWorkoutTimeYears: (years: number) => void;
 
 }
 
@@ -46,7 +63,13 @@ export function AppProvider({ children }: AppProviderProps) {
     const [Traps, setTraps] = useState(0);
     const [Biceps, setBiceps] = useState(0);
     const [userName, setUserName] = useState("");
-
+    const [Experience, setExperience] = useState<"Beginner" | "Intermediate" | "Advanced">("Beginner");
+    const [BFP, setBFP] = useState(0);
+    const [currentWeight, setCurrentWeight] = useState(0);
+    const [height, setHeight] = useState(0);
+    const [geneticAdvantage, setGeneticAdvantage] = useState<1|2|3|4|5|6|7|8|9|10>(1);
+    const [workoutTimeYears, setWorkoutTimeYears] = useState(0);
+    
     const value = {
         isLoading,
         setIsLoading,
@@ -63,7 +86,19 @@ export function AppProvider({ children }: AppProviderProps) {
         Biceps,
         setBiceps,
         userName,
-        setUserName
+        setUserName,
+        Experience,
+        setExperience,
+        BFP,
+        setBFP,
+        currentWeight,
+        setCurrentWeight,
+        height,
+        setHeight,
+        geneticAdvantage,
+        setGeneticAdvantage,
+        workoutTimeYears,
+        setWorkoutTimeYears,
     };
 
     return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
