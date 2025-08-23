@@ -42,6 +42,24 @@ interface Prediction {
   [muscle: string]: number;
 }
 
+interface cutPrediction {
+  BFP3: number | null;
+  definition3: number | null;
+  muscle_mass3: number | null;
+
+  BFP6: number | null;
+  definition6: number | null;
+  muscle_mass6: number | null;
+
+  BFP9: number | null;
+  definition9: number | null;
+  muscle_mass9: number | null;
+
+  BFP12: number | null;
+  definition12: number | null;
+  muscle_mass12: number | null;
+}
+
 export default function WorkoutForm() {
   const { age, gender, chest, Back, Traps, Biceps } = useAppContext();
   const router = useRouter();
@@ -77,6 +95,9 @@ export default function WorkoutForm() {
     exercise_category: exerciseCategory,
   });
   const [predictions, setPredictions] = useState<Prediction>({});
+  const [cutPredictions, setCutPredictions] = useState<cutPrediction | null>(
+    null
+  );
   const [error, setError] = useState<string | null>(null);
 
   // HERE IS THE BULK MODE / CUT MODE STATE
@@ -114,25 +135,62 @@ export default function WorkoutForm() {
         ...user,
         age: age,
         gender: gender,
-        current_size_cm: chest, // Using chest as primary measurement
+        current_size_cm: targetMuscleGroup,
       };
 
-      const response = await axios.post("http://localhost:3001/predict", {
-        ...updatedUser,
-        exercises: workout,
-        time_months: months,
-      });
+      let response;
 
-      // Parse the response string into an object
-      const predictionLines = response.data.result.split("\n");
-      const predictionObj: Prediction = {};
-      predictionLines.forEach((line: string) => {
-        if (line && !line.includes("Error")) {
-          const [muscle, value] = line.split(" growth: ");
-          predictionObj[muscle] = parseFloat(value);
-        }
-      });
-      setPredictions(predictionObj);
+      if (mode === "bulk") {
+        response = await axios.post("http://localhost:3001/bulk", {
+          ...updatedUser,
+          exercises: workout,
+          time_months: months,
+        });
+
+        // Parse the response string into an object
+        const predictionLines = response.data.result.split("\n");
+        const predictionObj: Prediction = {};
+        predictionLines.forEach((line: string) => {
+          if (line && !line.includes("Error")) {
+            const [muscle, value] = line.split(" growth: ");
+            predictionObj[muscle] = parseFloat(value);
+          }
+        });
+        setPredictions(predictionObj);
+      } else {
+        response = await axios.post("http://localhost:3002/cut", {
+          ...updatedUser,
+          exercises: workout,
+          time_months: months,
+        });
+
+        console.log("CUT RESPONSE HERE: ", response.data);
+
+        console.log("BIG HERE: ", response.data);
+
+        const jsonResponse = response.data;
+
+        const cutPrediction: cutPrediction = {
+          BFP3: jsonResponse.result["3"]["bfp"],
+          definition3: jsonResponse.result["3"]["definition"],
+          muscle_mass3: jsonResponse.result["3"]["muscle_mass"],
+
+          BFP6: jsonResponse.result["6"]["bfp"],
+          definition6: jsonResponse.result["6"]["definition"],
+          muscle_mass6: jsonResponse.result["6"]["muscle_mass"],
+
+          BFP9: jsonResponse.result["9"]["bfp"],
+          definition9: jsonResponse.result["9"]["definition"],
+          muscle_mass9: jsonResponse.result["9"]["muscle_mass"],
+
+          BFP12: jsonResponse.result["12"]["bfp"],
+          definition12: jsonResponse.result["12"]["definition"],
+          muscle_mass12: jsonResponse.result["12"]["muscle_mass"],
+        };
+        setCutPredictions(cutPrediction);
+
+        console.log("CUT PREDICTIONS STATE HERE: ", cutPredictions);
+      }
     } catch (error) {
       console.error("Error calling server:", error);
       setError("Failed to get predictions. Please try again.");
@@ -147,24 +205,24 @@ export default function WorkoutForm() {
         className="w-1/3 p-4"
       >
         <TabsList className="grid grid-cols-2">
-            <TabsTrigger
+          <TabsTrigger
             className="data-[state=active]:bg-[#E66B31] data-[state=active]:text-white"
             value="tab1"
             onClick={() => setMode("bulk")}
             style={{
-              backgroundColor: activeTab === 'tab1' ? '#E66B31' : '',
-              color: activeTab === 'tab1' ? 'white' : ''
+              backgroundColor: activeTab === "tab1" ? "#E66B31" : "",
+              color: activeTab === "tab1" ? "white" : "",
             }}
-            >
+          >
             Bulk Mode
-            </TabsTrigger>
+          </TabsTrigger>
           <TabsTrigger
             className="data-[state=active]:bg-[#E66B31] data-[state=active]:text-white"
             value="tab2"
             onClick={() => setMode("cut")}
             style={{
-              backgroundColor: activeTab === 'tab2' ? '#E66B31' : '',
-              color: activeTab === 'tab2' ? 'white' : ''
+              backgroundColor: activeTab === "tab2" ? "#E66B31" : "",
+              color: activeTab === "tab2" ? "white" : "",
             }}
           >
             Cut Mode
@@ -322,20 +380,33 @@ export default function WorkoutForm() {
               Get Predictions
             </Button>
             {error && <p className="text-red-500 mt-2">{error}</p>}
-            {Object.keys(predictions).length > 0 && (
-              <div className="mt-4">
-                <h3 className="text-lg font-semibold">
-                  Predicted Muscle Growth:
-                </h3>
-                <ul className="list-disc pl-5">
-                  {Object.entries(predictions).map(([muscle, growth]) => (
-                    <li key={muscle}>
-                      {muscle}: {growth.toFixed(2)} cm²
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
+            {mode === "bulk"
+              ? Object.keys(predictions).length > 0 && (
+                  <div className="mt-4">
+                    <h3 className="text-lg font-semibold">
+                      Predicted Muscle Growth:
+                    </h3>
+                    <ul className="list-disc pl-5">
+                      {Object.entries(predictions).map(([muscle, growth]) => (
+                        <li key={muscle}>
+                          {muscle}: {growth.toFixed(2)} cm²
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )
+              : cutPredictions && (
+                  <div className="mt-4">
+                    <h3 className="text-lg font-semibold">
+                      Cut Mode Predictions:
+                    </h3>
+                    <ul className="list-disc pl-5">
+                      <li>Body Fat Percentage: {cutPredictions.BFP3}%</li>
+                      <li>Muscle Definition: {cutPredictions.definition3}</li>
+                      <li>Muscle Mass: {cutPredictions.muscle_mass3}kg</li>
+                    </ul>
+                  </div>
+                )}
           </CardContent>
         </Card>
 

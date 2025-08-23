@@ -56,19 +56,19 @@ interface AppProviderProps {
 // Provider component
 export function AppProvider({ children }: AppProviderProps) {
     const [isLoading, setIsLoading] = useState(false);
-    const [age, setAge] = useState(0);
+    const [age, setAge] = useState(19);
     const [gender, setGender] = useState<"M" | "F">("M");
-    const [chest, setChest] = useState(0);
-    const [Back, setBack] = useState(0);
-    const [Traps, setTraps] = useState(0);
-    const [Biceps, setBiceps] = useState(0);
-    const [userName, setUserName] = useState("");
+    const [chest, setChest] = useState(30);
+    const [Back, setBack] = useState(30);
+    const [Traps, setTraps] = useState(30);
+    const [Biceps, setBiceps] = useState(30);
+    const [userName, setUserName] = useState("Sagar");
     const [Experience, setExperience] = useState<"Beginner" | "Intermediate" | "Advanced">("Beginner");
-    const [BFP, setBFP] = useState(0);
-    const [currentWeight, setCurrentWeight] = useState(0);
-    const [height, setHeight] = useState(0);
-    const [geneticAdvantage, setGeneticAdvantage] = useState<1|2|3|4|5|6|7|8|9|10>(1);
-    const [workoutTimeYears, setWorkoutTimeYears] = useState(0);
+    const [BFP, setBFP] = useState(15);
+    const [currentWeight, setCurrentWeight] = useState(60);
+    const [height, setHeight] = useState(174);
+    const [geneticAdvantage, setGeneticAdvantage] = useState<1|2|3|4|5|6|7|8|9|10>(3);
+    const [workoutTimeYears, setWorkoutTimeYears] = useState(1);
     
     const value = {
         isLoading,
