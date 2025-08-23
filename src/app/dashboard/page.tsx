@@ -38,8 +38,15 @@ interface Exercise {
   exercise_category: "Compound" | "Isolation";
 }
 
+interface Muscle {
+  muscle: string;
+}
+
 interface Prediction {
-  [muscle: string]: number;
+  Muscle3: Muscle | null;
+  Muscle6: Muscle | null;
+  Muscle9: Muscle | null;
+  Muscle12: Muscle | null;
 }
 
 interface cutPrediction {
@@ -94,7 +101,12 @@ export default function WorkoutForm() {
     weight: weight,
     exercise_category: exerciseCategory,
   });
-  const [predictions, setPredictions] = useState<Prediction>({});
+  const [predictions, setPredictions] = useState<Prediction>({
+    Muscle3: null,
+    Muscle6: null,
+    Muscle9: null,
+    Muscle12: null,
+  });
   const [cutPredictions, setCutPredictions] = useState<cutPrediction | null>(
     null
   );
@@ -147,9 +159,17 @@ export default function WorkoutForm() {
           time_months: months,
         });
 
-        console.log("BULK RESPONSE HERE: ",response.data);
+        console.log("BULK RESPONSE: ", response.data);
 
-        
+        const bulkPrediction: Prediction = {
+          Muscle3: response.data.result["3"] || null,
+          Muscle6: response.data.result["6"] || null,
+          Muscle9: response.data.result["9"] || null,
+          Muscle12: response.data.result["12"] || null,
+        };
+
+        console.log("BULK PREDICTION HERE: ", bulkPrediction);
+        setPredictions(bulkPrediction);
       } else {
         response = await axios.post("http://localhost:3002/cut", {
           ...updatedUser,
@@ -158,8 +178,6 @@ export default function WorkoutForm() {
         });
 
         console.log("CUT RESPONSE HERE: ", response.data);
-
-        console.log("BIG HERE: ", response.data);
 
         const jsonResponse = response.data;
 
@@ -373,33 +391,86 @@ export default function WorkoutForm() {
               Get Predictions
             </Button>
             {error && <p className="text-red-500 mt-2">{error}</p>}
-            {mode === "bulk"
-              ? Object.keys(predictions).length > 0 && (
-                  <div className="mt-4">
-                    <h3 className="text-lg font-semibold">
-                      Predicted Muscle Growth:
-                    </h3>
-                    <ul className="list-disc pl-5">
-                      {Object.entries(predictions).map(([muscle, growth]) => (
-                        <li key={muscle}>
-                          {muscle}: {growth.toFixed(2)} cm²
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )
-              : cutPredictions && (
-                  <div className="mt-4">
-                    <h3 className="text-lg font-semibold">
-                      Cut Mode Predictions:
-                    </h3>
+            
+            {/* Bulk Mode Predictions */}
+            {mode === "bulk" && (predictions.Muscle3 || predictions.Muscle6 || predictions.Muscle9 || predictions.Muscle12) && (
+              <div className="mt-4">
+                <h3 className="text-lg font-semibold mb-3">Bulk Mode Predictions:</h3>
+                <div className="space-y-3">
+                  {predictions.Muscle3 && (
+                    <div className="bg-[#E66B31]/20 p-3 rounded">
+                      <h4 className="text-md font-semibold text-[#E66B31]">3 Months:</h4>
+                      <p>Chest Growth: {predictions.Muscle3.muscle}</p>
+                    </div>
+                  )}
+                  {predictions.Muscle6 && (
+                    <div className="bg-[#E66B31]/20 p-3 rounded">
+                      <h4 className="text-md font-semibold text-[#E66B31]">6 Months:</h4>
+                      <p>Chest Growth: {predictions.Muscle6.muscle}</p>
+                    </div>
+                  )}
+                  {predictions.Muscle9 && (
+                    <div className="bg-[#E66B31]/20 p-3 rounded">
+                      <h4 className="text-md font-semibold text-[#E66B31]">9 Months:</h4>
+                      <p>Chest Growth: {predictions.Muscle9.muscle}</p>
+                    </div>
+                  )}
+                  {predictions.Muscle12 && (
+                    <div className="bg-[#E66B31]/20 p-3 rounded">
+                      <h4 className="text-md font-semibold text-[#E66B31]">12 Months:</h4>
+                      <p>Chest Growth: {predictions.Muscle12.muscle}</p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+
+            {/* Cut Mode Predictions */}
+            {mode === "cut" && cutPredictions && (
+              <div className="mt-4">
+                <h3 className="text-lg font-semibold mb-3">Cut Mode Predictions:</h3>
+                <div className="space-y-3">
+                  <div className="bg-[#E66B31]/20 p-3 rounded">
+                    <h4 className="text-md font-semibold text-[#E66B31]">3 Months:</h4>
                     <ul className="list-disc pl-5">
                       <li>Body Fat Percentage: {cutPredictions.BFP3}%</li>
                       <li>Muscle Definition: {cutPredictions.definition3}</li>
                       <li>Muscle Mass: {cutPredictions.muscle_mass3}kg</li>
                     </ul>
                   </div>
-                )}
+                  {cutPredictions.BFP6 && (
+                    <div className="bg-[#E66B31]/20 p-3 rounded">
+                      <h4 className="text-md font-semibold text-[#E66B31]">6 Months:</h4>
+                      <ul className="list-disc pl-5">
+                        <li>Body Fat Percentage: {cutPredictions.BFP6}%</li>
+                        <li>Muscle Definition: {cutPredictions.definition6}</li>
+                        <li>Muscle Mass: {cutPredictions.muscle_mass6}kg</li>
+                      </ul>
+                    </div>
+                  )}
+                  {cutPredictions.BFP9 && (
+                    <div className="bg-[#E66B31]/20 p-3 rounded">
+                      <h4 className="text-md font-semibold text-[#E66B31]">9 Months:</h4>
+                      <ul className="list-disc pl-5">
+                        <li>Body Fat Percentage: {cutPredictions.BFP9}%</li>
+                        <li>Muscle Definition: {cutPredictions.definition9}</li>
+                        <li>Muscle Mass: {cutPredictions.muscle_mass9}kg</li>
+                      </ul>
+                    </div>
+                  )}
+                  {cutPredictions.BFP12 && (
+                    <div className="bg-[#E66B31]/20 p-3 rounded">
+                      <h4 className="text-md font-semibold text-[#E66B31]">12 Months:</h4>
+                      <ul className="list-disc pl-5">
+                        <li>Body Fat Percentage: {cutPredictions.BFP12}%</li>
+                        <li>Muscle Definition: {cutPredictions.definition12}</li>
+                        <li>Muscle Mass: {cutPredictions.muscle_mass12}kg</li>
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
           </CardContent>
         </Card>
 
