@@ -147,16 +147,9 @@ export default function WorkoutForm() {
           time_months: months,
         });
 
-        // Parse the response string into an object
-        const predictionLines = response.data.result.split("\n");
-        const predictionObj: Prediction = {};
-        predictionLines.forEach((line: string) => {
-          if (line && !line.includes("Error")) {
-            const [muscle, value] = line.split(" growth: ");
-            predictionObj[muscle] = parseFloat(value);
-          }
-        });
-        setPredictions(predictionObj);
+        console.log("BULK RESPONSE HERE: ",response.data);
+
+        
       } else {
         response = await axios.post("http://localhost:3002/cut", {
           ...updatedUser,
