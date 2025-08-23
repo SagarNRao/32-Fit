@@ -38,15 +38,16 @@ interface Exercise {
   exercise_category: "Compound" | "Isolation";
 }
 
-interface Muscle {
-  muscle: string;
+interface BulkPrediction {
+  "chest growth"?: string;
+  [key: string]: string | undefined;
 }
 
 interface Prediction {
-  Muscle3: Muscle | null;
-  Muscle6: Muscle | null;
-  Muscle9: Muscle | null;
-  Muscle12: Muscle | null;
+  Muscle3: BulkPrediction | null;
+  Muscle6: BulkPrediction | null;
+  Muscle9: BulkPrediction | null;
+  Muscle12: BulkPrediction | null;
 }
 
 interface cutPrediction {
@@ -160,7 +161,10 @@ export default function WorkoutForm() {
         });
 
         console.log("BULK RESPONSE: ", response.data);
+        console.log("BULK RESPONSE RESULT: ", response.data.result);
+        console.log("MUSCLE 3 RAW: ", response.data.result["3"]);
 
+        // The server returns data like: {"3": {"chest growth": "2.34 cm2"}, "6": {...}}
         const bulkPrediction: Prediction = {
           Muscle3: response.data.result["3"] || null,
           Muscle6: response.data.result["6"] || null,
@@ -169,6 +173,8 @@ export default function WorkoutForm() {
         };
 
         console.log("BULK PREDICTION HERE: ", bulkPrediction);
+        console.log("MUSCLE3 OBJECT: ", bulkPrediction.Muscle3);
+        console.log("MUSCLE3 KEYS: ", bulkPrediction.Muscle3 ? Object.keys(bulkPrediction.Muscle3) : "null");
         setPredictions(bulkPrediction);
       } else {
         response = await axios.post("http://localhost:3002/cut", {
@@ -400,25 +406,33 @@ export default function WorkoutForm() {
                   {predictions.Muscle3 && (
                     <div className="bg-[#E66B31]/20 p-3 rounded">
                       <h4 className="text-md font-semibold text-[#E66B31]">3 Months:</h4>
-                      <p>Chest Growth: {predictions.Muscle3.muscle}</p>
+                      <p>Chest Growth: {predictions.Muscle3["chest growth"] || 
+                        predictions.Muscle3["Chest growth"] || 
+                        JSON.stringify(predictions.Muscle3)}</p>
                     </div>
                   )}
                   {predictions.Muscle6 && (
                     <div className="bg-[#E66B31]/20 p-3 rounded">
                       <h4 className="text-md font-semibold text-[#E66B31]">6 Months:</h4>
-                      <p>Chest Growth: {predictions.Muscle6.muscle}</p>
+                      <p>Chest Growth: {predictions.Muscle6["chest growth"] || 
+                        predictions.Muscle6["Chest growth"] || 
+                        JSON.stringify(predictions.Muscle6)}</p>
                     </div>
                   )}
                   {predictions.Muscle9 && (
                     <div className="bg-[#E66B31]/20 p-3 rounded">
                       <h4 className="text-md font-semibold text-[#E66B31]">9 Months:</h4>
-                      <p>Chest Growth: {predictions.Muscle9.muscle}</p>
+                      <p>Chest Growth: {predictions.Muscle9["chest growth"] || 
+                        predictions.Muscle9["Chest growth"] || 
+                        JSON.stringify(predictions.Muscle9)}</p>
                     </div>
                   )}
                   {predictions.Muscle12 && (
                     <div className="bg-[#E66B31]/20 p-3 rounded">
                       <h4 className="text-md font-semibold text-[#E66B31]">12 Months:</h4>
-                      <p>Chest Growth: {predictions.Muscle12.muscle}</p>
+                      <p>Chest Growth: {predictions.Muscle12["chest growth"] || 
+                        predictions.Muscle12["Chest growth"] || 
+                        JSON.stringify(predictions.Muscle12)}</p>
                     </div>
                   )}
                 </div>
