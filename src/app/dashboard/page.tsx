@@ -16,6 +16,7 @@ import axios from "axios";
 import { useAppContext } from "../appContext";
 import { useRouter } from "next/navigation";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import UserAvatar from "@/components/UserAvatar";
 
 interface User {
   age: number;
@@ -488,7 +489,9 @@ export default function WorkoutForm() {
           </CardContent>
         </Card>
 
-        <Card className="text-[#E1E2C1]">
+        <UserAvatar armsSizePred={25} chestSizePred={25} quadsSizePred={25} TrapsSizePred={25}></UserAvatar>
+
+        {/* <Card className="text-[#E1E2C1]">
           <CardHeader>
             <CardTitle className="text-2xl font-bold">
               Current Measurements
@@ -511,7 +514,7 @@ export default function WorkoutForm() {
               ))}
             </div>
           </CardContent>
-        </Card>
+        </Card> */}
       </div>
     </div>
   );
