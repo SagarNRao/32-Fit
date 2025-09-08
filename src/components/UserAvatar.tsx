@@ -12,7 +12,7 @@ interface UserAvatarProps {
 }
 
 export default function UserAvatar(props: UserAvatarProps) {
-  const [mode, setMode] = useState<"Bulk" | "Cut" | "">("");
+  const [mode, setMode] = useState<"Bulk" | "Cut" | "Fat" | "">("");
 
   const {
     userName,
@@ -57,8 +57,8 @@ export default function UserAvatar(props: UserAvatarProps) {
 
     const definition_raw = ((muscle_mass / 10) * (50 - BFP)) / 10;
 
-    // Scale to 0-20 range (doubled the original scale)
-    const definition_score = Math.max(0, Math.min(20, definition_raw * 2));
+    // Scale to 0-10 range (back to original scale)
+    const definition_score = Math.max(0, Math.min(10, definition_raw));
 
     // converting size to 0-10
     const armsSizeScaled = Math.ceil(
@@ -87,16 +87,20 @@ export default function UserAvatar(props: UserAvatarProps) {
     };
   };
 
+
   const stats = getDefinition();
 
   // Use useEffect to set mode based on definition score to avoid infinite re-renders
   useEffect(() => {
-    if (stats.definition_score < 10) {
+    if (stats.definition_score < 5) {
       setMode("Cut");
+    } else if (BFP > 50) {
+      console.log('a')
+      setMode('Fat')
     } else {
       setMode("Bulk");
     }
-  }, [stats.definition_score]);
+  }, [BFP, stats.definition_score]);
 
   const squareDims = 150
 
@@ -126,7 +130,7 @@ export default function UserAvatar(props: UserAvatarProps) {
           <CardContent className="pt-6">
             <div className="text-center">
           <p className="text-2xl font-bold text-blue-600">
-            {stats.definition_score}/20
+            {stats.definition_score}/10
           </p>
           <p className="text-sm text-muted-foreground">
             Definition Score
