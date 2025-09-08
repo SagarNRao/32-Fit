@@ -40,7 +40,10 @@ interface Exercise {
 }
 
 interface BulkPrediction {
-  "chest growth"?: string;
+  "Back growth"?: string;
+  "Chest growth"?: string;
+  "Arms growth"?: string;
+  "Quads growth"?: string;
   [key: string]: string | undefined;
 }
 
@@ -141,6 +144,29 @@ export default function WorkoutForm() {
   // HERE IS THE BULK MODE / CUT MODE STATE
   const [mode, setMode] = useState<"bulk" | "cut">("bulk");
   const [activeTab, setActiveTab] = useState("tab1");
+
+  // Helper function to parse bulk muscle growth data
+  const parseBulkMuscleGrowth = (bulkData: BulkPrediction | null): { arms: number; chest: number; back: number; quads: number } => {
+    if (!bulkData) {
+      return { arms: 3, chest: 3, back: 3, quads: 3 };
+    }
+
+    // Parse muscle growth values and convert to 1-5 scale
+    const parseGrowthValue = (growth: string | undefined): number => {
+      if (!growth) return 3;
+      const value = parseFloat(growth);
+      if (isNaN(value)) return 3;
+      // Convert cm to a 1-5 scale (assuming 0-3cm growth maps to 1-5)
+      return Math.max(1, Math.min(5, Math.round((value / 3) * 4 + 1)));
+    };
+
+    return {
+      arms: parseGrowthValue(bulkData["Arms growth"] || bulkData["arms growth"]),
+      chest: parseGrowthValue(bulkData["Chest growth"] || bulkData["chest growth"]),
+      back: parseGrowthValue(bulkData["Back growth"] || bulkData["back growth"]),
+      quads: parseGrowthValue(bulkData["Quads growth"] || bulkData["quads growth"])
+    };
+  };
 
   const addExercise = () => {
     if (
@@ -435,33 +461,57 @@ export default function WorkoutForm() {
                   {predictions.Muscle3 && (
                     <div className="bg-[#E66B31]/20 p-3 rounded">
                       <h4 className="text-md font-semibold text-[#E66B31]">3 Months:</h4>
-                      <p>Chest Growth: {predictions.Muscle3["chest growth"] || 
-                        predictions.Muscle3["Chest growth"] || 
-                        JSON.stringify(predictions.Muscle3)}</p>
+                      <div className="mt-2">
+                        <h5 className="font-semibold text-sm">Muscle Growth (cm):</h5>
+                        <div className="grid grid-cols-2 gap-2 text-sm">
+                          <div>Arms: {predictions.Muscle3["Arms growth"] || predictions.Muscle3["arms growth"] || "N/A"}</div>
+                          <div>Chest: {predictions.Muscle3["Chest growth"] || predictions.Muscle3["chest growth"] || "N/A"}</div>
+                          <div>Back: {predictions.Muscle3["Back growth"] || predictions.Muscle3["back growth"] || "N/A"}</div>
+                          <div>Quads: {predictions.Muscle3["Quads growth"] || predictions.Muscle3["quads growth"] || "N/A"}</div>
+                        </div>
+                      </div>
                     </div>
                   )}
                   {predictions.Muscle6 && (
                     <div className="bg-[#E66B31]/20 p-3 rounded">
                       <h4 className="text-md font-semibold text-[#E66B31]">6 Months:</h4>
-                      <p>Chest Growth: {predictions.Muscle6["chest growth"] || 
-                        predictions.Muscle6["Chest growth"] || 
-                        JSON.stringify(predictions.Muscle6)}</p>
+                      <div className="mt-2">
+                        <h5 className="font-semibold text-sm">Muscle Growth (cm):</h5>
+                        <div className="grid grid-cols-2 gap-2 text-sm">
+                          <div>Arms: {predictions.Muscle6["Arms growth"] || predictions.Muscle6["arms growth"] || "N/A"}</div>
+                          <div>Chest: {predictions.Muscle6["Chest growth"] || predictions.Muscle6["chest growth"] || "N/A"}</div>
+                          <div>Back: {predictions.Muscle6["Back growth"] || predictions.Muscle6["back growth"] || "N/A"}</div>
+                          <div>Quads: {predictions.Muscle6["Quads growth"] || predictions.Muscle6["quads growth"] || "N/A"}</div>
+                        </div>
+                      </div>
                     </div>
                   )}
                   {predictions.Muscle9 && (
                     <div className="bg-[#E66B31]/20 p-3 rounded">
                       <h4 className="text-md font-semibold text-[#E66B31]">9 Months:</h4>
-                      <p>Chest Growth: {predictions.Muscle9["chest growth"] || 
-                        predictions.Muscle9["Chest growth"] || 
-                        JSON.stringify(predictions.Muscle9)}</p>
+                      <div className="mt-2">
+                        <h5 className="font-semibold text-sm">Muscle Growth (cm):</h5>
+                        <div className="grid grid-cols-2 gap-2 text-sm">
+                          <div>Arms: {predictions.Muscle9["Arms growth"] || predictions.Muscle9["arms growth"] || "N/A"}</div>
+                          <div>Chest: {predictions.Muscle9["Chest growth"] || predictions.Muscle9["chest growth"] || "N/A"}</div>
+                          <div>Back: {predictions.Muscle9["Back growth"] || predictions.Muscle9["back growth"] || "N/A"}</div>
+                          <div>Quads: {predictions.Muscle9["Quads growth"] || predictions.Muscle9["quads growth"] || "N/A"}</div>
+                        </div>
+                      </div>
                     </div>
                   )}
                   {predictions.Muscle12 && (
                     <div className="bg-[#E66B31]/20 p-3 rounded">
                       <h4 className="text-md font-semibold text-[#E66B31]">12 Months:</h4>
-                      <p>Chest Growth: {predictions.Muscle12["chest growth"] || 
-                        predictions.Muscle12["Chest growth"] || 
-                        JSON.stringify(predictions.Muscle12)}</p>
+                      <div className="mt-2">
+                        <h5 className="font-semibold text-sm">Muscle Growth (cm):</h5>
+                        <div className="grid grid-cols-2 gap-2 text-sm">
+                          <div>Arms: {predictions.Muscle12["Arms growth"] || predictions.Muscle12["arms growth"] || "N/A"}</div>
+                          <div>Chest: {predictions.Muscle12["Chest growth"] || predictions.Muscle12["chest growth"] || "N/A"}</div>
+                          <div>Back: {predictions.Muscle12["Back growth"] || predictions.Muscle12["back growth"] || "N/A"}</div>
+                          <div>Quads: {predictions.Muscle12["Quads growth"] || predictions.Muscle12["quads growth"] || "N/A"}</div>
+                        </div>
+                      </div>
                     </div>
                   )}
                 </div>
@@ -477,17 +527,17 @@ export default function WorkoutForm() {
                     <h4 className="text-md font-semibold text-[#E66B31]">3 Months:</h4>
                     <ul className="list-disc pl-5">
                       <li>Body Fat Percentage: {cutPredictions.BFP3}%</li>
-                      <li>Overall Definition: {cutPredictions.definition3}/10</li>
+                      <li>Overall Definition: {cutPredictions.definition3}/5</li>
                       <li>Muscle Mass: {cutPredictions.muscle_mass3}kg</li>
                     </ul>
                     {cutPredictions.muscle_groups3 && (
                       <div className="mt-2">
                         <h5 className="font-semibold text-sm">Muscle Group Definitions:</h5>
                         <div className="grid grid-cols-2 gap-2 text-sm">
-                          <div>Arms: {cutPredictions.muscle_groups3.arms.toFixed(1)}/10</div>
-                          <div>Chest: {cutPredictions.muscle_groups3.chest.toFixed(1)}/10</div>
-                          <div>Back: {cutPredictions.muscle_groups3.back.toFixed(1)}/10</div>
-                          <div>Quads: {cutPredictions.muscle_groups3.quads.toFixed(1)}/10</div>
+                          <div>Arms: {cutPredictions.muscle_groups3.arms.toFixed(1)}/5</div>
+                          <div>Chest: {cutPredictions.muscle_groups3.chest.toFixed(1)}/5</div>
+                          <div>Back: {cutPredictions.muscle_groups3.back.toFixed(1)}/5</div>
+                          <div>Quads: {cutPredictions.muscle_groups3.quads.toFixed(1)}/5</div>
                         </div>
                       </div>
                     )}
@@ -497,17 +547,17 @@ export default function WorkoutForm() {
                       <h4 className="text-md font-semibold text-[#E66B31]">6 Months:</h4>
                       <ul className="list-disc pl-5">
                         <li>Body Fat Percentage: {cutPredictions.BFP6}%</li>
-                        <li>Overall Definition: {cutPredictions.definition6}/10</li>
+                        <li>Overall Definition: {cutPredictions.definition6}/5</li>
                         <li>Muscle Mass: {cutPredictions.muscle_mass6}kg</li>
                       </ul>
                       {cutPredictions.muscle_groups6 && (
                         <div className="mt-2">
                           <h5 className="font-semibold text-sm">Muscle Group Definitions:</h5>
                           <div className="grid grid-cols-2 gap-2 text-sm">
-                            <div>Arms: {cutPredictions.muscle_groups6.arms.toFixed(1)}/10</div>
-                            <div>Chest: {cutPredictions.muscle_groups6.chest.toFixed(1)}/10</div>
-                            <div>Back: {cutPredictions.muscle_groups6.back.toFixed(1)}/10</div>
-                            <div>Quads: {cutPredictions.muscle_groups6.quads.toFixed(1)}/10</div>
+                            <div>Arms: {cutPredictions.muscle_groups6.arms.toFixed(1)}/5</div>
+                            <div>Chest: {cutPredictions.muscle_groups6.chest.toFixed(1)}/5</div>
+                            <div>Back: {cutPredictions.muscle_groups6.back.toFixed(1)}/5</div>
+                            <div>Quads: {cutPredictions.muscle_groups6.quads.toFixed(1)}/5</div>
                           </div>
                         </div>
                       )}
@@ -518,17 +568,17 @@ export default function WorkoutForm() {
                       <h4 className="text-md font-semibold text-[#E66B31]">9 Months:</h4>
                       <ul className="list-disc pl-5">
                         <li>Body Fat Percentage: {cutPredictions.BFP9}%</li>
-                        <li>Overall Definition: {cutPredictions.definition9}/10</li>
+                        <li>Overall Definition: {cutPredictions.definition9}/5</li>
                         <li>Muscle Mass: {cutPredictions.muscle_mass9}kg</li>
                       </ul>
                       {cutPredictions.muscle_groups9 && (
                         <div className="mt-2">
                           <h5 className="font-semibold text-sm">Muscle Group Definitions:</h5>
                           <div className="grid grid-cols-2 gap-2 text-sm">
-                            <div>Arms: {cutPredictions.muscle_groups9.arms.toFixed(1)}/10</div>
-                            <div>Chest: {cutPredictions.muscle_groups9.chest.toFixed(1)}/10</div>
-                            <div>Back: {cutPredictions.muscle_groups9.back.toFixed(1)}/10</div>
-                            <div>Quads: {cutPredictions.muscle_groups9.quads.toFixed(1)}/10</div>
+                            <div>Arms: {cutPredictions.muscle_groups9.arms.toFixed(1)}/5</div>
+                            <div>Chest: {cutPredictions.muscle_groups9.chest.toFixed(1)}/5</div>
+                            <div>Back: {cutPredictions.muscle_groups9.back.toFixed(1)}/5</div>
+                            <div>Quads: {cutPredictions.muscle_groups9.quads.toFixed(1)}/5</div>
                           </div>
                         </div>
                       )}
@@ -539,17 +589,17 @@ export default function WorkoutForm() {
                       <h4 className="text-md font-semibold text-[#E66B31]">12 Months:</h4>
                       <ul className="list-disc pl-5">
                         <li>Body Fat Percentage: {cutPredictions.BFP12}%</li>
-                        <li>Overall Definition: {cutPredictions.definition12}/10</li>
+                        <li>Overall Definition: {cutPredictions.definition12}/5</li>
                         <li>Muscle Mass: {cutPredictions.muscle_mass12}kg</li>
                       </ul>
                       {cutPredictions.muscle_groups12 && (
                         <div className="mt-2">
                           <h5 className="font-semibold text-sm">Muscle Group Definitions:</h5>
                           <div className="grid grid-cols-2 gap-2 text-sm">
-                            <div>Arms: {cutPredictions.muscle_groups12.arms.toFixed(1)}/10</div>
-                            <div>Chest: {cutPredictions.muscle_groups12.chest.toFixed(1)}/10</div>
-                            <div>Back: {cutPredictions.muscle_groups12.back.toFixed(1)}/10</div>
-                            <div>Quads: {cutPredictions.muscle_groups12.quads.toFixed(1)}/10</div>
+                            <div>Arms: {cutPredictions.muscle_groups12.arms.toFixed(1)}/5</div>
+                            <div>Chest: {cutPredictions.muscle_groups12.chest.toFixed(1)}/5</div>
+                            <div>Back: {cutPredictions.muscle_groups12.back.toFixed(1)}/5</div>
+                            <div>Quads: {cutPredictions.muscle_groups12.quads.toFixed(1)}/5</div>
                           </div>
                         </div>
                       )}
@@ -563,56 +613,119 @@ export default function WorkoutForm() {
 
         {/* Avatar Section with Month Milestones */}
         <div className="w-1/3">
-          {cutPredictions && (
+          {(cutPredictions || predictions) && (
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-[#E1E2C1] mb-3">Avatar Progression</h3>
               
               {/* 3 Months Avatar */}
               <div className="border rounded-lg p-2">
                 <h4 className="text-sm font-semibold text-[#E66B31] mb-2">3 Months</h4>
                 <UserAvatar 
-                  armsSizePred={cutPredictions?.muscle_groups3?.arms || 5}
-                  chestSizePred={cutPredictions?.muscle_groups3?.chest || 5}
-                  quadsSizePred={cutPredictions?.muscle_groups3?.quads || 5}
-                  TrapsSizePred={cutPredictions?.muscle_groups3?.back || 5}
+                  armsSizePred={
+                    mode === "cut" 
+                      ? (cutPredictions?.muscle_groups3?.arms || 3)
+                      : parseBulkMuscleGrowth(predictions.Muscle3).arms
+                  }
+                  chestSizePred={
+                    mode === "cut"
+                      ? (cutPredictions?.muscle_groups3?.chest || 3)
+                      : parseBulkMuscleGrowth(predictions.Muscle3).chest
+                  }
+                  quadsSizePred={
+                    mode === "cut"
+                      ? (cutPredictions?.muscle_groups3?.quads || 3)
+                      : parseBulkMuscleGrowth(predictions.Muscle3).quads
+                  }
+                  TrapsSizePred={
+                    mode === "cut"
+                      ? (cutPredictions?.muscle_groups3?.back || 3)
+                      : parseBulkMuscleGrowth(predictions.Muscle3).back
+                  }
                 />
               </div>
 
               {/* 6 Months Avatar */}
-              {cutPredictions.muscle_groups6 && (
+              {((mode === "cut" && cutPredictions?.muscle_groups6) || (mode === "bulk" && predictions.Muscle6)) && (
                 <div className="border rounded-lg p-2">
                   <h4 className="text-sm font-semibold text-[#E66B31] mb-2">6 Months</h4>
                   <UserAvatar 
-                    armsSizePred={cutPredictions?.muscle_groups6?.arms || 5}
-                    chestSizePred={cutPredictions?.muscle_groups6?.chest || 5}
-                    quadsSizePred={cutPredictions?.muscle_groups6?.quads || 5}
-                    TrapsSizePred={cutPredictions?.muscle_groups6?.back || 5}
+                    armsSizePred={
+                      mode === "cut"
+                        ? (cutPredictions?.muscle_groups6?.arms || 3)
+                        : parseBulkMuscleGrowth(predictions.Muscle6).arms
+                    }
+                    chestSizePred={
+                      mode === "cut"
+                        ? (cutPredictions?.muscle_groups6?.chest || 3)
+                        : parseBulkMuscleGrowth(predictions.Muscle6).chest
+                    }
+                    quadsSizePred={
+                      mode === "cut"
+                        ? (cutPredictions?.muscle_groups6?.quads || 3)
+                        : parseBulkMuscleGrowth(predictions.Muscle6).quads
+                    }
+                    TrapsSizePred={
+                      mode === "cut"
+                        ? (cutPredictions?.muscle_groups6?.back || 3)
+                        : parseBulkMuscleGrowth(predictions.Muscle6).back
+                    }
                   />
                 </div>
               )}
 
               {/* 9 Months Avatar */}
-              {cutPredictions.muscle_groups9 && (
+              {((mode === "cut" && cutPredictions?.muscle_groups9) || (mode === "bulk" && predictions.Muscle9)) && (
                 <div className="border rounded-lg p-2">
                   <h4 className="text-sm font-semibold text-[#E66B31] mb-2">9 Months</h4>
                   <UserAvatar 
-                    armsSizePred={cutPredictions?.muscle_groups9?.arms || 5}
-                    chestSizePred={cutPredictions?.muscle_groups9?.chest || 5}
-                    quadsSizePred={cutPredictions?.muscle_groups9?.quads || 5}
-                    TrapsSizePred={cutPredictions?.muscle_groups9?.back || 5}
+                    armsSizePred={
+                      mode === "cut"
+                        ? (cutPredictions?.muscle_groups9?.arms || 3)
+                        : parseBulkMuscleGrowth(predictions.Muscle9).arms
+                    }
+                    chestSizePred={
+                      mode === "cut"
+                        ? (cutPredictions?.muscle_groups9?.chest || 3)
+                        : parseBulkMuscleGrowth(predictions.Muscle9).chest
+                    }
+                    quadsSizePred={
+                      mode === "cut"
+                        ? (cutPredictions?.muscle_groups9?.quads || 3)
+                        : parseBulkMuscleGrowth(predictions.Muscle9).quads
+                    }
+                    TrapsSizePred={
+                      mode === "cut"
+                        ? (cutPredictions?.muscle_groups9?.back || 3)
+                        : parseBulkMuscleGrowth(predictions.Muscle9).back
+                    }
                   />
                 </div>
               )}
 
               {/* 12 Months Avatar */}
-              {cutPredictions.muscle_groups12 && (
+              {((mode === "cut" && cutPredictions?.muscle_groups12) || (mode === "bulk" && predictions.Muscle12)) && (
                 <div className="border rounded-lg p-2">
                   <h4 className="text-sm font-semibold text-[#E66B31] mb-2">12 Months</h4>
                   <UserAvatar 
-                    armsSizePred={cutPredictions?.muscle_groups12?.arms || 5}
-                    chestSizePred={cutPredictions?.muscle_groups12?.chest || 5}
-                    quadsSizePred={cutPredictions?.muscle_groups12?.quads || 5}
-                    TrapsSizePred={cutPredictions?.muscle_groups12?.back || 5}
+                    armsSizePred={
+                      mode === "cut"
+                        ? (cutPredictions?.muscle_groups12?.arms || 3)
+                        : parseBulkMuscleGrowth(predictions.Muscle12).arms
+                    }
+                    chestSizePred={
+                      mode === "cut"
+                        ? (cutPredictions?.muscle_groups12?.chest || 3)
+                        : parseBulkMuscleGrowth(predictions.Muscle12).chest
+                    }
+                    quadsSizePred={
+                      mode === "cut"
+                        ? (cutPredictions?.muscle_groups12?.quads || 3)
+                        : parseBulkMuscleGrowth(predictions.Muscle12).quads
+                    }
+                    TrapsSizePred={
+                      mode === "cut"
+                        ? (cutPredictions?.muscle_groups12?.back || 3)
+                        : parseBulkMuscleGrowth(predictions.Muscle12).back
+                    }
                   />
                 </div>
               )}
@@ -620,20 +733,20 @@ export default function WorkoutForm() {
           )}
           
           {/* Fallback Avatar when no predictions */}
-          {!cutPredictions && (
+          {!cutPredictions && !predictions.Muscle3 && (
             <div className="border rounded-lg p-2">
               <h4 className="text-sm font-semibold text-[#E66B31] mb-2">Current</h4>
               <UserAvatar 
-                armsSizePred={5}
-                chestSizePred={5}
-                quadsSizePred={5}
-                TrapsSizePred={5}
+                armsSizePred={3}
+                chestSizePred={3}
+                quadsSizePred={3}
+                TrapsSizePred={3}
               />
             </div>
           )}
         </div>
 
-        {/* <Card className="text-[#E1E2C1]">
+        {/* <Card className="text-[#E1E2C1]">{
           <CardHeader>
             <CardTitle className="text-2xl font-bold">
               Current Measurements

@@ -153,12 +153,12 @@ df['muscle_mass_at_9'] = (df['predicted_weight_after_loss'] * (1 - df['bfp_at_9'
 df['muscle_mass_at_12'] = (df['predicted_weight_after_loss'] * (1 - df['bfp_at_12']/100)) * muscle_gain_factor
 
 # Calculate definition scores (higher muscle mass + lower BFP = higher definition)
-# Scale to 1-10 range
+# Scale to 1-5 range
 def calculate_definition(muscle_mass, bfp):
     # Higher muscle mass and lower BFP = better definition
     definition_raw = (muscle_mass / 10) * (50 - bfp) / 10
-    # Scale to 1-10 range
-    return np.clip(definition_raw / definition_raw.max() * 9 + 1, 1, 10)
+    # Scale to 1-5 range
+    return np.clip(definition_raw / definition_raw.max() * 4 + 1, 1, 5)
 
 df['definition_at_3'] = calculate_definition(df['muscle_mass_at_3'], df['bfp_at_3'])
 df['definition_at_6'] = calculate_definition(df['muscle_mass_at_6'], df['bfp_at_6'])

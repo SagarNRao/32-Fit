@@ -57,21 +57,21 @@ export default function UserAvatar(props: UserAvatarProps) {
 
     const definition_raw = ((muscle_mass / 10) * (50 - BFP)) / 10;
 
-    // Scale to 0-10 range (back to original scale)
-    const definition_score = Math.max(0, Math.min(10, definition_raw));
+    // Scale to 0-5 range (updated from 0-10)
+    const definition_score = Math.max(0, Math.min(5, definition_raw / 2));
 
-    // converting size to 1-10 range for sprite selection (props are already 0-10)
+    // converting size to 1-5 range for sprite selection (props are now 0-5)
     const armsSizeScaled = Math.ceil(
-      Math.max(1, Math.min(10, props.armsSizePred))
+      Math.max(1, Math.min(5, props.armsSizePred))
     );
     const chestSizeScaled = Math.ceil(
-      Math.max(1, Math.min(10, props.chestSizePred))
+      Math.max(1, Math.min(5, props.chestSizePred))
     );
     const quadsSizeScaled = Math.ceil(
-      Math.max(1, Math.min(10, props.quadsSizePred))
+      Math.max(1, Math.min(5, props.quadsSizePred))
     );
     const trapsSizeScaled = Math.ceil(
-      Math.max(1, Math.min(10, props.TrapsSizePred))
+      Math.max(1, Math.min(5, props.TrapsSizePred))
     );
 
     return {
@@ -92,7 +92,7 @@ export default function UserAvatar(props: UserAvatarProps) {
 
   // Use useEffect to set mode based on definition score to avoid infinite re-renders
   useEffect(() => {
-    if (stats.definition_score < 5) {
+    if (stats.definition_score < 2.5) {
       setMode("Cut");
     } else {
       setMode("Bulk");
@@ -105,7 +105,7 @@ export default function UserAvatar(props: UserAvatarProps) {
   const currentMode = mode || "Cut";
 
   return (
-    <Card className="flex flex-row">
+    <div className="flex flex-row">
       <Card className="w-full">
         <CardHeader>
           <CardTitle className="text-xl">
@@ -130,7 +130,7 @@ export default function UserAvatar(props: UserAvatarProps) {
           <CardContent className="pt-6">
             <div className="text-center">
           <p className="text-2xl font-bold text-blue-600">
-            {stats.definition_score}/10
+            {stats.definition_score}/5
           </p>
           <p className="text-sm text-muted-foreground">
             Definition Score
@@ -250,6 +250,6 @@ export default function UserAvatar(props: UserAvatarProps) {
           />
         </CardContent>
       </Card>
-    </Card>
+    </div>
   );
 }
