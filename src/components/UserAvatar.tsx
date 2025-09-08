@@ -60,18 +60,18 @@ export default function UserAvatar(props: UserAvatarProps) {
     // Scale to 0-10 range (back to original scale)
     const definition_score = Math.max(0, Math.min(10, definition_raw));
 
-    // converting size to 0-10
+    // converting size to 1-10 range for sprite selection (props are already 0-10)
     const armsSizeScaled = Math.ceil(
-      Math.max(0, Math.min(10, props.armsSizePred / 10))
+      Math.max(1, Math.min(10, props.armsSizePred))
     );
     const chestSizeScaled = Math.ceil(
-      Math.max(0, Math.min(10, props.chestSizePred / 10))
+      Math.max(1, Math.min(10, props.chestSizePred))
     );
     const quadsSizeScaled = Math.ceil(
-      Math.max(0, Math.min(10, props.quadsSizePred / 10))
+      Math.max(1, Math.min(10, props.quadsSizePred))
     );
     const trapsSizeScaled = Math.ceil(
-      Math.max(0, Math.min(10, props.TrapsSizePred / 10))
+      Math.max(1, Math.min(10, props.TrapsSizePred))
     );
 
     return {
@@ -79,10 +79,10 @@ export default function UserAvatar(props: UserAvatarProps) {
       definition_score: Math.round(definition_score * 10) / 10,
       training_intensity: training_intensity,
       sizes: {
-        arms: Math.round(armsSizeScaled * 10) / 10,
-        chest: Math.round(chestSizeScaled * 10) / 10,
-        quads: Math.round(quadsSizeScaled * 10) / 10,
-        traps: Math.round(trapsSizeScaled * 10) / 10,
+        arms: armsSizeScaled,
+        chest: chestSizeScaled,
+        quads: quadsSizeScaled,
+        traps: trapsSizeScaled,
       },
     };
   };
@@ -94,15 +94,15 @@ export default function UserAvatar(props: UserAvatarProps) {
   useEffect(() => {
     if (stats.definition_score < 5) {
       setMode("Cut");
-    } else if (BFP > 50) {
-      console.log('a')
-      setMode('Fat')
     } else {
       setMode("Bulk");
     }
-  }, [BFP, stats.definition_score]);
+  }, [stats.definition_score]);
 
-  const squareDims = 150
+  const squareDims = 150;
+
+  // Ensure mode has a fallback value
+  const currentMode = mode || "Cut";
 
   return (
     <Card className="flex flex-row">
@@ -222,29 +222,29 @@ export default function UserAvatar(props: UserAvatarProps) {
         <CardContent>
           {/* CHEST */}
           <Image className="border"
-            src={`/sprites/${mode}_Chest_${stats.sizes.chest}.png`}
-            alt="mybigfatbutt"
+            src={`/sprites/${currentMode}_Chest_${stats.sizes.chest}.png`}
+            alt="Chest muscle"
             width={squareDims}
             height={squareDims}
           />
           {/* ARMS */}
           <Image className="border"
-            src={`/sprites/${mode}_Arms_${stats.sizes.chest}.png`}
-            alt="mybigfatbutt"
+            src={`/sprites/${currentMode}_Arms_${stats.sizes.arms}.png`}
+            alt="Arms muscle"
             width={squareDims}
             height={squareDims}
           />
-          {/* TRAPS */}
+          {/* BACK/TRAPS */}
           <Image className="border"
-            src={`/sprites/${mode}_Back_${stats.sizes.chest}.png`}
-            alt="mybigfatbutt"
+            src={`/sprites/${currentMode}_Back_${stats.sizes.traps}.png`}
+            alt="Back muscle"
             width={squareDims}
             height={squareDims}
           />
           {/* QUADS */}
           <Image className="border"
-            src={`/sprites/${mode}_Quads_${stats.sizes.chest}.png`}
-            alt="mybigfatbutt"
+            src={`/sprites/${currentMode}_Quads_${stats.sizes.quads}.png`}
+            alt="Quads muscle"
             width={squareDims}
             height={squareDims}
           />

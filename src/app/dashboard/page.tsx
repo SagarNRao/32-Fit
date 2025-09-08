@@ -141,7 +141,6 @@ export default function WorkoutForm() {
   // HERE IS THE BULK MODE / CUT MODE STATE
   const [mode, setMode] = useState<"bulk" | "cut">("bulk");
   const [activeTab, setActiveTab] = useState("tab1");
-  const [selectedMonth, setSelectedMonth] = useState<3 | 6 | 9 | 12>(3);
 
   const addExercise = () => {
     if (
@@ -562,47 +561,76 @@ export default function WorkoutForm() {
           </CardContent>
         </Card>
 
-        {/* Avatar Section with Month Tabs */}
+        {/* Avatar Section with Month Milestones */}
         <div className="w-1/3">
           {cutPredictions && (
-            <div className="mb-4">
-              <Tabs value={selectedMonth.toString()} onValueChange={(value) => setSelectedMonth(Number(value) as 3 | 6 | 9 | 12)}>
-                <TabsList className="grid grid-cols-4 w-full">
-                  <TabsTrigger value="3" className="text-xs">3M</TabsTrigger>
-                  <TabsTrigger value="6" className="text-xs">6M</TabsTrigger>
-                  <TabsTrigger value="9" className="text-xs">9M</TabsTrigger>
-                  <TabsTrigger value="12" className="text-xs">12M</TabsTrigger>
-                </TabsList>
-              </Tabs>
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold text-[#E1E2C1] mb-3">Avatar Progression</h3>
+              
+              {/* 3 Months Avatar */}
+              <div className="border rounded-lg p-2">
+                <h4 className="text-sm font-semibold text-[#E66B31] mb-2">3 Months</h4>
+                <UserAvatar 
+                  armsSizePred={cutPredictions?.muscle_groups3?.arms || 5}
+                  chestSizePred={cutPredictions?.muscle_groups3?.chest || 5}
+                  quadsSizePred={cutPredictions?.muscle_groups3?.quads || 5}
+                  TrapsSizePred={cutPredictions?.muscle_groups3?.back || 5}
+                />
+              </div>
+
+              {/* 6 Months Avatar */}
+              {cutPredictions.muscle_groups6 && (
+                <div className="border rounded-lg p-2">
+                  <h4 className="text-sm font-semibold text-[#E66B31] mb-2">6 Months</h4>
+                  <UserAvatar 
+                    armsSizePred={cutPredictions?.muscle_groups6?.arms || 5}
+                    chestSizePred={cutPredictions?.muscle_groups6?.chest || 5}
+                    quadsSizePred={cutPredictions?.muscle_groups6?.quads || 5}
+                    TrapsSizePred={cutPredictions?.muscle_groups6?.back || 5}
+                  />
+                </div>
+              )}
+
+              {/* 9 Months Avatar */}
+              {cutPredictions.muscle_groups9 && (
+                <div className="border rounded-lg p-2">
+                  <h4 className="text-sm font-semibold text-[#E66B31] mb-2">9 Months</h4>
+                  <UserAvatar 
+                    armsSizePred={cutPredictions?.muscle_groups9?.arms || 5}
+                    chestSizePred={cutPredictions?.muscle_groups9?.chest || 5}
+                    quadsSizePred={cutPredictions?.muscle_groups9?.quads || 5}
+                    TrapsSizePred={cutPredictions?.muscle_groups9?.back || 5}
+                  />
+                </div>
+              )}
+
+              {/* 12 Months Avatar */}
+              {cutPredictions.muscle_groups12 && (
+                <div className="border rounded-lg p-2">
+                  <h4 className="text-sm font-semibold text-[#E66B31] mb-2">12 Months</h4>
+                  <UserAvatar 
+                    armsSizePred={cutPredictions?.muscle_groups12?.arms || 5}
+                    chestSizePred={cutPredictions?.muscle_groups12?.chest || 5}
+                    quadsSizePred={cutPredictions?.muscle_groups12?.quads || 5}
+                    TrapsSizePred={cutPredictions?.muscle_groups12?.back || 5}
+                  />
+                </div>
+              )}
             </div>
           )}
           
-          <UserAvatar 
-            armsSizePred={
-              selectedMonth === 3 ? (cutPredictions?.muscle_groups3?.arms || 5) :
-              selectedMonth === 6 ? (cutPredictions?.muscle_groups6?.arms || 5) :
-              selectedMonth === 9 ? (cutPredictions?.muscle_groups9?.arms || 5) :
-              (cutPredictions?.muscle_groups12?.arms || 5)
-            } 
-            chestSizePred={
-              selectedMonth === 3 ? (cutPredictions?.muscle_groups3?.chest || 5) :
-              selectedMonth === 6 ? (cutPredictions?.muscle_groups6?.chest || 5) :
-              selectedMonth === 9 ? (cutPredictions?.muscle_groups9?.chest || 5) :
-              (cutPredictions?.muscle_groups12?.chest || 5)
-            } 
-            quadsSizePred={
-              selectedMonth === 3 ? (cutPredictions?.muscle_groups3?.quads || 5) :
-              selectedMonth === 6 ? (cutPredictions?.muscle_groups6?.quads || 5) :
-              selectedMonth === 9 ? (cutPredictions?.muscle_groups9?.quads || 5) :
-              (cutPredictions?.muscle_groups12?.quads || 5)
-            } 
-            TrapsSizePred={
-              selectedMonth === 3 ? (cutPredictions?.muscle_groups3?.back || 5) :
-              selectedMonth === 6 ? (cutPredictions?.muscle_groups6?.back || 5) :
-              selectedMonth === 9 ? (cutPredictions?.muscle_groups9?.back || 5) :
-              (cutPredictions?.muscle_groups12?.back || 5)
-            }
-          />
+          {/* Fallback Avatar when no predictions */}
+          {!cutPredictions && (
+            <div className="border rounded-lg p-2">
+              <h4 className="text-sm font-semibold text-[#E66B31] mb-2">Current</h4>
+              <UserAvatar 
+                armsSizePred={5}
+                chestSizePred={5}
+                quadsSizePred={5}
+                TrapsSizePred={5}
+              />
+            </div>
+          )}
         </div>
 
         {/* <Card className="text-[#E1E2C1]">
