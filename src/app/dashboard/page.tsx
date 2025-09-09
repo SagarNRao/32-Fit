@@ -640,6 +640,11 @@ export default function WorkoutForm() {
                       ? (cutPredictions?.muscle_groups3?.back || 3)
                       : parseBulkMuscleGrowth(predictions.Muscle3).back
                   }
+                  mode={mode === "bulk" ? "Bulk" : "Cut"}
+                  armsDefinition={cutPredictions?.muscle_groups3?.arms}
+                  chestDefinition={cutPredictions?.muscle_groups3?.chest}
+                  quadsDefinition={cutPredictions?.muscle_groups3?.quads}
+                  trapsDefinition={cutPredictions?.muscle_groups3?.back}
                 />
               </div>
 
@@ -668,6 +673,11 @@ export default function WorkoutForm() {
                         ? (cutPredictions?.muscle_groups6?.back || 3)
                         : parseBulkMuscleGrowth(predictions.Muscle6).back
                     }
+                    mode={mode === "bulk" ? "Bulk" : "Cut"}
+                    armsDefinition={cutPredictions?.muscle_groups6?.arms}
+                    chestDefinition={cutPredictions?.muscle_groups6?.chest}
+                    quadsDefinition={cutPredictions?.muscle_groups6?.quads}
+                    trapsDefinition={cutPredictions?.muscle_groups6?.back}
                   />
                 </div>
               )}
@@ -697,6 +707,11 @@ export default function WorkoutForm() {
                         ? (cutPredictions?.muscle_groups9?.back || 3)
                         : parseBulkMuscleGrowth(predictions.Muscle9).back
                     }
+                    mode={mode === "bulk" ? "Bulk" : "Cut"}
+                    armsDefinition={cutPredictions?.muscle_groups9?.arms}
+                    chestDefinition={cutPredictions?.muscle_groups9?.chest}
+                    quadsDefinition={cutPredictions?.muscle_groups9?.quads}
+                    trapsDefinition={cutPredictions?.muscle_groups9?.back}
                   />
                 </div>
               )}
@@ -726,6 +741,11 @@ export default function WorkoutForm() {
                         ? (cutPredictions?.muscle_groups12?.back || 3)
                         : parseBulkMuscleGrowth(predictions.Muscle12).back
                     }
+                    mode={mode === "bulk" ? "Bulk" : "Cut"}
+                    armsDefinition={cutPredictions?.muscle_groups12?.arms}
+                    chestDefinition={cutPredictions?.muscle_groups12?.chest}
+                    quadsDefinition={cutPredictions?.muscle_groups12?.quads}
+                    trapsDefinition={cutPredictions?.muscle_groups12?.back}
                   />
                 </div>
               )}
@@ -741,6 +761,11 @@ export default function WorkoutForm() {
                 chestSizePred={3}
                 quadsSizePred={3}
                 TrapsSizePred={3}
+                mode="Bulk"
+                armsDefinition={3}
+                chestDefinition={3}
+                quadsDefinition={3}
+                trapsDefinition={3}
               />
             </div>
           )}

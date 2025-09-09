@@ -391,12 +391,12 @@ if journey:
         print(f'  Definition Score: {journey[interval]["definition"]:.1f}/10')
 
 # Save all models and encoders
-joblib.dump(models, 'body_composition_models.pkl')
-joblib.dump(le_gender, 'le_gender_body.pkl')
-joblib.dump(le_experience, 'le_experience_body.pkl')
-joblib.dump(le_exercise_name, 'le_exercise_name_body.pkl')
-joblib.dump(le_muscle_group, 'le_muscle_group_body.pkl')
-joblib.dump(le_exercise_category, 'le_exercise_category_body.pkl')
+joblib.dump(models, 'models/body_composition_models.pkl')
+joblib.dump(le_gender, 'models/le_gender_body.pkl')
+joblib.dump(le_experience, 'models/le_experience_body.pkl')
+joblib.dump(le_exercise_name, 'models/le_exercise_name_body.pkl')
+joblib.dump(le_muscle_group, 'models/le_muscle_group_body.pkl')
+joblib.dump(le_exercise_category, 'models/le_exercise_category_body.pkl')
 
 print('\nModels and encoders saved successfully!')
 print(f'Available exercises: {len(le_exercise_name.classes_)}')

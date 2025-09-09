@@ -9,6 +9,13 @@ interface UserAvatarProps {
   chestSizePred: number;
   quadsSizePred: number;
   TrapsSizePred: number;
+  // Individual definition scores for cut mode (optional)
+  armsDefinition?: number;
+  chestDefinition?: number;
+  quadsDefinition?: number;
+  trapsDefinition?: number;
+  // Mode to determine sprite selection logic
+  mode?: "Bulk" | "Cut";
 }
 
 export default function UserAvatar(props: UserAvatarProps) {
@@ -87,7 +94,6 @@ export default function UserAvatar(props: UserAvatarProps) {
     };
   };
 
-
   const stats = getDefinition();
 
   // Use useEffect to set mode based on definition score to avoid infinite re-renders
@@ -101,149 +107,181 @@ export default function UserAvatar(props: UserAvatarProps) {
 
   const squareDims = 150;
 
-  // Ensure mode has a fallback value
-  const currentMode = mode || "Cut";
+  // Determine the mode: use prop if provided, otherwise fall back to calculated mode
+  const currentMode = props.mode || mode || "Cut";
+
+  // Helper function to get sprite path for each muscle
+  const getSpriteDefinition = (
+    muscle: string,
+    size: number,
+    muscleDefinition?: number
+  ) => {
+    // Ensure size is within 1-5 range
+    const clampedSize = Math.max(1, Math.min(5, Math.round(size)));
+
+    if (currentMode === "Cut" && muscleDefinition !== undefined) {
+      // Use individual muscle definition scores for cut mode
+      const clampedDefinition = Math.max(
+        1,
+        Math.min(5, Math.round(muscleDefinition))
+      );
+
+      // Handle the inconsistent naming patterns in sprites2
+      if (muscle === "Chest") {
+        return `/sprites2/Chest_${clampedSize}_Def_${clampedDefinition}.png`;
+      } else {
+        // Arms, Back, Quads use definition range 6-10, so map 1-5 to 6-10
+        const mappedDefinition = clampedDefinition + 5;
+        return `/sprites2/${muscle}_${clampedSize}_Def_${mappedDefinition}.png`;
+      }
+    } else {
+      // Use overall definition score for bulk mode
+      const overallDefinition = Math.max(
+        1,
+        Math.min(5, Math.round(stats.definition_score))
+      );
+
+      if (muscle === "Chest") {
+        return `/sprites2/Chest_${clampedSize}_Def_${overallDefinition}.png`;
+      } else {
+        // Map 1-5 to 6-10 for Arms, Back, Quads
+        const mappedDefinition = overallDefinition + 5;
+        return `/sprites2/${muscle}_${clampedSize}_Def_${mappedDefinition}.png`;
+      }
+    }
+  };
 
   return (
     <div className="flex flex-row">
-      <Card className="w-full">
-        <CardHeader>
-          <CardTitle className="text-xl">
-        {userName}&apos;s Avatar Stats
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-6">
+      <div className="w-full">
+Ē        <CardContent className="space-y-6">
           {/* Main Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <Card>
-          <CardContent className="pt-6">
-            <div className="text-center">
-          <p className="text-2xl font-bold text-green-600">
-            {stats.muscle_mass} kg
-          </p>
-          <p className="text-sm text-muted-foreground">Muscle Mass</p>
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardContent className="pt-6">
-            <div className="text-center">
-          <p className="text-2xl font-bold text-blue-600">
-            {stats.definition_score}/5
-          </p>
-          <p className="text-sm text-muted-foreground">
-            Definition Score
-          </p>
-            </div>
-          </CardContent>
-        </Card>
-          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
 
           {/* Base Statistics */}
-          <Card>
-        <CardHeader>
-          <CardTitle className="text-sm">Base Statistics</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-2 gap-4 text-sm">
-            <div className="flex justify-between">
-          <span className="text-muted-foreground">Weight:</span>
-          <span className="font-medium">{currentWeight} kg</span>
-            </div>
-            <div className="flex justify-between">
-          <span className="text-muted-foreground">Body Fat:</span>
-          <span className="font-medium">{BFP}%</span>
-            </div>
-            <div className="flex justify-between">
-          <span className="text-muted-foreground">Training Years:</span>
-          <span className="font-medium">{workoutTimeYears}</span>
-            </div>
-            <div className="flex justify-between">
-          <span className="text-muted-foreground">
-            Training Intensity:
-          </span>
-          <span className="font-medium">
-            {stats.training_intensity}
-          </span>
-            </div>
-          </div>
-        </CardContent>
-          </Card>
+          {/* <Card>
+            <CardHeader>
+              <CardTitle className="text-sm">Base Statistics</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-2 gap-4 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Weight:</span>
+                  <span className="font-medium">{currentWeight} kg</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Body Fat:</span>
+                  <span className="font-medium">{BFP}%</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Training Years:</span>
+                  <span className="font-medium">{workoutTimeYears}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">
+                    Training Intensity:
+                  </span>
+                  <span className="font-medium">
+                    {stats.training_intensity}
+                  </span>
+                </div>
+              </div>
+            </CardContent>
+          </Card> */}
 
           {/* Muscle Development */}
-          <Card>
-        <CardHeader>
-          <CardTitle className="text-sm">
-            Muscle Development (0-10)
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-2 gap-3">
-            <Card className="p-3">
-          <div className="text-center">
-            <p className="text-lg font-bold text-purple-600">
-              {stats.sizes.arms}
-            </p>
-            <p className="text-xs text-muted-foreground">Arms</p>
-          </div>
-            </Card>
-            <Card className="p-3">
-          <div className="text-center">
-            <p className="text-lg font-bold text-purple-600">
-              {stats.sizes.chest}
-            </p>
-            <p className="text-xs text-muted-foreground">Chest</p>
-          </div>
-            </Card>
-            <Card className="p-3">
-          <div className="text-center">
-            <p className="text-lg font-bold text-purple-600">
-              {stats.sizes.quads}
-            </p>
-            <p className="text-xs text-muted-foreground">Quads</p>
-          </div>
-            </Card>
-            <Card className="p-3">
-          <div className="text-center">
-            <p className="text-lg font-bold text-purple-600">
-              {stats.sizes.traps}
-            </p>
-            <p className="text-xs text-muted-foreground">Traps</p>
-          </div>
-            </Card>
+          <div>
+            <CardHeader>
+              <CardTitle className="text-sm">
+                Muscle Development (0-10)
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-2 gap-3">
+                <Card className="p-3">
+                  <div className="text-center">
+                    <p className="text-lg font-bold text-purple-600">
+                      {stats.sizes.arms}
+                    </p>
+                    <p className="text-xs text-muted-foreground">Arms</p>
+                  </div>
+                </Card>
+                <Card className="p-3">
+                  <div className="text-center">
+                    <p className="text-lg font-bold text-purple-600">
+                      {stats.sizes.chest}
+                    </p>
+                    <p className="text-xs text-muted-foreground">Chest</p>
+                  </div>
+                </Card>
+                <Card className="p-3">
+                  <div className="text-center">
+                    <p className="text-lg font-bold text-purple-600">
+                      {stats.sizes.quads}
+                    </p>
+                    <p className="text-xs text-muted-foreground">Quads</p>
+                  </div>
+                </Card>
+                <Card className="p-3">
+                  <div className="text-center">
+                    <p className="text-lg font-bold text-purple-600">
+                      {stats.sizes.traps}
+                    </p>
+                    <p className="text-xs text-muted-foreground">Traps</p>
+                  </div>
+                </Card>
+              </div>
+            </CardContent>
           </div>
         </CardContent>
-          </Card>
-        </CardContent>
-      </Card>
+      </div>
 
       <Card>
         <CardContent>
           {/* CHEST */}
-          <Image className="border"
-            src={`/sprites/${currentMode}_Chest_${stats.sizes.chest}.png`}
+          <Image
+            className="border"
+            src={getSpriteDefinition(
+              "Chest",
+              stats.sizes.chest,
+              props.chestDefinition
+            )}
             alt="Chest muscle"
             width={squareDims}
             height={squareDims}
           />
           {/* ARMS */}
-          <Image className="border"
-            src={`/sprites/${currentMode}_Arms_${stats.sizes.arms}.png`}
+          <Image
+            className="border"
+            src={getSpriteDefinition(
+              "Arms",
+              stats.sizes.arms,
+              props.armsDefinition
+            )}
             alt="Arms muscle"
             width={squareDims}
             height={squareDims}
           />
           {/* BACK/TRAPS */}
-          <Image className="border"
-            src={`/sprites/${currentMode}_Back_${stats.sizes.traps}.png`}
+          <Image
+            className="border"
+            src={getSpriteDefinition(
+              "Back",
+              stats.sizes.traps,
+              props.trapsDefinition
+            )}
             alt="Back muscle"
             width={squareDims}
             height={squareDims}
           />
           {/* QUADS */}
-          <Image className="border"
-            src={`/sprites/${currentMode}_Quads_${stats.sizes.quads}.png`}
+          <Image
+            className="border"
+            src={getSpriteDefinition(
+              "Quads",
+              stats.sizes.quads,
+              props.quadsDefinition
+            )}
             alt="Quads muscle"
             width={squareDims}
             height={squareDims}
