@@ -3,6 +3,7 @@ import React from "react";
 import { useState, useContext, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
+import { Button } from "./ui/button";
 
 interface UserAvatarProps {
   armsSizePred: number;
@@ -20,6 +21,7 @@ interface UserAvatarProps {
 
 export default function UserAvatar(props: UserAvatarProps) {
   const [mode, setMode] = useState<"Bulk" | "Cut" | "Fat" | "">("");
+  const [viewBack, setViewBack] = useState<boolean>(false);
 
   const {
     userName,
@@ -154,7 +156,7 @@ export default function UserAvatar(props: UserAvatarProps) {
   return (
     <div className="flex flex-row">
       <div className="w-full">
-Ē        <CardContent className="space-y-6">
+        <CardContent className="space-y-6">
           {/* Main Stats */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
 
@@ -238,54 +240,71 @@ export default function UserAvatar(props: UserAvatarProps) {
 
       <Card>
         <CardContent>
+          {/* <Button onClick={() => setViewBack(true)}>Back</Button> */}
           {/* CHEST */}
-          <Image
-            className="border"
-            src={getSpriteDefinition(
-              "Chest",
-              stats.sizes.chest,
-              props.chestDefinition
-            )}
-            alt="Chest muscle"
-            width={squareDims}
-            height={squareDims}
-          />
-          {/* ARMS */}
-          <Image
-            className="border"
-            src={getSpriteDefinition(
-              "Arms",
-              stats.sizes.arms,
-              props.armsDefinition
-            )}
-            alt="Arms muscle"
-            width={squareDims}
-            height={squareDims}
-          />
-          {/* BACK/TRAPS */}
-          <Image
-            className="border"
-            src={getSpriteDefinition(
-              "Back",
-              stats.sizes.traps,
-              props.trapsDefinition
-            )}
-            alt="Back muscle"
-            width={squareDims}
-            height={squareDims}
-          />
-          {/* QUADS */}
-          <Image
-            className="border"
-            src={getSpriteDefinition(
-              "Quads",
-              stats.sizes.quads,
-              props.quadsDefinition
-            )}
-            alt="Quads muscle"
-            width={squareDims}
-            height={squareDims}
-          />
+          <div className="grid grid-cols-3">
+            {/* First row */}
+            <div></div> {/* Empty cell */}
+            <Image
+              className="border"
+              src="/logo.png"
+              alt="Chest muscle"
+              width={squareDims}
+              height={squareDims}
+            />
+            <div></div> {/* Empty cell */}
+            {/* Second row */}
+            <Image
+              className="border"
+              src={getSpriteDefinition(
+                "Arms",
+                stats.sizes.arms,
+                props.armsDefinition
+              )}
+              alt="Arms muscle"
+              width={squareDims}
+              height={squareDims}
+            />
+            <Image
+              className="border"
+              src={getSpriteDefinition(
+                "Chest",
+                stats.sizes.chest,
+                props.chestDefinition
+              )}
+              alt="Chest muscle"
+              width={squareDims}
+              height={squareDims}
+            />
+            <div>
+              <Image
+                className="border"
+                src={getSpriteDefinition(
+                  "Arms",
+                  stats.sizes.arms,
+                  props.armsDefinition
+                )}
+                alt="Arms muscle"
+                width={squareDims}
+                height={squareDims}
+              />
+            </div>{" "}
+            {/* Empty cell */}
+            {/* Third row */}
+            <div></div> {/* Empty cell */}
+            <Image
+              className="border"
+              src={getSpriteDefinition(
+                "Quads",
+                stats.sizes.quads,
+                props.quadsDefinition
+              )}
+              alt="Quads muscle"
+              width={squareDims}
+              height={squareDims}
+            />
+            <div></div> {/* Empty cell */}
+          </div>
         </CardContent>
       </Card>
     </div>
