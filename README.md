@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 32-Fit – Muscle Growth Predictor
 
-## Getting Started
+**32-Fit** is a machine learning side project that predicts realistic muscle size changes during **bulking** (growth) and **cutting** (preservation/loss) phases — to help lifters **trust the process** when visible progress feels slow or uncertain.
 
-First, run the development server:
+## Why this project exists
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Building (or keeping) muscle takes serious time and consistency. Without realistic expectations, it's easy to get demotivated and quit too early.  
+This tool aims to give data-driven estimates of **how much size you can realistically add** (or how little you might lose) over weeks/months, based on training experience, nutrition setup, recovery, and more.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Approach & Data
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Real longitudinal muscle-growth datasets (with controlled training, diet, DEXA scans, etc.) are extremely rare and would take years to collect personally.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+So the workflow was:
 
-## Learn More
+1. Researched scientific literature and real-world trends on:
+   - Natural muscle-building rates by training age (beginner / intermediate / advanced)
+   - Impact of surplus/deficit size, protein intake, training volume, sleep, etc.
+   - Typical muscle loss/retention patterns during cuts (especially with high protein + resistance training)
 
-To learn more about Next.js, take a look at the following resources:
+2. Used these trends to define realistic growth curves and influencing factors.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Asked **Claude** (Anthropic's LLM) to generate **synthetic tabular data** that follows those researched trends and distributions — creating a stand-in dataset large enough for model training.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. Trained two separate **Random Forest Regressor** models (scikit-learn):
+   - One for **bulking** → predicted circumference increase (cm/in) in arms, chest, legs, etc.
+   - One for **cutting** → predicted change (loss or retention) under deficit conditions
 
-## Deploy on Vercel
+## Current State
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Models are trained and work (see the `.ipynb` notebooks for training, feature engineering, evaluation).
+- Predictions are functional in notebook form.
+- No real frontend exists yet — the repo currently contains only Jupyter notebooks (and possibly a minimal `test_server.py` for inference testing).
+- Original plan included sprite-based body visualizations (animated physique morphing based on predictions) — but time ran out before implementation.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Notebooks Overview
+
+- Data generation / synthetic dataset creation
+- Exploratory analysis & feature importance
+- Model training & hyperparameter tuning (Random Forest)
+- Evaluation & prediction examples
+
+## How to Run (right now)
+
+1. Clone the repo
+   ```bash
+   git clone https://github.com/SagarNRao/32-Fit.git
