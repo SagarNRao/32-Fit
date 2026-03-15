@@ -42,6 +42,8 @@ So the workflow was:
 
 ## How to Run (right now)
 
-1. Clone the repo
+1. Go to https://huggingface.co/spaces/sagarNRao/32Fit
+
+2. Clone the repo
    ```bash
    git clone https://github.com/SagarNRao/32-Fit.git
