@@ -7,6 +7,16 @@
 Building (or keeping) muscle takes serious time and consistency. Without realistic expectations, it's easy to get demotivated and quit too early.  
 This tool aims to give data-driven estimates of **how much size you can realistically add** (or how little you might lose) over weeks/months, based on training experience, nutrition setup, recovery, and more.
 
+## How to Run (right now)
+
+1. Go to https://huggingface.co/spaces/sagarNRao/32Fit
+
+OR
+
+2. Clone the repo
+   ```bash
+   git clone https://github.com/SagarNRao/32-Fit.git
+
 ## Approach & Data
 
 Real longitudinal muscle-growth datasets (with controlled training, diet, DEXA scans, etc.) are extremely rare and would take years to collect personally.
@@ -40,8 +50,3 @@ So the workflow was:
 - Model training & hyperparameter tuning (Random Forest)
 - Evaluation & prediction examples
 
-## How to Run (right now)
-
-1. Clone the repo
-   ```bash
-   git clone https://github.com/SagarNRao/32-Fit.git
