@@ -2,6 +2,8 @@
 
 # dependencies
 /node_modules
+/fitpredictor/frontend/node_modules
+
 /.pnp
 .pnp.*
 .yarn/*
@@ -15,6 +17,7 @@
 
 # next.js
 /.next/
+/fitpredictor/frontend/.next/
 /out/
 
 # production
