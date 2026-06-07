@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-/fitpredictor/frontend/node_modules
+/webApp/frontend/node_modules
 
 /.pnp
 .pnp.*
@@ -17,7 +17,7 @@
 
 # next.js
 /.next/
-/fitpredictor/frontend/.next/
+/webApp/frontend/.next/
 /out/
 
 # production
