@@ -7,6 +7,9 @@
 Building (or keeping) muscle takes serious time and consistency. Without realistic expectations, it's easy to get demotivated and quit too early.  
 This tool aims to give data-driven estimates of **how much size you can realistically add** (or how little you might lose) over weeks/months, based on training experience, nutrition setup, recovery, and more.
 
+## UI/UX Design: 
+Created a retro mobile UI concept on Behance at https://www.behance.net/gallery/231263505/32-Fit centered on dynamic 32-bit avatars that morph to show predicted gains (a play on 32-bit + fitness); preserved as a high-fidelity visual design while the project focused on core ML model execution.
+
 ## How to Run (right now)
 
 1. Go to https://huggingface.co/spaces/sagarNRao/32Fit
