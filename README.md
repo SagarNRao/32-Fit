@@ -12,11 +12,13 @@ Created a retro mobile UI concept on Behance at https://www.behance.net/gallery/
 
 ## How to Run (right now)
 
-1. Go to https://huggingface.co/spaces/sagarNRao/32Fit
+1. Go to https://32-fit.vercel.app/
 
 OR
 
-2. Clone the repo
+2. Go to https://huggingface.co/spaces/sagarNRao/32Fit
+
+3. Clone the repo
    ```bash
    git clone https://github.com/SagarNRao/32-Fit.git
 
